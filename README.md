@@ -8,6 +8,6 @@
 ### 1. JAVA
 ### 2. DB
 
-- [자바와 DB 연동하기 feat. eclipse](https://github.com/daesungRa/MyStudy/blob/master/DB/%EC%9E%90%EB%B0%94%EC%99%80%20DB%20%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0(with%20Eclipse).md)
+- [자바와 DB 연동하기 feat. eclipse](https://github.com/daesungRa/MyStudy/blob/master/DB/%EC%9E%90%EB%B0%94%EC%99%80%20DB%20%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0(with%20Eclipse).md) (181217, mon)
 
 ### 3. JSP/Servlet

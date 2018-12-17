@@ -1,4 +1,7 @@
 ﻿
+![author](https://img.shields.io/badge/author-daesungRa-lightgray.svg?style=flat-square)
+![date](https://img.shields.io/badge/author-181217-lightgray.svg?style=flat-square)
+
 # DB 연동하기
 
 >오라클 데이터베이스에 접근하기 위해서는 JDBC 라는 DBMS 도구가 필요하다.<br>
@@ -58,13 +61,15 @@ public class DBConnect {
 
 ## 커넥션 활용하기
 
->이제, JDBC 를 사용하기 위해서는 Connection 객체를 반환받을 수 있는 DBConnect 클래스를 인스턴스화 하면 된다
+>이제 JDBC 를 사용하기 위해서는 Connection 객체를 반환받을 수 있는 DBConnect 클래스를 인스턴스화 하면 된다
 <br>
-1. DB 에 질의하고자 하는 쿼리문을 작성한다
-2. DBConnect 로부터 반환받은 Connection 객체로부터 작성한 쿼리문을 적용한 PreparedStatement 객체를 생성한다
-3. 필요에 의해 PreparedStatement 에 가변적인 파라미터를 적용한다
-4. 질의 결과가 필요하다면, ResultSet 객체를 생성해 ps.executeQuery() 반환값을 저장한다(일종의 CURSOR 역할)
-5. ResultSet 을 활용해 필요한 결과 데이터를 활용한다
+<pre>
+1. DB 에 질의하고자 하는 쿼리문을 작성한다<br>
+2. DBConnect 로부터 반환받은 Connection 객체로부터 작성한 쿼리문을 적용한 PreparedStatement 객체를 생성한다<br>
+3. 필요에 의해 PreparedStatement 에 가변적인 파라미터를 적용한다<br>
+4. 질의 결과가 필요하다면, ResultSet 객체를 생성해 ps.executeQuery() 반환값을 저장한다(일종의 CURSOR 역할)<br>
+5. ResultSet 을 활용해 필요한 결과 데이터를 활용한다<br>
+</pre>
 
 <br><pre>*유의할 점*<br>
 - 자바 커넥션을 활용한 DB 쿼리는 오토커밋이다(쿼리 실행 시마다 자동으로 커밋된다)
@@ -72,8 +77,8 @@ public class DBConnect {
 - 모든 쿼리를 실행한 이후에는, 사용했던 DB 자원들(rs, ps, conn)을 close(해제)해야 한다(그렇지 않으면 지속적으로 자원을 소모함)
 </pre>
 <br>
-**활용 예시**
-<pre>*empTest1 메서드*
+<strong>활용 예시</strong>
+<pre>*empTest1 메서드*<br>
 <code>
 // 급여가 10000 이상인 직원의 사번, 이름, 급여, 입사일 출력
 public void empTest1() {
@@ -108,7 +113,11 @@ public void empTest1() {
 		}
 	}
 </code></pre><br>
-<pre>*empTest2 메서드*
+
+이것은 일반적인 select 쿼리를 conn 객체의 ps 를 통해 전송한 것이다.
+쿼리의 결과는 rs 객체에 담기도록 하였으며, 그 값들을 콘솔에 출력하도록 하였다.
+
+<pre>*empTest2 메서드*<br>
 <code>
 public void empTest2() {
 		try {
@@ -145,7 +154,10 @@ public void empTest2() {
 		}
 	}
 </code></pre><br>
-<pre>*DBTest 메인메서드*
+
+이 코드는 employees 를 inner join 하여 그 값을 반환받아 출력하도록 하였다.
+
+<pre><i>DBTest 메인메서드</i><br>
 <code>
 public class DBTest {
 	Connection conn = null;
@@ -154,47 +166,13 @@ public class DBTest {
 	ResultSet rs = null;
 	
 	public static void main(String[] args) {
-		/*
-		Connection conn = null;
-		String sql = null;
-		ResultSet rs = null; // cursor 와 동일한 역할, 쿼리의 결과 명시적 저장
-
-		try {
-			conn = new DBConnect().getConn();
-			if (conn != null) {
-				System.out.println("정상적으로 DB 가 연결됨 ... ");
-				
-				sql = "select first_name, salary, hire_date from employees where department_id = ?"; // 문장 내 세미콜론은 붙이지 않는다
-				
-				PreparedStatement ps = conn.prepareStatement(sql);
-				ps.setInt(1, 80);
-				rs = ps.executeQuery(); // 쿼리 결과를 커서에 저장
-				
-				while (rs.next()) {
-					System.out.println(rs.getString("first_name")); // employees 테이블의 모든 이름 조회. 무조건 String 으로 받는다
-					System.out.println(rs.getInt("salary")); // salary 는 정수형. 무조건 int (실수형은 getDouble)
-					System.out.println(rs.getString("hire_date")); // 날짜를 String 으로 받으면 시분초까지 출력됨
-					System.out.println(rs.getDate("hire_date")); // 날짜를 Date 로 받으면 연월일만 출력됨
-					System.out.println("------------------------");
-				}
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		*/
-		
 		DBTest dbt = new DBTest();
-		/*dbt.empTest1();
+		dbt.empTest1();
 		dbt.empTest2();
-		dbt.empTest3();*/
-		// dbt.empTest4("D", 5000, 10000);
-		
-		// dbt.empTest5("c001", "park gil dong", "1111"); // member 테이블에 새로운 유저 insert
-		// dbt.empTest6("c001", "abc@def.com", "123-4567-8910", 2);
-		dbt.empTest7("kim1");
 	}
 </code></pre>
 
+메인 메서드로써 위의 empTest1 과 empTest2 메서드를 포함하고 있으며, 그것을 호출하였다.
 
 
 

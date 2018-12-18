@@ -18,11 +18,17 @@
 ## 게시판 구조
 
 1. BoardA
-	![desc BoardA;](./imgs/BoardA.png)
+	![desc BoardA;](
+        MyStudy/imgs/BoardA.PNG
+      )
 2. BoardB
-	![desc BoardB;](./imgs/BoardB.png)
+	![desc BoardB;](
+        MyStudy/imgs/BoardB.PNG
+      )
 3. BoardAtt
-	![desc BoardAtt;](./imgs/BoardAtt.png)
+	![desc BoardAtt;](
+        MyStudy/imgs/BoardAtt.PNG
+      )
 
 ## 코드 구조
 

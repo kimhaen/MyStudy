@@ -18,17 +18,29 @@
 ## 게시판 구조
 
 1. BoardA
+
+
 	![desc BoardA;](
         https://github.com/daesungRa/MyStudy/blob/master/imgs/BoardA.PNG
       )
+      
+      
 2. BoardB
+
+
 	![desc BoardB;](
         https://github.com/daesungRa/MyStudy/blob/master/imgs/BoardB.PNG
       )
+      
+      
 3. BoardAtt
+
+
 	![desc BoardAtt;](
         https://github.com/daesungRa/MyStudy/blob/master/imgs/BoardAtt.PNG
       )
+      
+      
 
 ## 코드 구조
 

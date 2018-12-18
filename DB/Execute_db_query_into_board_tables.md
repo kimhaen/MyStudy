@@ -12,10 +12,15 @@
 1. 일반적인 게시판에서 활용되는 쿼리문 학습
 	- select, insert, update, delete (이상 CRUD 쿼리)
 	- view(글 상세), reply(답글달기) 등
+
 2. 자바 코딩으로 DB 에 필요한 요청을 하는 전체적인 로직 이해하고 숙달하기
+
 3. 보다 나은 쿼리를 위해 고민해보기
 
 ## 게시판 구조
+
+>Hie
+
 
 1. BoardA
 
@@ -24,14 +29,30 @@
         https://github.com/daesungRa/MyStudy/blob/master/imgs/BoardA.PNG
       )
       
-      
+
+	- **A 형 게시판**인 BoardA 의 특징
+
+		+ 쿼리(SELECT)의 결과를 계층형으로 표현하기에 용이하다
+		+ 명확히 구조화되어 있으며 특정 DB 에 종속적이지 않다
+		+ 그러나 대댓글이 계속해서 달리면 deep 의 길이가 무한정 늘어날 가능성이 있다 (10억 개라면..?ㄷㄷ)
+		+ 컬럼 grp	: 만약 원본 글이라면 serial == grp == deep, 아니라면 grp는 최고 조상의 serial(group)와 같다
+		+ 컬럼 deep	: 바로 윗 부모의 deep + "-" + 자신의 serial
+		+ 정렬 시	: 원본 글에 대해 최신 글 순으로 grp 를 desc 하고, 각 원본에 대한 댓글들은 계층별로 asc
+
 2. BoardB
 
 
 	![desc BoardB;](
         https://github.com/daesungRa/MyStudy/blob/master/imgs/BoardB.PNG
       )
-      
+   
+
+   	- **B 형 게시판**인 BoardB 의 특징
+
+		+ 완전히 계층화된 A 형과 다르게 종속되는 부모 글에 대한 serial 만으로 간편하게 데이터 구조를 표현한다
+		+ 쿼리를 계층형으로 구조화할 수 없으며 특정 DB 에 종속적이다
+		+ 컬럼 pSerial	: 원본 글은 null 이며, 모든 댓글은 각 조상 원본 글의 serial 을 pSerial 값으로 갖는다(grp 와 유사)
+		+ 정렬 시	: A 형처럼 계층화되어 있지 않으므로 별도의 계층화 쿼리문을 만들어야 한다(START WITH-CONNECT BY 문 사용)
       
 3. BoardAtt
 
@@ -39,9 +60,30 @@
 	![desc BoardAtt;](
         https://github.com/daesungRa/MyStudy/blob/master/imgs/BoardAtt.PNG
       )
-      
-      
+
+      	- Attachment File (첨부파일) 목록을 저장하는 BoardAtt
+
+		+ 특정 글에 종속된 첨부파일 하나가 추가될 때마다 serial 값은 1 씩 증가
+		+ pSerial 은 BoardA 혹은 BoardB 의 특정 글의 serial 이다 (종속적)
+
+* 유의할 점
+
+	- 임시적으로 DB 에 생성한 게시판 구조. 제약조건은 아직 설정하지 않음.
+	- SEQUENCE	: 각 테이블에는 **SEQUENCE** 가 존재한다(SEQ_BOARDA, SEQ_BOARDB, SEQ_BOARDATT). 시퀀스는 새 데이터가 insert 될 때마다 1 씩 자동증가하도록 세팅한다.
+	- 무결성의 문제	: BoardAtt 의 외래키인 pSerial 은 BoardA 와 BoardB 의 주키인 bbs_serial 을 참조하는데, 주키 하나 당 여러 개의 BoardAtt 행이 존재할 수 있으므로 양자 간 join 이 일어났을 시 **1:N 의 도메인 원자성 위배 가능성**이 존재한다. 그러므로 경우에 따라 무결성 보장을 위해 별도의 join 테이블을 생성할 필요가 있다
+	- 컬럼 HIT	: 게시판의 각 글은 조회될 때마다(view) HIT 값을 1 씩 증가시키도록 세팅. 조회수의 의미를 갖는다
 
 ## 코드 구조
 
-1. DBConnection 클래스
+1. DBConnect 클래스
+
+2. BoardAVo, BoardBVo, BoardAtt 클래스
+
+3. CRUD 및 view, reply 기능을 테스트하는 클래스 - DBTest, BoardATest, BoardBTest
+
+
+
+
+
+
+

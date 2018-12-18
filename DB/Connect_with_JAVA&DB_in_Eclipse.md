@@ -10,9 +10,9 @@
 
 ## DB 커넥션 클래스 만들기
 
-<pre>
-*DBConnect 클래스*
-<code>
+- DB 커넥션 클래스
+
+```JAVA
 package db;
 
 import java.sql.Connection;
@@ -42,7 +42,7 @@ public class DBConnect {
 		return conn;
 	}
 }
-</code></pre>
+```
 
 이 클래스의 목적은 <strong>JDBC</strong> 를 통한 <strong>DB</strong> 와의 <strong>Connection</strong> 객체를 얻는 것이다<br>
 <br><strong>Connection</strong> 객체를 얻기 위해서는,<br><br>
@@ -78,8 +78,10 @@ public class DBConnect {
 </pre>
 <br>
 <strong>활용 예시</strong>
-<pre>*empTest1 메서드*<br>
-<code>
+
+	*empTest1 메서드*
+
+```JAVA
 // 급여가 10000 이상인 직원의 사번, 이름, 급여, 입사일 출력
 public void empTest1() {
 		try {
@@ -112,13 +114,13 @@ public void empTest1() {
 			} catch (Exception ex) { }
 		}
 	}
-</code></pre><br>
+```
 
 이것은 일반적인 select 쿼리를 conn 객체의 ps 를 통해 전송한 것이다.
 쿼리의 결과는 rs 객체에 담기도록 하였으며, 그 값들을 콘솔에 출력하도록 하였다.
 
-<pre>*empTest2 메서드*<br>
-<code>
+	*empTest2 메서드*
+```JAVA
 public void empTest2() {
 		try {
 			conn = new DBConnect().getConn();
@@ -153,12 +155,13 @@ public void empTest2() {
 			} catch (Exception ex) { }
 		}
 	}
-</code></pre><br>
+```
 
-이 코드는 employees 를 inner join 하여 그 값을 반환받아 출력하도록 하였다.
+	이 코드는 employees 를 inner join 하여 그 값을 반환받아 출력하도록 하였다.
 
-<pre><i>DBTest 메인메서드</i><br>
-<code>
+	*DBTest 메인메서드*
+
+```JAVA
 public class DBTest {
 	Connection conn = null;
 	String sql = null;
@@ -170,9 +173,9 @@ public class DBTest {
 		dbt.empTest1();
 		dbt.empTest2();
 	}
-</code></pre>
+```
 
-메인 메서드로써 위의 empTest1 과 empTest2 메서드를 포함하고 있으며, 그것을 호출하였다.
+	메인 메서드로써 위의 empTest1 과 empTest2 메서드를 포함하고 있으며, 그것을 호출하였다.
 
 
 

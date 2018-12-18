@@ -19,15 +19,15 @@
 
 1. BoardA
 	![desc BoardA;](
-        MyStudy/imgs/BoardA.PNG
+        https://github.com/daesungRa/MyStudy/blob/master/imgs/BoardA.PNG
       )
 2. BoardB
 	![desc BoardB;](
-        MyStudy/imgs/BoardB.PNG
+        https://github.com/daesungRa/MyStudy/blob/master/imgs/BoardB.PNG
       )
 3. BoardAtt
 	![desc BoardAtt;](
-        MyStudy/imgs/BoardAtt.PNG
+        https://github.com/daesungRa/MyStudy/blob/master/imgs/BoardAtt.PNG
       )
 
 ## 코드 구조

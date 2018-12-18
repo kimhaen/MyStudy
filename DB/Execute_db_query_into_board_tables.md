@@ -77,10 +77,302 @@
 
 1. DBConnect 클래스
 
+
+```JAVA
+package db;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DBConnect {
+	Connection conn;
+	String driver = "oracle.jdbc.driver.OracleDriver";
+	String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe"; // orcl(정식버전)
+	String dbUser = "hr";
+	String dbPwd = "hr";
+	
+	public DBConnect() {
+		try {
+			
+			// driver file loading
+			// db(jdbc) 가 메모리에 적재된다
+			Class.forName(driver);
+			
+			// 연결객체 생성
+			conn = DriverManager.getConnection(dbUrl, dbUser, dbPwd);
+			
+		} catch (Exception ex) { ex.printStackTrace(); }
+	}
+
+	public Connection getConn() {
+		return conn;
+	}
+}
+```
+
+
+JDBC 드라이버로부터 Connection 객체를 반환하는 클래스
+
+
 2. BoardAVo, BoardBVo, BoardAtt 클래스
 
-3. CRUD 및 view, reply 기능을 테스트하는 클래스 - DBTest, BoardATest, BoardBTest
 
+```JAVA
+package db;
+
+import java.util.List;
+
+public class BoardAVo {
+	private int bbs_serial;
+	private int bbs_grp;
+	private String bbs_deep;
+	private String bbs_subject;
+	private String bbs_content;
+	private String bbs_mdate; // Date 타입도 상관 없지만, 포맷 맞추기가 번거롭다
+	private String bbs_id;
+	private String bbs_pwd;
+	private int bbs_hit;
+	
+	// 첨부파일의 목록
+	private List<BoardAtt> att;
+	
+	// 첨부파일의 수
+	private int attFileCnt;
+	
+	// 사용자로부터 직접 입력 받을 사항만 생성자로 초기화. 나머지는 내부적으로 처리
+	// 아무 매개변수도 없는 디폴트 생성자도 필요하다 - Why?
+	public BoardAVo() { }
+	public BoardAVo(String subject, String content, String id, String pwd) {
+		this.bbs_subject = subject;
+		this.bbs_content = content;
+		this.bbs_id = id;
+		this.bbs_pwd = pwd;
+	}
+	
+	public int getBbs_serial() {
+		return bbs_serial;
+	}
+	public void setBbs_serial(int bbs_serial) {
+		this.bbs_serial = bbs_serial;
+	}
+	public int getBbs_grp() {
+		return bbs_grp;
+	}
+	public void setBbs_grp(int bbs_grp) {
+		this.bbs_grp = bbs_grp;
+	}
+	public String getBbs_deep() {
+		return bbs_deep;
+	}
+	public void setBbs_deep(String bbs_deep) {
+		this.bbs_deep = bbs_deep;
+	}
+	public String getBbs_subject() {
+		return bbs_subject;
+	}
+	public void setBbs_subject(String bbs_subject) {
+		this.bbs_subject = bbs_subject;
+	}
+	public String getBbs_content() {
+		return bbs_content;
+	}
+	public void setBbs_content(String bbs_content) {
+		this.bbs_content = bbs_content;
+	}
+	public String getBbs_mdate() {
+		return bbs_mdate;
+	}
+	public void setBbs_mdate(String bbs_mdate) {
+		this.bbs_mdate = bbs_mdate;
+	}
+	public String getBbs_id() {
+		return bbs_id;
+	}
+	public void setBbs_id(String bbs_id) {
+		this.bbs_id = bbs_id;
+	}
+	public String getBbs_pwd() {
+		return bbs_pwd;
+	}
+	public void setBbs_pwd(String bbs_pwd) {
+		this.bbs_pwd = bbs_pwd;
+	}
+	public int getBbs_hit() {
+		return bbs_hit;
+	}
+	public void setBbs_hit(int bbs_hit) {
+		this.bbs_hit = bbs_hit;
+	}
+	public int getAttFileCnt() {
+		return attFileCnt;
+	}
+	public void setAttFileCnt(int attFileCnt) {
+		this.attFileCnt = attFileCnt;
+	}
+	public List<BoardAtt> getAtt() {
+		return att;
+	}
+	public void setAtt(List<BoardAtt> att) {
+		this.att = att;
+	}
+	
+	
+}
+```
+
+```JAVA
+package db;
+
+import java.util.List;
+
+public class BoardBVo {
+	private int bbs_serial;
+	private String bbs_subject;
+	private String bbs_content;
+	private String bbs_mdate; // Date 타입도 상관 없지만, 포맷 맞추기가 번거롭다
+	private String bbs_id;
+	private String bbs_pwd;
+	private int bbs_hit;
+	private int pSerial;
+	
+	// 첨부파일의 목록
+	private List<BoardAtt> att;
+	
+	// 첨부파일의 수
+	private int attFileCnt;
+	
+	// 사용자로부터 직접 입력 받을 사항만 생성자로 초기화. 나머지는 내부적으로 처리
+	// 아무 매개변수도 없는 디폴트 생성자도 필요하다 - Why?
+	public BoardBVo() { }
+	public BoardBVo(String subject, String content, String id, String pwd) {
+		this.bbs_subject = subject;
+		this.bbs_content = content;
+		this.bbs_id = id;
+		this.bbs_pwd = pwd;
+	}
+	
+	public int getBbs_serial() {
+		return bbs_serial;
+	}
+	public void setBbs_serial(int bbs_serial) {
+		this.bbs_serial = bbs_serial;
+	}
+	public String getBbs_subject() {
+		return bbs_subject;
+	}
+	public void setBbs_subject(String bbs_subject) {
+		this.bbs_subject = bbs_subject;
+	}
+	public String getBbs_content() {
+		return bbs_content;
+	}
+	public void setBbs_content(String bbs_content) {
+		this.bbs_content = bbs_content;
+	}
+	public String getBbs_mdate() {
+		return bbs_mdate;
+	}
+	public void setBbs_mdate(String bbs_mdate) {
+		this.bbs_mdate = bbs_mdate;
+	}
+	public String getBbs_id() {
+		return bbs_id;
+	}
+	public void setBbs_id(String bbs_id) {
+		this.bbs_id = bbs_id;
+	}
+	public String getBbs_pwd() {
+		return bbs_pwd;
+	}
+	public void setBbs_pwd(String bbs_pwd) {
+		this.bbs_pwd = bbs_pwd;
+	}
+	public int getBbs_hit() {
+		return bbs_hit;
+	}
+	public void setBbs_hit(int bbs_hit) {
+		this.bbs_hit = bbs_hit;
+	}
+	public int getAttFileCnt() {
+		return attFileCnt;
+	}
+	public void setAttFileCnt(int attFileCnt) {
+		this.attFileCnt = attFileCnt;
+	}
+	public List<BoardAtt> getAtt() {
+		return att;
+	}
+	public void setAtt(List<BoardAtt> att) {
+		this.att = att;
+	}
+	
+	
+}
+```
+
+```JAVA
+package db;
+
+public class BoardAtt {
+	int serial;
+	int pSerial;
+	String delFile;
+	String attFile;
+	String oriFile;
+	
+	// update 시 분기로 사용할 플래그
+	String flag = "A"; // A=append, D=delete, U=update
+	
+	public BoardAtt() { }
+	public BoardAtt(int s, int ps, String att, String ori) {
+		this.serial = s;
+		this.pSerial = ps;
+		this.attFile = att;
+		this.oriFile = ori;
+	}
+	
+	public int getSerial() {
+		return serial;
+	}
+	public void setSerial(int serial) {
+		this.serial = serial;
+	}
+	public int getpSerial() {
+		return pSerial;
+	}
+	public void setpSerial(int pSerial) {
+		this.pSerial = pSerial;
+	}
+	public String getAttFile() {
+		return attFile;
+	}
+	public void setAttFile(String attFile) {
+		this.attFile = attFile;
+	}
+	public String getOriFile() {
+		return oriFile;
+	}
+	public void setOriFile(String oriFile) {
+		this.oriFile = oriFile;
+	}
+	public String getDelFile() {
+		return delFile;
+	}
+	public void setDelFile(String delFile) {
+		this.delFile = delFile;
+	}
+	public String getFlag() {
+		return flag;
+	}
+	public void setFlag(String flag) {
+		this.flag = flag;
+	}
+	
+}
+```
+
+
+3. CRUD 및 view, reply 기능을 테스트하는 클래스 - DBTest, BoardATest, BoardBTest
 
 
 

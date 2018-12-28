@@ -1,6 +1,6 @@
 ﻿
 ![author](https://img.shields.io/badge/author-daesungRa-lightgray.svg?style=flat-square)
-![date](https://img.shields.io/badge/author-181217-lightgray.svg?style=flat-square)
+![date](https://img.shields.io/badge/date-181217-lightgray.svg?style=flat-square)
 
 # DB 연동하기
 

@@ -1,6 +1,6 @@
 ﻿
 ![author](https://img.shields.io/badge/author-daesungRa-lightgray.svg?style=flat-square)
-![date](https://img.shields.io/badge/author-181218-lightgray.svg?style=flat-square)
+![date](https://img.shields.io/badge/date-181218-lightgray.svg?style=flat-square)
 
 # 시퀀스 알아보기
 

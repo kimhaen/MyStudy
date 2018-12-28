@@ -12,6 +12,10 @@
 - [연동된 DB 게시판 테이블에 쿼리문 실행하기](https://github.com/daesungRa/MyStudy/blob/master/DB/Execute_db_query_into_board_tables.md) (181218, Tues)
 - [시퀀스 문법](https://github.com/daesungRa/MyStudy/blob/master/DB/Sequence_syntax.md) (181226, wed)
 
+### 3. Algorithm
+
+- [선택정렬과 버블정렬 예제](https://github.com/daesungRa/MyStudy/blob/master/Algorithm/SelectionSort.md) (181228, fri)
+
 
 
 

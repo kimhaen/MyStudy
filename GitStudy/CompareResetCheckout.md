@@ -2,7 +2,7 @@
 ![author](https://img.shields.io/badge/author-daesungRa-lightgray.svg?style=flat-square)
 ![date](https://img.shields.io/badge/date-181231-lightgray.svg?style=flat-square)
 
-참조 : [Git 도구 - Reset 명확히 알고 가기] (https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Reset-%EB%AA%85%ED%99%95%ED%9E%88-%EC%95%8C%EA%B3%A0-%EA%B0%80%EA%B8%B0)
+참조 : [Git 도구 - Reset 명확히 알고 가기]
 
 ## HEAD, index, working directory
 
@@ -40,5 +40,6 @@ $ git reset --hard <커밋객체주소>
 * --mixed 옵션은 HEAD 브랜치가 지정된 커밋객체주소를 참조하도록 하는 것은 물론, index 도 동일한 객체주소를 참조하도록 한다. 아무런 옵션 없이 실행한 reset 명령은 --mixed 옵션에 해당하는 지점까지 작업한다.
 * --hard 옵션은 위험하다. HEAD, index 를 넘어 working directory 까지 지정한 객체의 시점으로 변경시킬 수 있기 때문이다. 이것의 결과는 다시 되돌릴 방법이 없다. 다만, 작업공간에서 사라져버린 최신 커밋객체가 어딘가 존재한다면(예를 들어 다른 브랜치가 최신커밋객체를 참조하고 있거나 정 안되면 그것의 주소값이라도 알고 있다면), reflog 를 이용해서 복원할 수 있다.
 
+[Git 도구 - Reset 명확히 알고 가기]: https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Reset-%EB%AA%85%ED%99%95%ED%9E%88-%EC%95%8C%EA%B3%A0-%EA%B0%80%EA%B8%B0
 
 

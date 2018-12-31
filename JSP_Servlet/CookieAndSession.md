@@ -2,7 +2,7 @@
 ![author](https://img.shields.io/badge/author-daesungRa-lightgray.svg?style=flat-square)
 ![date](https://img.shields.io/badge/date-181231-lightgray.svg?style=flat-square)
 
-	* 이 글은 JSP 에서 쿠키와 세션을 생성하고 활용하는 방식을 기록한다
+	* 이 글은 JAVA 에서 쿠키와 세션을 생성하고 활용하는 방식을 기록한다
 
 ## HTTP 에 대한 간단한 고찰
 

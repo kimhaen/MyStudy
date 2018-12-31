@@ -2,7 +2,7 @@
 ![author](https://img.shields.io/badge/author-daesungRa-lightgray.svg?style=flat-square)
 ![date](https://img.shields.io/badge/date-181231-lightgray.svg?style=flat-square)
 
-	* 이 글은 JSP 에서 쿠키와 세션을 생성하고 활용하는 방식을 기록한다
+	* 이 글은 JAVA 에서 쿠키와 세션을 생성하고 활용하는 방식을 기록한다
 
 ## HTTP 에 대한 간단한 고찰
 
@@ -28,7 +28,6 @@
 
 	* 일반적인 웹 프로젝트에서는 request 시 서버 측 JAVA 코드에서 Cookie 객체로 생성되고, 그것이 response 객체에 담겨 송신된다.
 
-	<pre>
 	CookieSet.jsp
 	```JAVA
 	<%
@@ -38,7 +37,6 @@
 		response.addCookie(cookie);
 	%>
 	```
-	</pre>
 
 	* 클라이언트가 CookieSet.jsp 페이지로 request 객체를 전송하면, 이 페이지는 쿠키 객체를 생성하여 각각 "이름" 과 "값" 을 세팅한다 (시간은 1 시간으로 세팅). 이후 cookie 객체는 response 객체에 담겨 전송된다.
 	* 응답을 받은 클라이언트는, request.getCookies() 메서드로 쿠키를 얻고, 게터로 정보를 확인할 수 있다.

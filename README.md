@@ -25,3 +25,4 @@
 
 - [Cookie 와 Session, 그리고 HTTP](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/CookieAndSession.md) (181231, mon)
 
+- [Java Bean](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JavaBean.md) (181231, mon)

@@ -55,8 +55,7 @@ public class Student {
 }
 ```
 
-뭐 특별할 것은 없다.
-데이터를 저장할 멤버필드와 생성자, getter/setter 로 구성된다.
+* 뭐 특별할 것은 없다.<br>데이터를 저장할 멤버필드와 생성자, getter/setter 로 구성된다.
 
 ## 빈 활용하기
 ```java

@@ -1,4 +1,4 @@
-# 라대성의 공부 기록
+﻿# 라대성의 공부 기록
 
 이 프로젝트는 공부한 내용들을 그날그날 업로드 하는 것이 목적입니다.<br>
 구분은 과목별, 프로젝트별로 되어 있습니다
@@ -25,5 +25,9 @@
 ### 5. JSP/Servlet
 
 - [Cookie 와 Session, 그리고 HTTP](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/CookieAndSession.md) (181231, mon)
-
 - [Java Bean](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JavaBean.md) (181231, mon)
+- [mvc 로 간단한 로그인 로직 구현해보기](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/Login_DBConnection.md) (190101, tue)
+
+### 6. 기타 정보
+
+- [이클립스 Project Clean](https://github.com/daesungRa/MyStudy/blob/master/etc/ProjectClean.md) (190101, tue)

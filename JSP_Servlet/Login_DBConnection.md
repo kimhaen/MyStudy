@@ -13,7 +13,7 @@
 ## 코드
 
 Login.html (로그인 화면)
-```JAVA
+```HTML
 <!DOCTYPE html>
 <html>
 <head>

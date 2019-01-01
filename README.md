@@ -16,6 +16,7 @@
 
 - [선택정렬과 버블정렬 예제](https://github.com/daesungRa/MyStudy/blob/master/Algorithm/SelectionSort.md) (181228, fri)
 - [사칙연산 응용 예제 - 설탕 배달](https://github.com/daesungRa/MyStudy/blob/master/Algorithm/DeliverSugar.md) (181231, mon)
+- [규칙 찾기 - 벌집](https://github.com/daesungRa/MyStudy/blob/master/Algorithm/BeeHouse.md) (190101, tue)
 
 ### 4. Git
 

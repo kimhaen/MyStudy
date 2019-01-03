@@ -32,7 +32,7 @@
 
 ### 6. HTML/CSS
 
-- [html 기본문법 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/htmlBasic.md) (190103, thur)
+- [html 기본 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/htmlBasic.md) (190103, thur)
 
 ### 7. 기타 정보
 

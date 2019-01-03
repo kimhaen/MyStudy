@@ -33,6 +33,7 @@
 ### 6. HTML/CSS
 
 - [html 기본 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/htmlBasic.md) (190103, thur)
+- [검색 폼 감각적으로 꾸미기](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/sensuousSearchBar.md) (190103, thur)
 
 ### 7. 기타 정보
 

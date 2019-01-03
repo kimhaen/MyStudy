@@ -30,6 +30,10 @@
 - [Java Bean](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JavaBean.md) (181231, mon)
 - [mvc 로 간단한 로그인 로직 구현해보기](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/Login_DBConnection.md) (190101, tue)
 
-### 6. 기타 정보
+### 6. HTML/CSS
+
+- [html 기본문법 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/htmlBasic.md) (190103, thur)
+
+### 7. 기타 정보
 
 - [이클립스 Project Clean](https://github.com/daesungRa/MyStudy/blob/master/etc/ProjectClean.md) (190101, tue)

@@ -2,7 +2,7 @@
 ![author](https://img.shields.io/badge/author-daesungRa-lightgray.svg?style=flat-square)
 ![date](https://img.shields.io/badge/date-190103-lightgray.svg?style=flat-square)
 
-참조: [검색 폼의 Input과 버튼에 관한 CSS 코드 실험]
+출처: [검색 폼의 Input과 버튼에 관한 CSS 코드 실험]
 
 # 감각적인 검색 폼 만들기
 
@@ -101,7 +101,7 @@
 
 - searchForm01_hover
 
-![searchForm01](https://github.com/daesungRa/MyStudy/tree/master/imgs/searchForm01_hover.PNG)
+![searchForm01](https://github.com/daesungRa/MyStudy/blob/master/imgs/searchForm01_hover.PNG)
 
 ## searchForm01.html
 

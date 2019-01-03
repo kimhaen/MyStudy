@@ -97,11 +97,11 @@
 
 - searchForm01
 
-![searchForm01](https://github.com/daesungRa/MyStudy/tree/master/imgs/searchForm01.png)
+![searchForm01](https://github.com/daesungRa/MyStudy/tree/master/imgs/searchForm01.PNG)
 
 - searchForm01_hover
 
-![searchForm01](https://github.com/daesungRa/MyStudy/tree/master/imgs/searchForm01_hover.png)
+![searchForm01](https://github.com/daesungRa/MyStudy/tree/master/imgs/searchForm01_hover.PNG)
 
 ## searchForm01.html
 
@@ -197,11 +197,11 @@
 
 - searchForm02
 
-![searchForm01](https://github.com/daesungRa/MyStudy/tree/master/imgs/searchForm02.png)
+![searchForm01](https://github.com/daesungRa/MyStudy/tree/master/imgs/searchForm02.PNG)
 
 - searchForm02_hover
 
-![searchForm01](https://github.com/daesungRa/MyStudy/tree/master/imgs/searchForm02_hover.png)
+![searchForm01](https://github.com/daesungRa/MyStudy/tree/master/imgs/searchForm02_hover.PNG)
 
 
 

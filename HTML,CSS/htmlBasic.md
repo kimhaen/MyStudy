@@ -48,9 +48,9 @@
 ### 참조
 - a : anchor 태그, 페이지 링크를 위해 가장 많이 사용하는 태그 중의 하나이다
 - &lt;a href="#alpha"&gt;Move to alpha&lt;/a&gt;&lt;br/&gt; : 페이지 내 id 가 alpha 인 위치로 이동한다
-- <a href='https://www.google.co.kr'>www.google.com</a><br/> : 구글 홈페이지로 이동
-- <a href='paragraph.jsp' target='_blank'>내 페이지</a><br/> : 무조건 새 페이지에 지정 페이지 표현
-- <a href='http://192.168.0.7:8888/WebTest/html/paragraph.jsp#test1' target='_blank'>다른 페이지의 특정 아이디로 이동</a><br/>
+- &lt;a href='https://www.google.co.kr'&gt;www.google.com&lt;/a&gt;&lt;br/&gt; : 구글 홈페이지로 이동
+- &lt;a href='paragraph.jsp' target='_blank'&gt;내 페이지&lt;/a&gt;&lt;br/&gt; : 무조건 새 페이지에 지정 페이지 표현
+- &lt;a href='http://192.168.0.7:8888/WebTest/html/paragraph.jsp#test1' target='_blank'&gt;다른 페이지의 특정 아이디로 이동&lt;/a&gt;&lt;br/&gt;
 
 ### 목록
 - ul, ol : unordered list (type = 'circle | square | disc' (대소문자 구분 x)), ordered list (type = 'A | 1 | I' (대소문자 구분 x), start = N)

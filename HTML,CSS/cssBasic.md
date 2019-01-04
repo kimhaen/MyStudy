@@ -13,7 +13,7 @@
 - textarea
 
 ```HTML
-&lt;textarea rows="5" cols="50"&gt;hihi~&lt;/textarea&gt;&lt;br/&gt;
+<textarea rows="5" cols="50">hihi~</textarea><br/>
 ```
 
 - select, optgroup, option
@@ -78,7 +78,7 @@
 ## 예시
 
 ```HTML
-&lt;style type="text/css"&gt;
+<style type="text/css">
 	h1 {
 		color: #34ff82;
 	}
@@ -100,7 +100,7 @@
 		margin: 10px auto;
 		box-shadow: 10px 10px 10px #aaaaff;
 	}
-&lt;/style&gt;
+</style>
 ```
 
 결과는 다음과 같다

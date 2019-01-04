@@ -66,7 +66,7 @@
 ## 예시
 
 ```HTML
-&lt;style type="text/css"&gt;
+<style type="text/css">
 	h1 {
 		color: #34ff82;
 	}
@@ -88,7 +88,7 @@
 		margin: 10px auto;
 		box-shadow: 10px 10px 10px #aaaaff;
 	}
-&lt;/style&gt;
+</style>
 ```
 
 결과는 다음과 같다

@@ -13,7 +13,7 @@
 - textarea
 
 ```HTML
-&lt;textarea rows="5" cols="50"&gt;hihi~&lt;/textarea&gt;&lt;br/&gt;
+<textarea rows="5" cols="50">hihi~</textarea><br/>
 ```
 
 - select, optgroup, option

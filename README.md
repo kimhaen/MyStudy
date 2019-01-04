@@ -12,7 +12,7 @@
 - [연동된 DB 게시판 테이블에 쿼리문 실행하기](https://github.com/daesungRa/MyStudy/blob/master/DB/Execute_db_query_into_board_tables.md) (181218, Tues)
 - [시퀀스 문법](https://github.com/daesungRa/MyStudy/blob/master/DB/Sequence_syntax.md) (181226, wed)
 - [Statement & PreparedStatement](https://github.com/daesungRa/MyStudy/blob/master/DB/Statement&PreparedStatement.md) (190103, thur)
-- [DBCP](https://github.com/daesungRa/MyStudy/blob/master/DB/DBCP.md) (190103, thur)
+- [DBCP](https://github.com/daesungRa/MyStudy/blob/master/DB/DBCP.md) (190104, fri)
 
 ### 3. Algorithm
 
@@ -34,6 +34,7 @@
 ### 6. HTML/CSS
 
 - [html 기본 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/htmlBasic.md) (190103, thur)
+- [css 기본 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/cssBasic.md) (190104, fri)
 - [검색 폼 감각적으로 꾸미기](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/sensuousSearchBar.md) (190103, thur)
 
 ### 7. 기타 정보

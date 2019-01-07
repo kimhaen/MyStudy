@@ -40,7 +40,7 @@
 
 ### 7. Javascript
 
-- [JavaScript 시작!](http://htmlpreview.github.com/?https://github.com/daesungRa/MyStudy/blob/master/Javascript/Javascript_Summary.md) (190107, mon)
+- [JavaScript 시작!](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Javascript_Summary.md) (190107, mon)
 
 ### 8. 기타 정보
 

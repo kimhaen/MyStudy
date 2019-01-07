@@ -1,68 +1,67 @@
 ![author](https://img.shields.io/badge/author-daesungRa-lightgray.svg?style=flat-square)
 ![date](https://img.shields.io/badge/date-190107-lightgray.svg?style=flat-square)
 
-# ÀÚ¹Ù½ºÅ©¸³Æ® ½ÃÀÛ!
+# ìžë°”ìŠ¤í¬ë¦½íŠ¸ ì‹œìž‘!
 
-ÂüÁ¶ : [w3schools ÀÚ¹Ù½ºÅ©¸³Æ®](https://www.w3schools.com/js/default.asp)
+ì°¸ì¡° : [w3schools ìžë°”ìŠ¤í¬ë¦½íŠ¸](https://www.w3schools.com/js/default.asp)
 
-* °øºÎ¹æ½Ä
+ê³µë¶€ë°©ì‹
+- w3schools ìžë°”ìŠ¤í¬ë¦½íŠ¸ ê³¼ì •ì„ ë²ˆì—­í•˜ëŠ” ë°©ì‹
 
-- w3schools ÀÚ¹Ù½ºÅ©¸³Æ® °úÁ¤À» ¹ø¿ªÇÏ´Â ¹æ½Ä
+### ê°œìš”
 
-### °³¿ä
+> ìžë°”ìŠ¤í¬ë¦½íŠ¸ëŠ” HTML ê³¼ ì›¹ì˜ í”„ë¡œê·¸ëž˜ë° ì–¸ì–´ìž…ë‹ˆë‹¤.</br>
+ìžë°”ìŠ¤í¬ë¦½íŠ¸ëŠ” ë°°ìš°ê¸° ì‰½ìŠµë‹ˆë‹¤.<br/>ì´ íŠœí† ë¦¬ì–¼ì€ ê¸°ì´ˆë¶€í„° ë°œì „ê¹Œì§€ ìžë°”ìŠ¤í¬ë¦½íŠ¸ë¥¼ ê°€ë¥´ì¹©ë‹ˆë‹¤.
 
-> ÀÚ¹Ù½ºÅ©¸³Æ®´Â HTML °ú À¥ÀÇ ÇÁ·Î±×·¡¹Ö ¾ð¾îÀÔ´Ï´Ù.</br>
-ÀÚ¹Ù½ºÅ©¸³Æ®´Â ¹è¿ì±â ½±½À´Ï´Ù.<br/>ÀÌ Æ©Åä¸®¾óÀº ±âÃÊºÎÅÍ ¹ßÀü±îÁö ÀÚ¹Ù½ºÅ©¸³Æ®¸¦ °¡¸£Ä¨´Ï´Ù.
+### ì™œ ìžë°”ìŠ¤í¬ë¦½íŠ¸ë¥¼ ë°°ì›Œì•¼ í• ê¹Œìš”?
 
-### ¿Ö ÀÚ¹Ù½ºÅ©¸³Æ®¸¦ ¹è¿ö¾ß ÇÒ±î¿ä?
+- ìžë°”ìŠ¤í¬ë¦½íŠ¸ëŠ” ëª¨ë“  ì›¹ ê°œë°œìžê°€ ê¼­ ë°°ì›Œì•¼ í•  ì„¸ ê°€ì§€ ì–¸ì–´ ì¤‘ì˜ í•˜ë‚˜ìž…ë‹ˆë‹¤. (HTML, CSS, JavaScript)
+- HTML ì€ ì›¹ íŽ˜ì´ì§€ì˜ ì½˜í…ì¸ ë¥¼ ì •ì˜í•©ë‹ˆë‹¤.
+- CSS ëŠ” ì›¹ íŽ˜ì´ì§€ì˜ ë ˆì´ì•„ì›ƒì„ íŠ¹ì •í•©ë‹ˆë‹¤.
+- JavaScript ëŠ” ì›¹ íŽ˜ì´ì§€ì˜ ë™ìž‘ì„ í”„ë¡œê·¸ëž˜ë° í•©ë‹ˆë‹¤.
 
-- ÀÚ¹Ù½ºÅ©¸³Æ®´Â ¸ðµç À¥ °³¹ßÀÚ°¡ ²À ¹è¿ö¾ß ÇÒ ¼¼ °¡Áö ¾ð¾î ÁßÀÇ ÇÏ³ªÀÔ´Ï´Ù. (HTML, CSS, JavaScript)
-- HTML Àº À¥ ÆäÀÌÁöÀÇ ÄÜÅÙÃ÷¸¦ Á¤ÀÇÇÕ´Ï´Ù.
-- CSS ´Â À¥ ÆäÀÌÁöÀÇ ·¹ÀÌ¾Æ¿ôÀ» Æ¯Á¤ÇÕ´Ï´Ù.
-- JavaScript ´Â À¥ ÆäÀÌÁöÀÇ µ¿ÀÛÀ» ÇÁ·Î±×·¡¹Ö ÇÕ´Ï´Ù.
+ì›¹ íŽ˜ì´ì§€ëŠ” ìžë°”ìŠ¤í¬ë¦½íŠ¸ê°€ ì‚¬ìš©ë˜ëŠ” ìœ ì¼í•œ í”Œëž«í¼ì´ ì•„ë‹™ë‹ˆë‹¤. ë§Žì€ ë°ìŠ¤í¬íƒ‘, ì„œë²„ í”„ë¡œê·¸ëž¨ì—ì„œ ìžë°”ìŠ¤í¬ë¦½íŠ¸ê°€ ì‚¬ìš©ë©ë‹ˆë‹¤. Node.js ê°€ ê°€ìž¥ ë„ë¦¬ ì•Œë ¤ì ¸ ìžˆìŠµë‹ˆë‹¤.
+MongoDB ì™€ CouchDB ê°™ì€ ëª‡ëª‡ ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ë˜í•œ ìžë°”ìŠ¤í¬ë¦½íŠ¸ê°€ í”„ë¡œê·¸ëž˜ë° ì–¸ì–´ë¡œì¨ ì‚¬ìš©ë©ë‹ˆë‹¤.
 
-À¥ ÆäÀÌÁö´Â ÀÚ¹Ù½ºÅ©¸³Æ®°¡ »ç¿ëµÇ´Â À¯ÀÏÇÑ ÇÃ·§ÆûÀÌ ¾Æ´Õ´Ï´Ù. ¸¹Àº µ¥½ºÅ©Å¾, ¼­¹ö ÇÁ·Î±×·¥¿¡¼­ ÀÚ¹Ù½ºÅ©¸³Æ®°¡ »ç¿ëµË´Ï´Ù. Node.js °¡ °¡Àå ³Î¸® ¾Ë·ÁÁ® ÀÖ½À´Ï´Ù.
-MongoDB ¿Í CouchDB °°Àº ¸î¸î µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ ¶ÇÇÑ ÀÚ¹Ù½ºÅ©¸³Æ®°¡ ÇÁ·Î±×·¡¹Ö ¾ð¾î·Î½á »ç¿ëµË´Ï´Ù.
+### ì˜ˆì œë¡œ í•™ìŠµí•˜ì„¸ìš”
 
-### ¿¹Á¦·Î ÇÐ½ÀÇÏ¼¼¿ä
+- ìš°ë¦¬ì˜ "Try it Yourself!" ì—ë””í„°ë¡œ ëª¨ë“  ì˜ˆì œì™€ ê²°ê³¼ í™”ë©´ì„ ë³€ê²½í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+- ì˜ˆì œë¥¼ í†µí•œ í•™ìŠµì€ 1000 ë‹¨ì–´ë¥¼ ì½ëŠ” ê²ƒë³´ë‹¤ ë‚«ìŠµë‹ˆë‹¤.
+- ë˜í•œ ì„¤ëª…ë“¤ì„ ë”ìš± ì´í•´í•˜ê¸° ì‰½ë„ë¡ í•©ë‹ˆë‹¤.
+- ì´ íŠœí† ë¦¬ì–¼ì€ "Try it Yourself!" ì˜ˆì œë“¤ë¡œ ëª¨ë“  ì„¤ëª…ë“¤ì„ ëª…í™•í•˜ê²Œ ë³´ì¶©í•©ë‹ˆë‹¤.
+- ë§Œì•½ ë‹¹ì‹ ì´ ëª¨ë“  ì˜ˆì œë“¤ì„ ìž‘ì„±í•´ ë³¸ë‹¤ë©´, ìžë°”ìŠ¤í¬ë¦½íŠ¸ì— ëŒ€í•œ ì•„ì£¼ ë§Žì€ ê²ƒë“¤ì„ ë‹¨ì‹œê°„ì— í•™ìŠµí•  ê²ƒìž…ë‹ˆë‹¤.
 
-- ¿ì¸®ÀÇ "Try it Yourself!" ¿¡µðÅÍ·Î ¸ðµç ¿¹Á¦¿Í °á°ú È­¸éÀ» º¯°æÇÒ ¼ö ÀÖ½À´Ï´Ù.
-- ¿¹Á¦¸¦ ÅëÇÑ ÇÐ½ÀÀº 1000 ´Ü¾î¸¦ ÀÐ´Â °Íº¸´Ù ³´½À´Ï´Ù.
-- ¶ÇÇÑ ¼³¸íµéÀ» ´õ¿í ÀÌÇØÇÏ±â ½±µµ·Ï ÇÕ´Ï´Ù.
-- ÀÌ Æ©Åä¸®¾óÀº "Try it Yourself!" ¿¹Á¦µé·Î ¸ðµç ¼³¸íµéÀ» ¸íÈ®ÇÏ°Ô º¸ÃæÇÕ´Ï´Ù.
-- ¸¸¾à ´ç½ÅÀÌ ¸ðµç ¿¹Á¦µéÀ» ÀÛ¼ºÇØ º»´Ù¸é, ÀÚ¹Ù½ºÅ©¸³Æ®¿¡ ´ëÇÑ ¾ÆÁÖ ¸¹Àº °ÍµéÀ» ´Ü½Ã°£¿¡ ÇÐ½ÀÇÒ °ÍÀÔ´Ï´Ù.
+### ì•Œê³  ìžˆë‚˜ìš”?
 
-### ¾Ë°í ÀÖ³ª¿ä?
+ìžë°”ìŠ¤í¬ë¦½íŠ¸ì™€ ìžë°”ëŠ” ì»¨ì…‰ì´ë‚˜ ë””ìžì¸ ë©´ì—ì„œ ì™„ì „ížˆ ì„œë¡œ ë‹¤ë¥¸ ì–¸ì–´ìž…ë‹ˆë‹¤. ìžë°”ìŠ¤í¬ë¦½íŠ¸ëŠ” 1995 ë…„ Brendan Eich ì— ì˜í•´ ë°œëª…ë˜ì—ˆê³ , 1997 ë…„ì— ECMA í‘œì¤€ìœ¼ë¡œ ì±„íƒë˜ì—ˆìŠµë‹ˆë‹¤.
+ECMA-262 ëŠ” í‘œì¤€ì˜ ê³µì‹ ì´ë¦„ìž…ë‹ˆë‹¤. ECMAScript ëŠ” ìžë°”ìŠ¤í¬ë¦½íŠ¸ ì–¸ì–´ì˜ ê³µì‹ ì´ë¦„ìž…ë‹ˆë‹¤.
 
-ÀÚ¹Ù½ºÅ©¸³Æ®¿Í ÀÚ¹Ù´Â ÄÁ¼ÁÀÌ³ª µðÀÚÀÎ ¸é¿¡¼­ ¿ÏÀüÈ÷ ¼­·Î ´Ù¸¥ ¾ð¾îÀÔ´Ï´Ù. ÀÚ¹Ù½ºÅ©¸³Æ®´Â 1995 ³â Brendan Eich ¿¡ ÀÇÇØ ¹ß¸íµÇ¾ú°í, 1997 ³â¿¡ ECMA Ç¥ÁØÀ¸·Î Ã¤ÅÃµÇ¾ú½À´Ï´Ù.
-ECMA-262 ´Â Ç¥ÁØÀÇ °ø½Ä ÀÌ¸§ÀÔ´Ï´Ù. ECMAScript ´Â ÀÚ¹Ù½ºÅ©¸³Æ® ¾ð¾îÀÇ °ø½Ä ÀÌ¸§ÀÔ´Ï´Ù.
+### í•™ìŠµ ì†ë„
 
-### ÇÐ½À ¼Óµµ
+ì´ íŠœí† ë¦¬ì–¼ì—ì„œ í•™ìŠµ ì†ë„ëŠ” ë‹¹ì‹ ì˜ ì„ íƒìž…ë‹ˆë‹¤. ëª¨ë“  ê²ƒì€ ë‹¹ì‹ ì—ê²Œ ë‹¬ë ¸ìŠµë‹ˆë‹¤.<br/>
+ë§Œì•½ ì–´ë µë‹¤ë©´, ìž ì‹œ ì‰¬ì—ˆë‹¤ê°€ ë‹¤ì‹œ ì½ì–´ ë³´ì‹­ì‹œì˜¤. ê·¸ë¦¬ê³  í•­ìƒ "Try-it-Yourself" ì˜ˆì œë“¤ì„ í™•ì‹¤ížˆ ì´í•´í•˜ë„ë¡ í•˜ì‹­ì‹œì˜¤.
 
-ÀÌ Æ©Åä¸®¾ó¿¡¼­ ÇÐ½À ¼Óµµ´Â ´ç½ÅÀÇ ¼±ÅÃÀÔ´Ï´Ù. ¸ðµç °ÍÀº ´ç½Å¿¡°Ô ´Þ·È½À´Ï´Ù.<br/>
-¸¸¾à ¾î·Æ´Ù¸é, Àá½Ã ½¬¾ú´Ù°¡ ´Ù½Ã ÀÐ¾î º¸½Ê½Ã¿À. ±×¸®°í Ç×»ó "Try-it-Yourself" ¿¹Á¦µéÀ» È®½ÇÈ÷ ÀÌÇØÇÏµµ·Ï ÇÏ½Ê½Ã¿À.
+### ìžë°”ìŠ¤í¬ë¦½íŠ¸ ë ˆí¼ëŸ°ìŠ¤
 
-### ÀÚ¹Ù½ºÅ©¸³Æ® ·¹ÆÛ·±½º
+w3schools ëŠ” ëª¨ë“  HTML ê³¼ ë¸Œë¼ìš°ì € ê°ì²´ë“¤ì„ í¬í•¨í•œ ìžë°”ìŠ¤í¬ë¦½íŠ¸ ë ˆí¼ëŸ°ìŠ¤ë¥¼ ì™„ë²½ížˆ ìœ ì§€ë³´ìˆ˜ í•©ë‹ˆë‹¤.<br/>
+ë ˆí¼ëŸ°ìŠ¤ëŠ” ëª¨ë“  ì •ë³´, ë°©ì‹, ì´ë²¤íŠ¸ì˜ ì˜ˆì œë¥¼ í¬í•¨í•˜ê³ , ìµœì‹  ì›¹ í‘œì¤€ì— ë”°ë¼ ì§€ì†ì ìœ¼ë¡œ ì—…ë°ì´íŠ¸ ë©ë‹ˆë‹¤.
 
-w3schools ´Â ¸ðµç HTML °ú ºê¶ó¿ìÀú °´Ã¼µéÀ» Æ÷ÇÔÇÑ ÀÚ¹Ù½ºÅ©¸³Æ® ·¹ÆÛ·±½º¸¦ ¿Ïº®È÷ À¯Áöº¸¼ö ÇÕ´Ï´Ù.<br/>
-·¹ÆÛ·±½º´Â ¸ðµç Á¤º¸, ¹æ½Ä, ÀÌº¥Æ®ÀÇ ¿¹Á¦¸¦ Æ÷ÇÔÇÏ°í, ÃÖ½Å À¥ Ç¥ÁØ¿¡ µû¶ó Áö¼ÓÀûÀ¸·Î ¾÷µ¥ÀÌÆ® µË´Ï´Ù.
+[ìžë°”ìŠ¤í¬ë¦½íŠ¸ ë ˆí¼ëŸ°ìŠ¤](https://www.w3schools.com/jsref/)
 
-[ÀÚ¹Ù½ºÅ©¸³Æ® ·¹ÆÛ·±½º](https://www.w3schools.com/jsref/)
+### ìžë°”ìŠ¤í¬ë¦½íŠ¸ ì—°ìŠµê³¼ í€´ì¦ˆ
 
-### ÀÚ¹Ù½ºÅ©¸³Æ® ¿¬½À°ú ÄûÁî
-
-[ÀÚ¹Ù½ºÅ©¸³Æ® ¿¬½À](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_variables1)
-[ÀÚ¹Ù½ºÅ©¸³Æ® ÄûÁî](https://www.w3schools.com/js/js_quiz.asp)
+[ìžë°”ìŠ¤í¬ë¦½íŠ¸ ì—°ìŠµ](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_variables1)
+[ìžë°”ìŠ¤í¬ë¦½íŠ¸ í€´ì¦ˆ](https://www.w3schools.com/js/js_quiz.asp)
 
 -------------------------------------
 
-# ÀÚ¹Ù½ºÅ©¸³Æ® ¼Ò°³
+# ìžë°”ìŠ¤í¬ë¦½íŠ¸ ì†Œê°œ
 
-> ÀÌ Àå¿¡¼­´Â ÀÚ¹Ù½ºÅ©¸³Æ®°¡ ÇÒ ¼ö ÀÖ´Â °Íµé¿¡ ´ëÇÑ ¿¹Á¦¸¦ ¼³¸íÇÕ´Ï´Ù.
+> ì´ ìž¥ì—ì„œëŠ” ìžë°”ìŠ¤í¬ë¦½íŠ¸ê°€ í•  ìˆ˜ ìžˆëŠ” ê²ƒë“¤ì— ëŒ€í•œ ì˜ˆì œë¥¼ ì„¤ëª…í•©ë‹ˆë‹¤.
 
-### ÀÚ¹Ù½ºÅ©¸³Æ®´Â HTML ¹®ÀåÀ» º¯°æÇÒ ¼ö ÀÖ½À´Ï´Ù.
+### ìžë°”ìŠ¤í¬ë¦½íŠ¸ëŠ” HTML ë¬¸ìž¥ì„ ë³€ê²½í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
-ÀÌ¸¦ À§ÇØ ÀÚÁÖ »ç¿ëµÇ´Â ÀÚ¹Ù½ºÅ©¸³Æ® HTML ¸Þ¼­µå ÁßÀÇ ÇÏ³ª´Â <strong>getElementById()</strong> ÀÔ´Ï´Ù.
+ì´ë¥¼ ìœ„í•´ ìžì£¼ ì‚¬ìš©ë˜ëŠ” ìžë°”ìŠ¤í¬ë¦½íŠ¸ HTML ë©”ì„œë“œ ì¤‘ì˜ í•˜ë‚˜ëŠ” <strong>getElementById()</strong> ìž…ë‹ˆë‹¤.
 
 ```JAVASCRIPT
 <script>
@@ -72,12 +71,12 @@ w3schools ´Â ¸ðµç HTML °ú ºê¶ó¿ìÀú °´Ã¼µéÀ» Æ÷ÇÔÇÑ ÀÚ¹Ù½ºÅ©¸³Æ® ·¹ÆÛ·±½º¸¦ ¿Ïº®È
 </script>
 ```
 
-ÀÌ ÄÚµå´Â ID °¡ demo ÀÎ ÄÄÆ÷³ÍÆ®ÀÇ ³»ºÎ HTML ÅØ½ºÆ®¸¦ Hello JavaScript! ·Î º¯°æÇÏ´Â ¿¹Á¦ÀÔ´Ï´Ù.
-¶ÇÇÑ, Å« µû¿ÈÇ¥°¡ ¾Æ´Ñ ÀÛÀº µû¿ÈÇ¥ÀÇ »ç¿ëµµ Çã¿ëÇÕ´Ï´Ù.
+ì´ ì½”ë“œëŠ” ID ê°€ demo ì¸ ì»´í¬ë„ŒíŠ¸ì˜ ë‚´ë¶€ HTML í…ìŠ¤íŠ¸ë¥¼ Hello JavaScript! ë¡œ ë³€ê²½í•˜ëŠ” ì˜ˆì œìž…ë‹ˆë‹¤.
+ë˜í•œ, í° ë”°ì˜´í‘œê°€ ì•„ë‹Œ ìž‘ì€ ë”°ì˜´í‘œì˜ ì‚¬ìš©ë„ í—ˆìš©í•©ë‹ˆë‹¤.
 
-### ÀÚ¹Ù½ºÅ©¸³Æ®´Â HTML ¼Ó¼º°ª º¯°æµµ °¡´ÉÇÕ´Ï´Ù.
+### ìžë°”ìŠ¤í¬ë¦½íŠ¸ëŠ” HTML ì†ì„±ê°’ ë³€ê²½ë„ ê°€ëŠ¥í•©ë‹ˆë‹¤.
 
-ÀÌ ¿¹Á¦´Â img ÅÂ±×ÀÇ src ¼Ó¼º°ªÀ» º¯°æÇÕ´Ï´Ù.
+ì´ ì˜ˆì œëŠ” img íƒœê·¸ì˜ src ì†ì„±ê°’ì„ ë³€ê²½í•©ë‹ˆë‹¤.
 
 
 ```JAVASCRIPT
@@ -90,11 +89,11 @@ w3schools ´Â ¸ðµç HTML °ú ºê¶ó¿ìÀú °´Ã¼µéÀ» Æ÷ÇÔÇÑ ÀÚ¹Ù½ºÅ©¸³Æ® ·¹ÆÛ·±½º¸¦ ¿Ïº®È
 </script>
 ```
 
-ÀÌ ¿¹Á¦¿¡¼­´Â ÀÚ¹Ù½ºÅ©¸³Æ®°¡ Àû¿ëµÈ ¹öÆ°À» Å¬¸¯ÇÒ ¶§¸¶´Ù ID °¡ myImage ÀÎ img ÅÂ±×ÀÇ src ¼Ó¼º°ªÀ» º¯°æÇÕ´Ï´Ù.
+ì´ ì˜ˆì œì—ì„œëŠ” ìžë°”ìŠ¤í¬ë¦½íŠ¸ê°€ ì ìš©ëœ ë²„íŠ¼ì„ í´ë¦­í•  ë•Œë§ˆë‹¤ ID ê°€ myImage ì¸ img íƒœê·¸ì˜ src ì†ì„±ê°’ì„ ë³€ê²½í•©ë‹ˆë‹¤.
 
-### ÀÚ¹Ù½ºÅ©¸³Æ®´Â HTML ½ºÅ¸ÀÏ (CSS) º¯°æ °¡´ÉÇÕ´Ï´Ù.
+### ìžë°”ìŠ¤í¬ë¦½íŠ¸ëŠ” HTML ìŠ¤íƒ€ì¼ (CSS) ë³€ê²½ ê°€ëŠ¥í•©ë‹ˆë‹¤.
 
-HTML ¿ä¼Ò ½ºÅ¸ÀÏÀÇ º¯°æÀº HTML ¼Ó¼º¿¡ ¿©·¯ °¡Áö ¿µÇâÀ» ¹ÌÄ¨´Ï´Ù
+HTML ìš”ì†Œ ìŠ¤íƒ€ì¼ì˜ ë³€ê²½ì€ HTML ì†ì„±ì— ì—¬ëŸ¬ ê°€ì§€ ì˜í–¥ì„ ë¯¸ì¹©ë‹ˆë‹¤
 
 ```JAVASCRIPT
 <p id='demo'>JavaScript can change the style of an HTML element.</p>
@@ -102,13 +101,13 @@ HTML ¿ä¼Ò ½ºÅ¸ÀÏÀÇ º¯°æÀº HTML ¼Ó¼º¿¡ ¿©·¯ °¡Áö ¿µÇâÀ» ¹ÌÄ¨´Ï´Ù
 <button type='button' onclick='document.getElementById("demo").style.fontSize="35px"'>Click Me!</button>
 ```
 
-### ÀÚ¹Ù½ºÅ©¸³Æ®´Â HTML ¿ä¼ÒµéÀ» ¼û±é´Ï´Ù.
+### ìžë°”ìŠ¤í¬ë¦½íŠ¸ëŠ” HTML ìš”ì†Œë“¤ì„ ìˆ¨ê¹ë‹ˆë‹¤.
 
-display ½ºÅ¸ÀÏÀ» º¯°æÇÔÀ¸·Î½á HTML ¿ä¼ÒµéÀ» ¼û±æ ¼ö ÀÖ½À´Ï´Ù.
+display ìŠ¤íƒ€ì¼ì„ ë³€ê²½í•¨ìœ¼ë¡œì¨ HTML ìš”ì†Œë“¤ì„ ìˆ¨ê¸¸ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
 ~.style.display = 'none';
 
-### ÀÚ¹Ù½ºÅ©¸³Æ®´Â ¼û°ÜÁø ¿ä¼ÒµéÀ» º¸¿©ÁÙ ¼ö ÀÖ½À´Ï´Ù.
+### ìžë°”ìŠ¤í¬ë¦½íŠ¸ëŠ” ìˆ¨ê²¨ì§„ ìš”ì†Œë“¤ì„ ë³´ì—¬ì¤„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
 ~.style.display = 'block';
 

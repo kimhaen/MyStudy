@@ -50,10 +50,10 @@ w3schools 는 모든 HTML 과 브라우저 객체들을 포함한 자바스크�
 
 ### 자바스크립트 연습과 퀴즈
 
-[자바스크립트 연습](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_variables1)
+[자바스크립트 연습](https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_variables1)<br/>
 [자바스크립트 퀴즈](https://www.w3schools.com/js/js_quiz.asp)
 
--------------------------------------
+----------------------------------------
 
 # 자바스크립트 소개
 

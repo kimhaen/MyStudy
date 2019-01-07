@@ -39,7 +39,7 @@
 
 ### 7. Javascript
 
-- [JavaScript](http://htmlpreview.github.com/?https://github.com/daesungRa/MyStudy/blob/master/Javascript/Javascript_Summary.html) (190107, mon)
+- [JavaScript ](http://htmlpreview.github.com/?https://github.com/daesungRa/MyStudy/blob/master/Javascript/Javascript_Summary.md) (190107, mon)
 
 ### 8. 기타 정보
 

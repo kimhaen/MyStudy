@@ -37,6 +37,10 @@
 - [css 기본 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/cssBasic.md) (190104, fri)
 - [검색 폼 감각적으로 꾸미기](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/sensuousSearchBar.md) (190103, thur)
 
-### 7. 기타 정보
+### 7. Javascript
+
+- [JavaScript](http://htmlpreview.github.com/?https://github.com/daesungRa/MyStudy/blob/master/Javascript/Javascript_Summary.html) (190107, mon)
+
+### 8. 기타 정보
 
 - [이클립스 Project Clean](https://github.com/daesungRa/MyStudy/blob/master/etc/ProjectClean.md) (190101, tue)

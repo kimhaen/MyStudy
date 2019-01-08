@@ -36,6 +36,7 @@
 - [html 기본 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/htmlBasic.md) (190103, thur)
 - [css 기본 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/cssBasic.md) (190104, fri)
 - [css 기본 두방정리..!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/cssBasic02.md) (190107, mon)
+- [반응형 웹 규칙](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/responsiveWeb.md) (190108, tue)
 - [검색 폼 감각적으로 꾸미기](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/sensuousSearchBar.md) (190103, thur)
 
 ### 7. Javascript

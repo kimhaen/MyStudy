@@ -1,4 +1,7 @@
 ﻿
+![author](https://img.shields.io/badge/author-daesungRa-lightgray.svg?style=flat-square)
+![date](https://img.shields.io/badge/date-190107-lightgray.svg?style=flat-square)
+
 ## CSS 이어서
 
 - class 명을 띄어쓰기를 기준으로 여러 개를 쓴다면, 그만큼 세부적으로 분류되는 것이다

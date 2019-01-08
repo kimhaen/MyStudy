@@ -45,6 +45,10 @@
 - [JavaScript 시작!](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Javascript_Summary.md) (190107, mon)
 - [(요약정리)자바스크립트 개요](https://github.com/daesungRa/MyStudy/blob/master/Javascript/JS_basic.md) (190108, tue)
 
-### 8. 기타 정보
+### 8. Spring MVC
+
+- [IoC & DI](https://github.com/daesungRa/MyStudy/blob/master/Spring/SpringBegin.md) (190109, wed)
+
+### 9. 기타 정보
 
 - [이클립스 Project Clean](https://github.com/daesungRa/MyStudy/blob/master/etc/ProjectClean.md) (190101, tue)

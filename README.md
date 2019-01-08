@@ -30,6 +30,7 @@
 - [Cookie 와 Session, 그리고 HTTP](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/CookieAndSession.md) (181231, mon)
 - [Java Bean](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JavaBean.md) (181231, mon)
 - [mvc 로 간단한 로그인 로직 구현해보기](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/Login_DBConnection.md) (190101, tue)
+- [EL / JSTL 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/EL%26JSTL.md) (190107, mon)
 
 ### 6. HTML/CSS
 
@@ -37,11 +38,11 @@
 - [css 기본 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/cssBasic.md) (190104, fri)
 - [css 기본 두방정리..!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/cssBasic02.md) (190107, mon)
 - [반응형 웹 규칙](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/responsiveWeb.md) (190108, tue)
-- [검색 폼 감각적으로 꾸미기](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/sensuousSearchBar.md) (190103, thur)
+- [감각적으로 검색 폼 만들기](https://github.com/daesungRa/MyStudy/blob/master/HTML%2CCSS/sensuousSearchBar.md) (190103, thur)
 
 ### 7. Javascript
 
-- [JavaScript 시작!](http://htmlpreview.github.com/?https://github.com/daesungRa/MyStudy/blob/master/Javascript/Javascript_Summary.md) (190107, mon)
+- [JavaScript 시작!](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Javascript_Summary.md) (190107, mon)
 
 ### 8. 기타 정보
 

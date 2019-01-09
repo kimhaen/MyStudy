@@ -44,6 +44,7 @@
 
 - [JavaScript 시작!](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Javascript_Summary.md) (190107, mon)
 - [(요약정리)자바스크립트 개요](https://github.com/daesungRa/MyStudy/blob/master/Javascript/JS_basic.md) (190108, tue)
+- [조건문 실습](https://github.com/daesungRa/MyStudy/blob/master/Javascript/IfTest.md) (190109, wed)
 
 ### 8. Spring MVC
 

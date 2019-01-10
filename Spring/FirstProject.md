@@ -76,11 +76,6 @@ IoC 컨테이너를 활용한 DI 방식을 사용한다면 재사용 가능한 �
 		<property name="id">hong</property>
 		<property name="pwd">1111</property>
 	</bean>
-	<bean id="firstProjectBean02" class="spring.myFirstProject.FirstProjectBean">
-		<constructor-arg>ra</constructor-arg>
-		<constructor-arg>2222</constructor-arg>
-	</bean>
-	<bean id="firstProjectBean03" class="spring.myFirstProject.FirstProjectBean"/>
 </beans>
 ```
 
@@ -100,7 +95,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class MainClass {
 
 	public static void main(String[] args){
- 
+
 		/*
 		* 기존의 의존성 높은 방식
 		*/
@@ -124,12 +119,6 @@ public class MainClass {
 
 			System.out.println("firstProjectBean02 의 id : " + firstProjectBean02.getId());
 			System.out.println("firstProjectBean02 의 pwd : " + firstProjectBean02.getPwd());
-
-			System.out.println("firstProjectBean03 의 id : " + firstProjectBean03.getId());
-			System.out.println("firstProjectBean03 의 pwd : " + firstProjectBean03.getPwd());
-
-			System.out.println("firstProjectBean04 의 id : " + firstProjectBean04.getId());
-			System.out.println("firstProjectBean04 의 pwd : " + firstProjectBean04.getPwd());
 		}
 	}
 

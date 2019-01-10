@@ -32,7 +32,7 @@
 - [mvc 로 간단한 로그인 로직 구현해보기](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/Login_DBConnection.md) (190101, tue)
 - [EL / JSTL 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/EL%26JSTL.md) (190107, mon)
 
-### 6. Spring MVC
+### 6. Spring
 
 - [IoC & DI](https://github.com/daesungRa/MyStudy/blob/master/Spring/SpringBegin.md) (190109, wed)
 - [스프링 기본 모듈, IoC 컨테이너, 아파치 메이븐 정리](https://github.com/daesungRa/MyStudy/blob/master/Spring/SpringModuleAndIoCContainerAndMaven.md) (190110, thur)

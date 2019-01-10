@@ -32,7 +32,12 @@
 - [mvc 로 간단한 로그인 로직 구현해보기](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/Login_DBConnection.md) (190101, tue)
 - [EL / JSTL 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/EL%26JSTL.md) (190107, mon)
 
-### 6. HTML/CSS
+### 6. Spring MVC
+
+- [IoC & DI](https://github.com/daesungRa/MyStudy/blob/master/Spring/SpringBegin.md) (190109, wed)
+- [스프링 기본 모듈, IoC 컨테이너, 아파치 메이븐 정리](https://github.com/daesungRa/MyStudy/blob/master/Spring/SpringModuleAndIoCContainerAndMaven.md) (190110, thur)
+
+### 7. HTML/CSS
 
 - [html 기본 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/htmlBasic.md) (190103, thur)
 - [css 기본 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/cssBasic.md) (190104, fri)
@@ -40,16 +45,11 @@
 - [반응형 웹 규칙](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/responsiveWeb.md) (190108, tue)
 - [감각적으로 검색 폼 만들기](https://github.com/daesungRa/MyStudy/blob/master/HTML%2CCSS/sensuousSearchBar.md) (190103, thur)
 
-### 7. Javascript
+### 8. Javascript
 
 - [JavaScript 시작!](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Javascript_Summary.md) (190107, mon)
 - [(요약정리)자바스크립트 개요](https://github.com/daesungRa/MyStudy/blob/master/Javascript/JS_basic.md) (190108, tue)
 - [조건문, 반복문, JSON](https://github.com/daesungRa/MyStudy/blob/master/Javascript/IfSwitchForJSON.md) (190109, wed)
-
-### 8. Spring MVC
-
-- [IoC & DI](https://github.com/daesungRa/MyStudy/blob/master/Spring/SpringBegin.md) (190109, wed)
-- [스프링 기본 모듈, IoC 컨테이너, 아파치 메이븐 정리](https://github.com/daesungRa/MyStudy/blob/master/Spring/SpringModuleAndIoCContainerAndMaven.md) (190110, thur)
 
 ### 9. 기타 정보
 

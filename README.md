@@ -49,7 +49,9 @@
 ### 8. Spring MVC
 
 - [IoC & DI](https://github.com/daesungRa/MyStudy/blob/master/Spring/SpringBegin.md) (190109, wed)
+- [스프링 기본 모듈, IoC 컨테이너, 아파치 메이븐 정리](https://github.com/daesungRa/MyStudy/blob/master/Spring/SpringModuleAndIoCContainerAndMaven.md) (190110, thur)
 
 ### 9. 기타 정보
 
 - [이클립스 Project Clean](https://github.com/daesungRa/MyStudy/blob/master/etc/ProjectClean.md) (190101, tue)
+

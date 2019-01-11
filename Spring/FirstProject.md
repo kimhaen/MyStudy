@@ -80,8 +80,8 @@ IoC 컨테이너를 활용한 DI 방식을 사용한다면 재사용 가능한 �
 ```
 
 위 xml 코드에서 실제 객체를 생성하는 설정은 bean 태그이다. (지정한 class 의 JAVA Bean 생성, id 는 사용자가 임의 지정)<br/>
-firstProjectBean01, firstProjectBean02 라는 객체를 spring.myFirstProject.FirstProjectBean 자바 클래스 기반으로 생성한 것인데,<br/>
-컨테이너가 싱글톤으로 관리하므로 궁극적으로 동일한 객체를 참조한다.<br/>
+firstProjectBean01 라는 객체를 spring.myFirstProject.FirstProjectBean 자바 클래스 기반으로 생성한 것인데,<br/>
+컨테이너가 싱글톤으로 관리하므로 같은 객체를 하나 이상 생성할 수 없다.<br/>
 프로젝트를 실행하는 main 메서드에서는 이제부터 원하는 클래스를 직접 import 해 객체생성하여 사용하지 않고,<br/>
 IoC 컨테이너를 생성 후 xml 파일에 지정된 이미 만들어진 객체를 주입받는다<br/>
 
@@ -109,8 +109,6 @@ public class MainClass {
 		// 컨테이너로부터 원하는 이름(위에서 객체 생성하면서 임의로 지정한 id)의 객체를 주입받는다
 		FirstProjectBean firstProjectBean01 = context.getBean("firstProjectBean01", FirstProjectBean.class);
 		FirstProjectBean firstProjectBean02 = context.getBean("firstProjectBean01", FirstProjectBean.class);
-		FirstProjectBean firstProjectBean03 = context.getBean("firstProjectBean02", FirstProjectBean.class);
-		FirstProjectBean firstProjectBean04 = context.getBean("firstProjectBean03", FirstProjectBean.class);
 
 		// 주입받은 객체 데이터 확인
 		for (int i = 0; i < 4; i++) {
@@ -124,6 +122,9 @@ public class MainClass {
 
 }
 ```
+
+메인 메서드에서는 먼저 IoC 컨테이너를 앞서 설정한 applicationContext.xml 기반으로 생성하고 그것으로부터 사전에 생성된 객체를 주입받는다.<br/>
+거듭 말하듯이 컨테이너에서 하나의 bean 클래스는 기본적으로 싱글톤으로 관리되므로, 위 예제에서처럼 여러 객체 변수에 빈 객체를  담는다고 해도 궁극적으로 참조하는 빈 객체는 모두 동일하다.
 
 
 참조: [전자정부 - IoC Container](http://www.egovframe.go.kr/wiki/doku.php?id=egovframework:rte2:fdl:ioc_container)

@@ -52,6 +52,7 @@
 - [(요약정리)자바스크립트 개요](https://github.com/daesungRa/MyStudy/blob/master/Javascript/JS_basic.md) (190108, tue)
 - [조건문, 반복문, JSON](https://github.com/daesungRa/MyStudy/blob/master/Javascript/IfSwitchForJSON.md) (190109, wed)
 - [배열, 다차원 배열, 함수, 사용자 지정 함수](https://github.com/daesungRa/MyStudy/blob/master/Javascript/ArrayFunction.md) (190110, thur)
+- [JS 객체, 회원가입 및 수정 로직 만들기](https://github.com/daesungRa/MyStudy/blob/master/Javascript/ObjectAndMakeInsertLogic.md) (190111, fri)
 
 ### 9. 기타 정보
 

@@ -12,8 +12,13 @@
 - 공부 내용 요약
 	* 자바 기본 개념 학습
 	* Singleton 예제를 직접 작성하면서 javac, java 명령으로 직접 컴파일 후 실행하는 과정 학습
+## 목차
 
-## 자바 개념 및 프로젝트 구조 파악
+(자바 기본 개념 정리)[#자바 기본 개념 정리]
+(자바 프로젝트 생성 및 실행)[자바 프로젝트 생성 및 실행 - 예제) Singleton 프로젝트]
+(느낀점)[느낀점]
+
+## 자바 기본 개념 정리
 
 Java 언어는,
 - 대표적인 객체지향 언어이며
@@ -41,9 +46,11 @@ Java 언어는,
 	* 개발자는 GC 에 의해 메모리가 관리되도록 두어야 하며 (사실 별 방법도 없음), 그나마 할 수 있는 처리는 **System.gc();** 로 GC 가 최대한 우선적으로 작업하도록 호출하는 것뿐이다
 
 ![JVM 구조](https://github.com/daesungRa/MyStudy/blob/master/imgs/JVM.png)
+```
 GC 는 클래스 로더와 같은 수준에서 힙 영역에 대해 동작하며,<br/>
 네이티브 메서드 영역은 자바 이외의 언어로 작성된 네이티브 코드를 Java Native Interface(JNI) 로 호출해 적재하는 공간이다.<br/>
 PC 레지스터는 현재 수행 중인 JVM 명령의 주소를 저장하며, 각 스레드가 어떤 식으로 동작해야되는지에 대한 데이터를 처리한다
+```
 
 ### 절차지향 패러다임과의 비교
 
@@ -75,9 +82,12 @@ PC 레지스터는 현재 수행 중인 JVM 명령의 주소를 저장하며, �
 		- 소스 디렉토리-패키지 하위에 필요한 자바 파일을 생성하고 코딩
 ![바이너리 및 소스 디렉토리 생성](https://github.com/daesungRa/MyStudy/blob/master/imgs/singletonEx02.png)
 
-이해를 위한 이클립스 프로젝트 구성화면
+<br/>이해를 위한 이클립스 프로젝트 구성화면<br/>
 ![자바 프로젝트 전체구조](https://github.com/daesungRa/MyStudy/blob/master/imgs/JavaProjectStructure.png)
-이클립스에서 바이너리 디렉토리는 나타나지 않지만 실제 경로에는 존재하며, 소스코드를 컴파일한 클래스 파일이 자동으로 생성되어 해당 위치에 저장된다
+```
+이클립스에서 바이너리 디렉토리는 나타나지 않지만 실제 경로에는 존재하며,
+소스코드를 컴파일한 클래스 파일이 자동으로 생성되어 해당 위치에 저장된다
+```
 
 
 3. 소스코드 작성
@@ -90,10 +100,12 @@ PC 레지스터는 현재 수행 중인 JVM 명령의 주소를 저장하며, �
 		- Serial.java > Singleton.java > SingletonTest.java 순이다
 		- 왜 그런지는 아래 코드 내용을 보면서 한번 생각해볼 것
 		- 이 의존관계에 따라 순차적으로 컴파일하고, 최종적으로 테스트파일을 실행한다
-
+<br/>Serial.java<br/>
 ![Serial.java](https://github.com/daesungRa/MyStudy/blob/master/imgs/singletonEx_Serial.png)
+<br/>Singleton.java<br/>
 ![Singleton.java](https://github.com/daesungRa/MyStudy/blob/master/imgs/singletonEx_Singleton.png)
-![SingletonTest.java](https://github.com/daesungRa/MyStudy/blob/master/imgs/singletonEx_SingletonTest.png)
+<br/>SingletonTest.java<br/>
+![SingletonTest.java](https://github.com/daesungRa/MyStudy/blob/master/imgs/singletonEx_Test.png)
 
 4. **컴파일 및 실행**
 	* 자바 관련 실행 프로그램은 시스템에 지정한 Java 경로 내 bin (바이너리, 실행 파일들의 모음) 디렉토리 내에 위치한다
@@ -109,6 +121,10 @@ PC 레지스터는 현재 수행 중인 JVM 명령의 주소를 저장하며, �
 	* 이 밖에 더 있지만 위 두 개가 주요하므로 나머지는 추후 공부해볼 것
 
 ![컴파일 결과](https://github.com/daesungRa/MyStudy/blob/master/imgs/singletonEx03.png)
+1. Singleton.java 파일에 의해 의존되는(참조되는) Serial.java 먼저 컴파일한다
+2. 그 다음인 Singleton.java 컴파일
+3. 최종적으로 싱클톤 클래스를 로드해 메인 메서드로 출력하는 테스트 파일 컴파일
+4. 바이너리 디렉토리에 실행 파일들이 생성된 것을 확인할 수 있다
 
 ### java
 
@@ -119,8 +135,15 @@ PC 레지스터는 현재 수행 중인 JVM 명령의 주소를 저장하며, �
 	* 이 밖에 더 있지만 위 두 개가 주요하므로 나머지는 추후 공부해볼 것
 
 ![실행 화면](https://github.com/daesungRa/MyStudy/blob/master/imgs/singletonEx04.png)
+1. 의존관계를 명시하고(-classpath) 실행 파일을 실행한다([패키지명.클래스파일명])
+2. 싱글톤 테스트 결과가 출력된 것을 확인
 
 ## 느낀점
+
+- 보이지 않는 영역에서 JVM 과 GC 가 동작하는 과정에 대한 이해가 생김
+- 절차지향과 객체지향 패러다임에 대한 이해가 생김
+- 컨트롤 + F11 이면 자동으로 수행되는 컴파일, 빌드, 실행 작업이 그리 간단치만은 않은 절차로 이루어진다는 것 확인 (의존관계에 따른 순차 컴파일 등)
+- 추후 유사시 자바만 설치되어 있다면 날코딩으로도 작업을 할 수 있겠다는 생각을 함
 
 #### 참조
 

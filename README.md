@@ -7,7 +7,7 @@
 
 ### 1. JAVA
 
-- [자바 개요 및 커맨드라인 환경에서 자바 컴파일 후 실행하기](https://github.com/daesungRa/MyStudy/blob/master/JAVA/CommandlineCompile.md) (190113, sun)
+- [자바 기본개념 및 커맨드라인 환경에서 자바 컴파일 후 실행하기](https://github.com/daesungRa/MyStudy/blob/master/JAVA/CommandlineCompile.md) (190113, sun)
 - [원활한 협업을 위한 자바 상식, 규칙](https://github.com/daesungRa/MyStudy/blob/master/JAVA/JavaCommonSenseForCooperation.md) (최초 190113, sun, 지속업뎃)
 
 ### 2. DB

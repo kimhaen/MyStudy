@@ -11,9 +11,9 @@
 2. [DB](#DB)
 3. [Algorithm](#Algorithm)
 4. [Git](#Git)
-5. [JSP/Servlet](#JSP/Servlet)
+5. [JSP/Servlet](#JSP-Servlet)
 6. [Spring](#Spring)
-7. [HTML/CSS](#HTML/CSS)
+7. [HTML/CSS](#HTML-CSS)
 8. [Javascript](#Javascript)
 9. [기타 정보](#기타-정보)
 
@@ -43,7 +43,7 @@
 
 - [Reset, Checkout 명령어](https://github.com/daesungRa/MyStudy/blob/master/GitStudy/CompareResetCheckout.md) (181231, mon)
 
-### JSP/Servlet
+### JSP Servlet
 
 - [Cookie 와 Session, 그리고 HTTP](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/CookieAndSession.md) (181231, mon)
 - [Java Bean](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JavaBean.md) (181231, mon)
@@ -56,7 +56,7 @@
 - [스프링 기본 모듈, IoC 컨테이너, 아파치 메이븐 정리](https://github.com/daesungRa/MyStudy/blob/master/Spring/SpringModuleAndIoCContainerAndMaven.md) (190110, thur)
 - [스프링 메이븐 프로젝트 만들기, 싱글톤 패턴](https://github.com/daesungRa/MyStudy/blob/master/Spring/FirstProject.md) (190110, thur)
 
-### HTML/CSS
+### HTML CSS
 
 - [html 기본 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/htmlBasic.md) (190103, thur)
 - [css 기본 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/cssBasic.md) (190104, fri)

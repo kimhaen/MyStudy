@@ -7,7 +7,7 @@
 
 ## 목차
 
-1. [JAVA](#java)
+1. [JAVA](#1.-JAVA)
 2. [DB](#db)
 3. [Algorithm](Algorithm)
 4. [Git](Git)

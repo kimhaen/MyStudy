@@ -78,4 +78,5 @@
 ### 기타 정보
 
 - [이클립스 Project Clean](https://github.com/daesungRa/MyStudy/blob/master/etc/ProjectClean.md) (190101, tue)
+- [기술 참조 모음](https://github.com/daesungRa/MyStudy/blob/master/etc/Reference.md) (190115, tue)
 

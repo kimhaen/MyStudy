@@ -4,6 +4,8 @@
 
 참조: 최범균의 JSP 2.3 웹 프로그래밍
 
+# 서블릿!
+
 ## 서블릿이란?
 
 - JSP 표준이 나오기 전에 만들어진 자바 웹앱 개발 표준
@@ -135,7 +137,62 @@ public class [서블릿 클래스명] extends HttpServlet {
 	...
 ```
 
-- @WebServlet 어노테이션을 사용하는 서블릿의 경우에는 loadOnStartup 속성에 속성값을 지정함으로써 설정 가능하다
+- @WebServlet 어노테이션을 사용하는 서블릿의 경우에는 loadOnStartup 속성에 속성값(똑같이 정수 오름차순)을 지정함으로써 설정 가능하다
+
+## 초기화 파라미터
+
+- DB 커넥션을 생성하기 위해 재정의한 init() 초기화 메서드를 포함한 클래스를 예제로 살펴본다
+
+DBCPInit.java
+```JAVA
+public class DBCPInit extends HttpServlet {
+	
+	@Override
+	public void init() throws ServletException {
+		loadJDBCDriver();
+		initConnectionPool();
+	}
+
+	private void loadJDBCDriver () {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException ex) {
+			throw new RuntimeException("fail to load JDBC Driver", ex);
+		}
+	}
+
+	private void initConnectionPool () {
+		try {
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String user = "hr";
+			String pwd = "hr";
+
+			ConnectionFactory connFactory = new DriverManagerConnectionFactory(url, user, pwd);
+			PoolableConnectionFactory poolableConnFactory = new PoolableConnectionFactory(connFactory, null);
+			poolableConnFactory.setValidationQuery("select 1");
+
+			GenericObjectPoolconfig poolConfig = new GenericObjectPoolConfig();
+			poolConfig.setTimeBetweenEvictionRunsMills(1000L * 60L * 5L);
+			poolConfig.setTestWhileIdle(true);
+			poolConfig.setMinIdle(4);
+			poolConfig.setMaxTotal(50);
+
+			GenericObjectPool<PoolableConnection> connectionPool = new GenericObjectPool<>(poolableConnFactory, poolConfig);
+			poolableConnFactory.setPool(connectionPool);
+
+			Class.forName("org.apache.commons.dbcp2.PoolingDriver");
+			PoolingDriver driver = (PoolingDriver) DriverManager.getDriver("jdbc:apache:commons:dbcp:");
+			driver.registerPool("chap14", connectionPool);
+		} catch (Exception ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+
+}
+```
+
+출처: 최범균, jsp2.3 웹 프로그래밍
+
 
 
 

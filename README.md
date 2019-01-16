@@ -49,7 +49,9 @@
 - [Java Bean](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JavaBean.md) (181231, mon)
 - [mvc 로 간단한 로그인 로직 구현해보기](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/Login_DBConnection.md) (190101, tue)
 - [EL / JSTL 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/EL%26JSTL.md) (190107, mon)
-- [JSP 기초 정리](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPBasic.md) (190115, tue)
+- [JSP 기초 정리01](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPBasic01.md) (190115, tue)
+- [JSP 기초 정리01](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPBasic02.md) (190116, wed)
+- [JSP 로만 만든 웹페이지, 웹페이지 작성 시 고려할 이슈들](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPPageEx.md) (190116, wed)
 - [서블릿 기초 정리](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/ServletBasic.md) (190114, mon)
 
 ### Spring

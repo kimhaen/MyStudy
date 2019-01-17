@@ -39,7 +39,7 @@
 - 하지만 규모가 작은 프로젝트라면, 서비스와 dao 의 기능이 거의 동일한 것으로 느껴질 수 있다. 그러므로 둘 간의 차이점을 분명히 인식해야 혼란이 없을 것이다
 - 일단 Service 는 특정 작업의 트랜잭션 단위, DAO 는 좀더 세분화된 (DO 의 데이터 단위와 일치하는) 데이터 처리 단위로 이해하면 된다
 - CRUD 로직에서 Service 의 '삽입' 트랜잭션 단위는 register 개념이며, dao 는 실제 insert 개념이다
-- 같은 방식으로 search / search, modify / update, remove / delete 개념이다
+- 같은 방식으로 search / select, modify / update, remove / delete 개념이다 (트랜잭션 / 실제작업 or 큰거 / 작은거 or ...)
 
 ### 그럼, Model 은?
 

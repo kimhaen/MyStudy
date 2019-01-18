@@ -28,7 +28,7 @@
 - 이것의 init-param 으로 적용된 servlet-context.xml (스프링 설정파일) 에 의해 HandlerMapping, HandlerAdapter, ViewResolver 가 생성된다
 - 스프링 컨테이너에 자동 생성된 HandlerMapping 으로 요청에 적절한(보통 매핑된 url) 컨트롤러를 찾고,
 - 찾은 컨트롤러에 HandlerAdapter 로 실제 접근한다
-- 해당 컨트롤러는 이제 적절한 메서드로 요청 service 를 처리하고, 로직에 따라 결과 데이터를 Model 객체에 담은 후 ModelAndView 를 반환한다(모델 객체와 뷰에 조합할 파일이름)
+- 해당 컨트롤러는 이제 적절한 메서드로 요청 service 를 처리하고, 로직에 따라 결과 데이터를 Model 혹은 ModelAndView 객체에 담은 후 반환한다(모델 객체와 뷰에 조합할 파일이름)
 - 이후 ViewResolver 는 컨트롤러의 반환값과 servlet-context.xml 에 설정된 beans:property 속성 (prefix, suffix) 값들을 활용해 뷰 페이지를 조합하고,
 - 최종적으로 DispatcherServlet 은 그것을 브라우저에 response 한다. 화면에 보여지는 것은 뷰 페이지 조합의 결과이다
 - 결과 페이지에는 model 객체에 담긴 로직 처리 결과 데이터가 표현될 수 있다
@@ -45,5 +45,7 @@
 
 - 모델 객체는 VO 와 Dao, Service 에 따른 데이터 묶음이나 처리 결과를 지칭한다
 - 즉, DB 에 실제 적용되는 데이터 단위이며, 이것을 활용해 뷰 단을 표현하거나 데이터 처리를 진행한다
-- 아직 이해가 완전하지 않으므로 좀더 공부해볼 것!
+- Model 객체와 ModelAndView 객체의 차이
+  * 컨트롤러 각 메서드에서 데이터는 Model 에 담기고 View 는 반환값으로 처리된다
+  * 반면 메서드에서 ModelAndView 객체를 반환하기로 지정하면, mav 객체를 생성하고 거기에 처리 데이터와 뷰 이름을 함께 담아서 한 번에 반환한다
 

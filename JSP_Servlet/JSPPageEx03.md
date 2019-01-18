@@ -38,13 +38,14 @@
 - 모든 경로의 기준은 index.jsp 화면임. 요청에 따라 각 컴포넌트 및 화면들이 index 에 적재되는 방식
 
 ### 개선점
-	* 비밀번호 변경 로직 추가 필요
-	* 새로운 멤버 등록의 DB 커넥션 로직은 아직 만들지 않음(수정 로직을 참고해서 만들 것)
-	* 비밀번호 검증 후 삭제 로직은 만들었는데, 비밀번호 검증 후 수정 로직은 아직 만들지 않음 (고로 그냥 수정됨)
+- 비밀번호 변경 로직 추가 필요
+- 새로운 멤버 등록의 DB 커넥션 로직은 아직 만들지 않음(수정 로직을 참고해서 만들 것)
+- 비밀번호 검증 후 삭제 로직은 만들었는데, 비밀번호 검증 후 수정 로직은 아직 만들지 않음 (고로 그냥 수정됨)
+
 ### 프로젝트 링크
 
-[MyWebProject]
-[MyWebProject]:(https://github.com/daesungRa/MyWebProject)
+[MyWebProject]<br/>
+[MyWebProject]: https://github.com/daesungRa/MyWebProject
 
 
 

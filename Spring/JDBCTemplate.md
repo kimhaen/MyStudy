@@ -168,7 +168,7 @@ public class MemberDao {
 - 기본적으로 CRUD 에서 반환값은 int, VO, int, int 이다
 - 각각 투입, 검색, 투입, 투입 (?) 의 개념이기 때문 (임의로 정의함)
 
-###  투입 (INSERT, UPDATE< DELETE) 에 따른 Template 활용
+###  투입 (INSERT, UPDATE, DELETE) 에 따른 Template 활용
 
 - 투입 개념의 쿼리에서는 template.update() 메서드를 활용한다
 - 실행 결과는 int 로 반환되므로 그것에 맞게 저장 후 반환하면 된다

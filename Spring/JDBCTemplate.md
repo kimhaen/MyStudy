@@ -22,7 +22,7 @@ public class MemberDao {
 
 	// driver, url, id, pw 작성
 	private String driver = "oracle.jdbc.driver.OracleDriver";
-	private String url = "jdbc:oracle:thin@localhost:1521:xe";
+	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	private String userId = "hr";
 	private String userPw = "hr";
 
@@ -188,7 +188,7 @@ public class MemberDao {
 		
 		int result = 0;
 		
-		final String sql = "INSERT INTO member (memId, memPw, memMail) values (?,?,?)";
+		final String sql = "INSERT INTO member_spring (memId, memPw, memEmail) values (?,?,?)";
 		
 //		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 //		dataSource.setDriverClassName(driver);
@@ -200,7 +200,7 @@ public class MemberDao {
 //		template.setDataSource(dataSource);
 		
 //		1st
-//		result = template.update(sql, member.getMemId(), member.getMemPw(), member.getMemMail());
+//		result = template.update(sql, member.getMemId(), member.getMemPw(), member.getMemEmail());
 		
 //		2nd
 //		result = template.update(new PreparedStatementCreator() {
@@ -211,7 +211,7 @@ public class MemberDao {
 //				PreparedStatement pstmt = conn.prepareStatement(sql);
 //				pstmt.setString(1, member.getMemId());
 //				pstmt.setString(2, member.getMemPw());
-//				pstmt.setString(3, member.getMemMail());
+//				pstmt.setString(3, member.getMemEmail());
 //				
 //				return pstmt;
 //			}
@@ -224,7 +224,7 @@ public class MemberDao {
 			public void setValues(PreparedStatement pstmt) throws SQLException {
 				pstmt.setString(1, member.getMemId());
 				pstmt.setString(2, member.getMemPw());
-				pstmt.setString(3, member.getMemMail());
+				pstmt.setString(3, member.getMemEmail());
 				
 			}
 		});
@@ -237,11 +237,11 @@ public class MemberDao {
 		try {
 			Class.forName(driver);
 			conn = DriverManager.getConnection(url, userid, userpw);
-			String sql = "INSERT INTO member (memId, memPw, memMail) values (?,?,?)";
+			String sql = "INSERT INTO member (memId, memPw, memEmail) values (?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, member.getMemId());
 			pstmt.setString(2, member.getMemPw());
-			pstmt.setString(3, member.getMemMail());
+			pstmt.setString(3, member.getMemEmail());
 			result = pstmt.executeUpdate();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -277,7 +277,7 @@ public class MemberDao {
 		
 		List<Member> members = null;
 		
-		final String sql = "SELECT * FROM member WHERE memId = ? AND memPw = ?";
+		final String sql = "SELECT * FROM member_spring WHERE memId = ? AND memPw = ?";
 		
 //		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 //		dataSource.setDriverClassName(driver);
@@ -303,7 +303,7 @@ public class MemberDao {
 //				Member mem = new Member();
 //				mem.setMemId(rs.getString("memId"));
 //				mem.setMemPw(rs.getString("memPw"));
-//				mem.setMemMail(rs.getString("memMail"));
+//				mem.setMemEmail(rs.getString("memEmail"));
 //				mem.setMemPurcNum(rs.getInt("memPurcNum"));
 //				return mem;
 //			}
@@ -327,7 +327,7 @@ public class MemberDao {
 //				Member mem = new Member();
 //				mem.setMemId(rs.getString("memId"));
 //				mem.setMemPw(rs.getString("memPw"));
-//				mem.setMemMail(rs.getString("memMail"));
+//				mem.setMemEmail(rs.getString("memEmail"));
 //				mem.setMemPurcNum(rs.getInt("memPurcNum"));
 //				return mem;
 //			}
@@ -341,7 +341,7 @@ public class MemberDao {
 //				Member mem = new Member();
 //				mem.setMemId(rs.getString("memId"));
 //				mem.setMemPw(rs.getString("memPw"));
-//				mem.setMemMail(rs.getString("memMail"));
+//				mem.setMemEmail(rs.getString("memEmail"));
 //				mem.setMemPurcNum(rs.getInt("memPurcNum"));
 //				return mem;
 //			}
@@ -356,7 +356,7 @@ public class MemberDao {
 				Member mem = new Member();
 				mem.setMemId(rs.getString("memId"));
 				mem.setMemPw(rs.getString("memPw"));
-				mem.setMemMail(rs.getString("memMail"));
+				mem.setMemEmail(rs.getString("memEmail"));
 				mem.setMemPurcNum(rs.getInt("memPurcNum"));
 				return mem;
 			}
@@ -375,7 +375,7 @@ public class MemberDao {
 			
 			Class.forName(driver);
 			conn = DriverManager.getConnection(url, userid, userpw);
-			String sql = "SELECT * FROM member WHERE memId = ? AND memPw = ?";
+			String sql = "SELECT * FROM member_spring WHERE memId = ? AND memPw = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, member.getMemId());
 			pstmt.setString(2, member.getMemPw());
@@ -384,13 +384,13 @@ public class MemberDao {
 			while (rs.next()) {
 				String memId = rs.getString("memid");
 				String memPw = rs.getString("mempw");
-				String memMail = rs.getString("memMail");
+				String memEmail = rs.getString("memEmail");
 				int memPurcNum = rs.getInt("memPurcNum");
 				
 				mem = new Member();
 				mem.setMemId(memId);
 				mem.setMemPw(memPw);
-				mem.setMemMail(memMail);
+				mem.setmemEmail(memEmail);
 				mem.setMemPurcNum(memPurcNum);
 			}
 			

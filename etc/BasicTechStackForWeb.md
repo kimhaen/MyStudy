@@ -70,10 +70,18 @@
 	* init param
 - Spring
 	* IoC, DI
-	* 컨테이너 생명주기
+	* pom.xml, web.xml, root-context.xml, servlet-context.xml
+	* spring container
+		- lifeCycle, bean lifeCycle, singleton
+		- DispatcherServlet, HandlerMapping, HandlerAdapter, ViewResolver
 	* AOP
 	* apache maven
 	* mvc
+		- controller
+		- service
+		- dao, vo, dto
+		- view
+		- Model, ModelAndView
 	* interceptor
 	* filter
 

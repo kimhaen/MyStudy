@@ -93,6 +93,6 @@
 ### 기타 정보
 
 - [이클립스 Project Clean](https://github.com/daesungRa/MyStudy/blob/master/etc/ProjectClean.md) (190101, tue)
-- [게시판 프로젝트를 위한 기본 기술목록](https://github.com/daesungRa/MyStudy/blob/master/etc/BasicTechStackForWeb.md) (최초 190123, wed, 지속 업뎃)
+- [웹 프로젝트를 위한 기본 기술목록](https://github.com/daesungRa/MyStudy/blob/master/etc/BasicTechStackForWeb.md) (최초 190123, wed, 지속 업뎃)
 - [기술 참조 모음](https://github.com/daesungRa/MyStudy/blob/master/etc/Reference.md) (190115, tue)
 

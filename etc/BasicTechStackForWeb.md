@@ -117,6 +117,10 @@
 
 ## 외부 API
 
+- 우편번호, 주소 검색
+- Google Map
+- 계정 연동(Google, Facebook, Twitter, Instagram, kakao, naver, daum, ...)
+
 ## 개인적인 기술
 
 - console 환경에서 javac, java 명령어로 

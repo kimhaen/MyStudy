@@ -56,7 +56,8 @@
 - [JSP 로만 만든 웹페이지01, 웹페이지 작성 시 고려할 이슈들](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPPageEx.md) (190116, wed)
 - [JSP 로만 만든 웹페이지02, 중복체크 및 멤버조회 수정 페이지](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPPageEx02.md) (190117, thur)
 - [JSP 로만 만든 웹페이지03, member CRUD 까지 잠정 완료](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPPageEx03.md) (190118, fri)
-- [JSP 로만 만든 웹페이지04, CRUD 모듈화, 페이징 처리](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPPageEx04.md) (190122, tue)
+- [JSP 로만 만든 웹페이지04, CRUD 모듈화, 페이징 처리](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPPageEx04.md) (190121, mon)
+- [JSP 로만 만든 웹페이지05, 페이징, 파일 업로드](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JPSboard_fileUpload.md) (190122, tue)
 - [서블릿 기초 정리](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/ServletBasic.md) (190114, mon)
 
 ### Spring

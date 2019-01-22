@@ -18,8 +18,8 @@
 	- blockSize : 하단에 나타나는 페이지의 크기
 	- startPage : blockSize 에 따른 첫 페이지 번호
 	- endPage : blockSize 에 따른 마지막 페이지 번호
-	- startNo : listSize 에 따른 첫 멤버 번호
-	- endNo : listSize 에 따른 마지막 멤버 번호
+	- startNo : listSize 에 따른 각 페이지 첫 멤버 번호
+	- endNo : listSize 에 따른 각 페이지 마지막 멤버 번호
 
 	- totSize: 전체 멤버 사이즈
 	- totPage : 전체 페이지

@@ -2,7 +2,7 @@
 ![author](https://img.shields.io/badge/author-daesungRa-lightgray.svg?style=flat-square)
 ![date](https://img.shields.io/badge/date-190123-lightgray.svg?style=flat-square)
 
-# 일반적인 게시판 웹 프로젝트를 위한 기본 기술 목록
+# 일반적인 웹 프로젝트(게시판)를 위한 기본 기술 목록
 
 > 이정도는 알아야, 혹은 좀 더 알면 좋은 기술 목록. 지속적으로 갱신해 나갈 것이다.<br/>
 > 자세한 공부 내용은 [MyStudy](https://github.com/daesungRa/MyStudy/) 의 각 카테고리에 정리함
@@ -47,7 +47,7 @@
 	* EL
 	* JSTL
 	* View-화면 구성
-		- index.jsp 
+		- index.jsp (main.jsp)
 		- 회원 관련(member) : login.jsp / login_result.jsp / logout.jsp / insert.jsp / insert_result.jsp / modify.jsp / modify_result.jsp / remove.jsp / remove_result.jsp
 		- 게시판 관련(board) : main.jsp / write.jsp / view.jsp (read.jsp) / modify.jsp (update.jsp) / remove.jsp (delete.jsp)
 		- 기타 : 관리자 페이지, 회원 목록, 총 게시글 목록(페이징, 계층형, 댓글), 검색 기능(키워드 통합검색), 파일 업로드

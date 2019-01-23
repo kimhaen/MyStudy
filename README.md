@@ -50,7 +50,7 @@
 - [Cookie 와 Session, 그리고 HTTP](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/CookieAndSession.md) (181231, mon)
 - [Java Bean](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JavaBean.md) (181231, mon)
 - [mvc 로 간단한 로그인 로직 구현해보기](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/Login_DBConnection.md) (190101, tue)
-- [EL / JSTL 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/EL%26JSTL.md) (190107, mon)
+- [EL / JSTL](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/EL%26JSTL.md) (190107, mon)
 - [JSP 기초 정리01](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPBasic01.md) (190115, tue)
 - [JSP 기초 정리02](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPBasic02.md) (190116, wed)
 - [JSP 로만 만든 웹페이지01, 웹페이지 작성 시 고려할 이슈들](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPPageEx.md) (190116, wed)

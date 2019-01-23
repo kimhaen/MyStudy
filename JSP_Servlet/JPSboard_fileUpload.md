@@ -39,6 +39,31 @@
 * 검색어와 현재 페이지 정보를 수정, 삭제 처리 후 목록으로 되돌아올 때 기존 정보를 유지시키기
 * 우편번호 검색
 
+## 우편번호 검색 API
+
+- 매우 간단하다.
+
+### 사용법
+
+- 다음 카카오 우편번호 서비스로 들어가서 기본 사용법대로 따라하면 된다
+- 
+- zonecode, address, readAddress 세 가지 항목을 주로 사용하기로 한다
+- API 의 내부 구조는 AJAX 로 되어 있음
+
+## 멤버 리스트에서부터 modify 페이지로 이동 후 수정 및 삭제 작업한 다음 다시 리스트로 돌아갈 때 기존의 정보를 보존하기 위한 방법 
+
+- 비연결형인 HTTP 에서 정보보존을 어떻게 할까?
+- 중요한 정보
+	* 검색어 (search)
+	* 현재 페이지 (nowPage)
+- 애초에 페이지 이동 시 해당 정보들도 같이 넘겨준다 (list > modify)
+- list 에서는 검색 form 태그 내에 search 와 nowPage 를 저장하고 modify 에서도 form 태그 내에 hidden 으로 그 정보들을 받아서 저장한다
+- MemberVo 에 search 와 nowPage 필드를 추가(세터게터도 추가) 후
+- modify 에서 modify_result 로 넘길 때 enctype="multipart/form-data" 이므로 FileUpload 인스턴스로 각 항목 세팅 후 getVo 한다
+- getVo 의 결과 vo 객체로 수정이나 삭제 작업을 진행하고,
+- vo 에 세팅되어 있던 search, nowPage 데이터를 각 result 페이지의 form 태그 내에 hidden 으로 추가한다
+- form 태그로 목록으로 돌아가기 하면, search 와 nowPage 가 같이 전송되면서 기존의 정보가 보존된다
+- insert.jsp 에서도 동일하게 하되, FileUpload 시 nowPage == null 임에도 Integer.parseInt 를 하게 되므로, null 에 따른 조건처리를 추가한다
 
 
 

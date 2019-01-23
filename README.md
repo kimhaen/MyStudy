@@ -90,6 +90,10 @@
 - [이벤트, 다양한 객체](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Event.md) (190114, mon)
 - [사용자 정의 클래스 및 객체 만들기](https://github.com/daesungRa/MyStudy/blob/master/Javascript/CreateUserObject.md) (190114, mon)
 
+### 게시판 만들기 연습!!
+
+- [**BoardTest01**-프로젝트 생성부터 MVC 만들고 임시테스트까지](https://github.com/daesungRa/MyStudy/blob/master/SpringPractice/[springmvc-BoardTest01]init_to_testLogic.md) (190124, thur)
+
 ### 기타 정보
 
 - [이클립스 Project Clean](https://github.com/daesungRa/MyStudy/blob/master/etc/ProjectClean.md) (190101, tue)

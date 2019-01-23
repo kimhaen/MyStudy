@@ -129,6 +129,42 @@ public class MemberDao {
 
 ## JDBC Template 의 역할 및 설정
 
+- 우선 pom.xml 에 oracle jdbc repository 를 추가하고,
+- db 모듈에 관련된 라이브러리를 추가한다
+
+```XML
+	...
+
+	<repositories>
+		<repository>
+			<id>oracle</id>
+			<name>ORACLE JDBC Repository</name>
+			<url>http://maven.jahia.org/maven2</url>
+		</repository>
+	</repositories>
+
+	...
+
+	<!-- DB -->
+	<dependency>
+		<groupId>com.oracle</groupId>
+		<artifactId>ojdbc6</artifactId>
+		<version>12.1.0.2</version>
+	</dependency>
+	<dependency>
+		<groupId>com.mchange</groupId>
+		<artifactId>c3p0</artifactId>
+		<version>0.9.5</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+		<version>4.1.6.RELEASE</version>
+	</dependency>
+
+	...
+```
+
 - JDBC Template 는 이런 식으로 동일하게 반복되는 커넥션 세팅 과정을 모듈화한다
 - 즉, 한 번만 설정한 뒤 그 이후로는 재사용하기만 하면 되므로 개발자의 실제적인 부담이 줄어든다 (쿼리 작성 및 실행만 하면 됨)
 - Template 에는 c3p0 와 oracle 제품이 있는데, 구문상의 작은 차이를 제외하면 모든 세팅 방식은 완전 동일하다

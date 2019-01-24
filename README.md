@@ -28,6 +28,7 @@
 
 ### DB
 
+- [게시판을 위한 DB 계정 생성 및 테이블 생성](https://github.com/daesungRa/MyStudy/blob/master/DB/createUser.md) (190124, thur)
 - [자바와 DB 연동하기 in eclipse](https://github.com/daesungRa/MyStudy/blob/master/DB/Connect_with_JAVA%26DB_in_Eclipse.md) (181217, mon)
 - [연동된 DB 게시판 테이블에 쿼리문 실행하기](https://github.com/daesungRa/MyStudy/blob/master/DB/Execute_db_query_into_board_tables.md) (181218, Tues)
 - [시퀀스 문법](https://github.com/daesungRa/MyStudy/blob/master/DB/Sequence_syntax.md) (181226, wed)
@@ -52,7 +53,7 @@
 - [mvc 로 간단한 로그인 로직 구현해보기](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/Login_DBConnection.md) (190101, tue)
 - [EL / JSTL](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/EL%26JSTL.md) (190107, mon)
 - [JSP 기초 정리01](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPBasic01.md) (190115, tue)
-- [JSP 기초 정리02](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPBasic02.md) (190116, wed)
+- [JSP 기초 정리02-jsp 웹앱, 웹앱 배포하기, 페이지 이동처리, useBean](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPBasic02.md) (190116, wed)
 - [JSP 로만 만든 웹페이지01, 웹페이지 작성 시 고려할 이슈들](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPPageEx.md) (190116, wed)
 - [JSP 로만 만든 웹페이지02, 중복체크 및 멤버조회 수정 페이지](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPPageEx02.md) (190117, thur)
 - [JSP 로만 만든 웹페이지03, member CRUD 까지 잠정 완료](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JSPPageEx03.md) (190118, fri)

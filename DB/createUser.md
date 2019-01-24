@@ -75,7 +75,10 @@ Table created.
 - 이로써 게시판을 위한 테이블 생성이 완료되었다
 - 테이블 생성의 결과는 다음과 같다
 
+- 테이블 board
 ![board.png](https://github.com/daesungRa/MyStudy/blob/master/imgs/db/table_board.PNG)
+
+- 테이블 comments
 ![comments.png](https://github.com/daesungRa/MyStudy/blob/master/imgs/db/table_comments.PNG)
 
 

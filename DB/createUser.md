@@ -33,6 +33,13 @@ SQL> grant unlimited tablespace to daesungra;
 Grant succeeded.
 ```
 
+- 혹은, 권한부여할 때 connect, dba, resource 세 개를 명시적으로 줄 수도 있다
+
+```SQL
+SQL> grant connect, dba, resource to daesungra;
+Grant succeeded.
+```
+
 ## 생성한 계정으로 접속해 테이블 생성하기
 
 - 생성할 테이블은 게시판을 위한 board, 댓글을 위한 comments 이다

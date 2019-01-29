@@ -157,8 +157,6 @@ if (xhr.readyState == 4 && xhr.status == 200) {
 				}
 			}
 		}
-		btnXml.onclick = function () { }
-		btnJson.onclick = function () { }
 	}
 </script>
 </head>
@@ -172,8 +170,6 @@ if (xhr.readyState == 4 && xhr.status == 200) {
 			<input type='button' value='TEXT' id='btnText' />
 			<input type='button' value='HTML' id='btnHtml' />
 			<input type='button' value='JSP' id='btnJsp' />
-			<input type='button' value='XML' id='btnXml' />
-			<input type='button' value='JSON' id='btnJson' />
 		</div>
 		<br/>
 		<div id='result'>

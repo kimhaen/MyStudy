@@ -153,11 +153,13 @@
 	* .navbar 내부에 ul 태그의 .navbar-nav 클래스를 적용하면 여러 링크들을 내부 li 태그로 추가할 수 있다.
 	* li 태그의 클래스명은 .nav-item 으로 하고, 내용은 a 태그의 .nav-link 로 한다
 - .justify-content-conter 클래스를 적용하면 navbar 내부의 컨텐트들이 중앙정렬된다
-- Collapsing The Navigation Bar
-	* 네비게이션 링크들(목록들)을 숨기고 그것을 모아 클릭 시 나타나도록 하는 하나의 버튼으로 바꾸고 싶을 때
-	* .navbar-toggler 클래스, data-toggle='collapse', data-target='#thetarget' 요소들을 사용한다
-	* 토글러로 바꾸고자 하는 목적 링크들(목록들)에는 div class='collapse navbar-collapse' 클래스를 사용한다. 이것의 아이디는 네비게이션 링크의 data-target 아이디와 일치시킨다
-	* 예제를 보면 이해가 쉽다
+
+### Collapsing The Navigation Bar
+
+- 네비게이션 링크들(목록들)을 숨기고 그것을 모아 클릭 시 나타나도록 하는 하나의 버튼으로 바꾸고 싶을 때
+- .navbar-toggler 클래스, data-toggle='collapse', data-target='#thetarget' 요소들을 사용한다
+- 토글러로 바꾸고자 하는 목적 링크들(목록들)에는 div class='collapse navbar-collapse' 클래스를 사용한다. 이것의 아이디는 네비게이션 링크의 data-target 아이디와 일치시킨다
+- 예제를 보면 이해가 쉽다
 
 ```HTML
 	...
@@ -194,7 +196,27 @@
 - 타입은 버튼, data-toggle 방식은 collapse, 토글 대상은 #collapsibleNavbar 로 지정하고 버튼 내용으로 .navbar-toggler-icon 클래스를 추가한다
 - 대체할 ul>li 링크들은 .collapse navbar-collapse 클래스로 감싸고 id 를 앞서 명시한 것과 같은 collapsibleNavbar 로 지정한다
 
+### 드롭다운 navbar
 
+- navbar 의 ul 태그 내의 li 태그 중에 드롭다운 리스트를 추가한다
+- li 태그에 .nav-item dropdown 클래스를 추가하고, 내부 a 태그에 nav-link dropdown-toggle 클래스를 추가 후 data-toggle 방식을 dropdown 으로 한다
+- 드롭다운으로 추가할 대상 리스트들은 .dropdown-menu, .dropdown-item 클래스로 지정한다
+
+```HTML
+...
+	<!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Dropdown link
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </li>
+...
+```
 
 
 

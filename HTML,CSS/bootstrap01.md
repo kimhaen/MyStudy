@@ -4,8 +4,7 @@
 
 # 부트스트랩 정리
 
-참조 : [w3schools 부트스트랩 튜토리얼](https://www.w3schools.com/bootstrap4/)
-방식 : w3schools 튜토리얼을 번역
+방식 : [w3schools 부트스트랩 튜토리얼](https://www.w3schools.com/bootstrap4/)을 번역
 
 ### 왜 부트스트랩을 사용하는가?
 

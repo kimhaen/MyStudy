@@ -85,17 +85,18 @@
 
 ### Javascript
 
-- [JavaScript 시작!](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Javascript_Summary.md) (190107, mon)
-- [(요약정리)자바스크립트 개요](https://github.com/daesungRa/MyStudy/blob/master/Javascript/JS_basic.md) (190108, tue)
-- [조건문, 반복문, JSON](https://github.com/daesungRa/MyStudy/blob/master/Javascript/IfSwitchForJSON.md) (190109, wed)
-- [배열, 다차원 배열, 함수, 사용자 지정 함수](https://github.com/daesungRa/MyStudy/blob/master/Javascript/ArrayFunction.md) (190110, thur)
-- [JS 객체, 회원가입 및 수정 로직 만들기](https://github.com/daesungRa/MyStudy/blob/master/Javascript/ObjectAndMakeInsertLogic.md) (190111, fri)
-- [이벤트, 다양한 객체](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Event.md) (190114, mon)
-- [사용자 정의 클래스 및 객체 만들기](https://github.com/daesungRa/MyStudy/blob/master/Javascript/CreateUserObject.md) (190114, mon)
+- [[JS]JavaScript 시작!](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Javascript_Summary.md) (190107, mon)
+- [[JS](요약정리)자바스크립트 개요](https://github.com/daesungRa/MyStudy/blob/master/Javascript/JS_basic.md) (190108, tue)
+- [[JS]조건문, 반복문, JSON](https://github.com/daesungRa/MyStudy/blob/master/Javascript/IfSwitchForJSON.md) (190109, wed)
+- [[JS]배열, 다차원 배열, 함수, 사용자 지정 함수](https://github.com/daesungRa/MyStudy/blob/master/Javascript/ArrayFunction.md) (190110, thur)
+- [[JS]JS 객체, 회원가입 및 수정 로직 만들기](https://github.com/daesungRa/MyStudy/blob/master/Javascript/ObjectAndMakeInsertLogic.md) (190111, fri)
+- [[JS]이벤트, 다양한 객체](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Event.md) (190114, mon)
+- [[JS]사용자 정의 클래스 및 객체 만들기](https://github.com/daesungRa/MyStudy/blob/master/Javascript/CreateUserObject.md) (190114, mon)
+- [[AJAX]Ajax 기초](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Ajax01.md) (190129, tue)
 
 ### 게시판 만들기 연습!!
 
-- [**BoardTest01**-프로젝트 생성부터 MVC 만들고 임시테스트까지](https://github.com/daesungRa/MyStudy/blob/master/SpringPractice/[springmvc-BoardTest01]init_to_testLogic.md) (190124, thur)
+- [[BoardTest01]프로젝트 생성부터 MVC 만들고 임시테스트까지](https://github.com/daesungRa/MyStudy/blob/master/SpringPractice/[springmvc-BoardTest01]init_to_testLogic.md) (190124, thur)
 
 ### 기타 정보
 

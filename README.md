@@ -92,7 +92,8 @@
 - [[JS] JS 객체, 회원가입 및 수정 로직 만들기](https://github.com/daesungRa/MyStudy/blob/master/Javascript/ObjectAndMakeInsertLogic.md) (190111, fri)
 - [[JS] 이벤트, 다양한 객체](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Event.md) (190114, mon)
 - [[JS] 사용자 정의 클래스 및 객체 만들기](https://github.com/daesungRa/MyStudy/blob/master/Javascript/CreateUserObject.md) (190114, mon)
-- [[AJAX] Ajax 기초](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Ajax01.md) (190129, tue)
+- [[AJAX] Ajax 기초 01 - 개념요약, txt, html, jsp 요청처리](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Ajax01.md) (190129, tue)
+- [[AJAX] Ajax 기초 02 - xml, json 요청처리](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Ajax02.md) (190130, wed)
 
 ### 게시판 만들기 연습!!
 

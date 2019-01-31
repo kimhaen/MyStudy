@@ -95,6 +95,7 @@
 - [[AJAX] Ajax 기초 01 - 개념요약, txt, html, jsp 요청처리](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Ajax01.md) (190129, tue)
 - [[AJAX] Ajax 기초 02 - xml, json 요청처리](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Ajax02.md) (190130, wed)
 - [[AJAX] Ajax 기초 03 - DOM 01](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Ajax03.md) (190130, wed)
+- [[AJAX] Ajax 기초 04 - DOM 02, Ajax 와 Json 을 활용해 서버 db 조회 후 동적 페이지 구성](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Ajax04.md) (190131, thur)
 
 ### 게시판 만들기 연습!!
 

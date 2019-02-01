@@ -21,6 +21,9 @@
 
 ### Learning from My Bugs
 
+- [자바스크립트 주의할점](https://github.com/daesungRa/MyStudy/blob/master/LearnFromBugs/JS.md) (최초 190201, fri, 지속업뎃)
+- [EL, JSTL 주의할점](https://github.com/daesungRa/MyStudy/blob/master/LearnFromBugs/El_Jstl.md) (최초 190201, fri, 지속업뎃)
+
 ### JAVA
 
 - [자바 기본개념 및 커맨드라인 환경에서 자바 컴파일 후 실행하기](https://github.com/daesungRa/MyStudy/blob/master/JAVA/CommandlineCompile.md) (190113, sun)

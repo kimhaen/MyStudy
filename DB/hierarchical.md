@@ -29,7 +29,7 @@
 - 필수컬럼 외 id, pwd, title, content 등의 요소들은 상황에 따라 추가한다
 - 정렬은 gSerial desc, depth asc 하고 행 넘버를 추가한 다음의 쿼리를 사용한다
 
-**query 1**
+**query_sort**
 ```SQL
 select * from (
     select rownum rno, s.* from (
@@ -44,7 +44,7 @@ select * from (
 - 최상위 글이므로 gSerial 은 serial 과 같고,
 - 나머지 pSerial, depth, indent 는 모두 0 이다
 
-**query 2**
+**query_insert**
 ```SQL
 insert into board (serial, id, title, content,
 		gSerial, pSerial, depth, indent, bDate)
@@ -324,6 +324,7 @@ public boolean delete (int serial) {
 	* 쿼리 : 3 번 그룹의 6 번 답글을 삭제한다고 가정. 자신의 depth 는 1 이며 다음 답글 7 번과 자신의 답답글 두 개가 존재한다
 	* 위 조건을 적용해 delete 쿼리를 작성하면 다음과 같다
 
+**query_delete**
 ```SQL
 delete from board
 	where (gSerial = (select gSerial from board where serial = 6)) -- 같은 그룹 내

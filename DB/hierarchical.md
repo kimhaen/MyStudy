@@ -340,12 +340,19 @@ delete from board
 		); -- 그런 depth 까지 포함되는 모든 답답글들을 삭제한다
 ```
 
-- Oracle Sql Developer 에서 위 쿼리를 날리고 테이블을 정렬 조회하면, 원하는 답글과 그것의 답답글들이 연쇄적으로 삭제된 것을 볼 수 있다
+- Oracle Sql Developer 에서 위 쿼리를 실행하고 테이블을 정렬 조회하면, 원하는 답글과 그것의 답답글들이 연쇄적으로 삭제된 것을 볼 수 있다
 
 ```
 3개 행 이(가) 삭제되었습니다.
 ```
 ![deleting reply content in cascade](https://github.com/daesungRa/MyStudy/blob/master/imgs/db/hierarchical_delete_in_cascade.png)
+
+### 그럼 댓글은?
+
+- 댓글은 댓글을 위한 별도의 테이블을 만들고, (ex. **comment**)
+- 각 글들이 특정 게시판 (**BOARD**) 글을 외래키로 참조하도록 하면 된다
+- 나머지 구성은 답글의 논리적 순서와 완전히 동일하게 하면 된다
+- 다만, 게시글을 수정하거나 삭제할 때 제약조건이 더 많아질 것이므로 충분히 주의할 것
 
 ## 계층형 쿼리 사용하기
 

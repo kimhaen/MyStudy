@@ -22,12 +22,12 @@
 	* indent (답글 수준 또는 들여쓰기를 위한 깊이)
 - 기본 정렬은 gSerial 별로 desc 한다 (최신글 순)
 - depth 의 경우, 가장 오래된 답글이 상단에 오도록 정렬한다 (오래된 답글 순)
-	* 새 답글을 등록할 때 참조하는 글의 indent 가 0 이라면(최상위 글) 그룹 내 최대 depth 를 구하고 그것으로부터 +1 된 depth 를 삽입하는 과정이 필요하다 (맨 아래 추가)
+	* 새 답글을 등록할 때 참조하는 글의 indent 가 0 이라면(최상위 글) 그룹 내 전체 글 개수를 구하고 그것으로부터 +1 된 depth 를 삽입하는 과정이 필요하다 (그룹 맨 아래 추가)
 	* 만약 답답글이라면(참조하는 글의 indent > 0) 참조하는 글 이하 모든 답글들의 depth 를 1 씩 증가시키고 그 중간에 답답글을 끼워넣는 쿼리를 실행한다 (같은 그룹 내)
-	* 최신 답글 순이라면 일괄적으로 참조하는 글 바로 아래에 추가하고 나머지는 1 씩 증가시키면 되므로 상대적으로 더 쉽다 (답답글도 마찬가지)
+	* 그냥 최신 답글 순이라면 일괄적으로 참조하는 글 바로 아래에 추가하고 나머지는 1 씩 증가시키면 되므로 상대적으로 더 쉽다 (답답글도 마찬가지)
 - indent 의 경우, 부모 글의 indent 에서 1 을 더한다
-- 필수컬럼 외 id, pwd, title, content 등의 요소들은 상황에 따라 추가하면 된다
-- 정렬은 gSerial desc, depth asc 된 다음의 쿼리를 사용한다
+- 필수컬럼 외 id, pwd, title, content 등의 요소들은 상황에 따라 추가한다
+- 정렬은 gSerial desc, depth asc 하고 행 넘버를 추가한 다음의 쿼리를 사용한다
 
 ```SQL
 select * from (
@@ -50,20 +50,22 @@ insert into board (serial, id, title, content,
 		seq_board.currval, 0, 0, 0, sysdate);
 ```
 
-- 이 쿼리대로 우선 5 개 글을 등록하고 정렬한 결과는 다음과 같다
+- 이 쿼리대로 우선 5 개 글을 등록하고 정렬한 결과는 다음과 같다 (최신글 순)
 
 ![mainContent](https://github.com/daesungRa/MyStudy/blob/master/imgs/db/hierarchical_fiveMainContent.PNG)
 
 ### 최상위 글에 대한 답글 등록하기
 
-- 답글도 새 글이므로 새로운 시리얼(serial) 을 부여하고,
+- 답글도 새 글이므로 새로운 시리얼(serial) 을 부여하고, 나머지 요소들은 자신이 참조하는 부모 글의 요소들을 기반으로 결정한다
 - 그룹 시리얼(gSerial) 은 부모 글의 그룹 시리얼(gSerial),
 - 부모 시리얼(pSerial) 은 부모 글의 시리얼(serial),
-- 그룹 내 정렬을 위한 depth 는 같은 그룹 내 모든 글 수를 카운트(count(*)) 하고 그 카운트 대로 삽입하면 된다 (최상위 글의 depth 가 인덱스 0 이므로 카운트 결과는 자동 +1 효과)
+- 그룹 내 정렬을 위한 depth 는 같은 그룹 내 모든 글 수를 카운트(count(*)) 하고 그 카운트 대로 삽입하면 된다 (최상위 글의 depth 가 인덱스 0 이므로 카운트 결과는 자동으로 인덱스 +1 효과)
 - indent 는 참조하는 글의 indent + 1 (최상위 글에 대한 답글이므로, 0 + 1)
 - 결과적으로 같은 그룹 내 모든 글 수를 카운트하는 쿼리와 새로운 답글을 삽입하는 쿼리 총 두 개가 필요하다
 
 ```JAVA
+...
+
 public boolean insertReply (HttpServletRequest request) {
 
 	boolean b = false;
@@ -134,7 +136,7 @@ public boolean insertReply (HttpServletRequest request) {
 
 - 테스트를 위해 3 번 글에 대한 답글 세 개를 등록하고 정렬한 결과는 다음과 같다
 
-![reply01](https://github.com/daesungRa/MyStudy/blob/master/imgs/db/hierarchical_reply01.PNG)
+![reply01](https://github.com/daesungRa/MyStudy/blob/master/imgs/db/hierarchical_reply01.png)
 
 - 최상위 글들은 최신순으로 정렬되었고, 3 번 글에 대한 답글들은 오래된 순으로 정렬된 것을 확인할 수 있다
 - 최상위 글에 대한 1차 답글이므로 indent 는 모두 1 이다
@@ -238,7 +240,7 @@ public boolean insertReply (HttpServletRequest request) {
 
 - 테스트를 위해 3 번 글을 그룹으로 하는 답글 중 6 번 시리얼을 부모 답글로 삼는 답답글 두 개 (시리얼 9, 10) 를 추가하고 정렬한 결과는 다음과 같다
 
-![reply01](https://github.com/daesungRa/MyStudy/blob/master/imgs/db/hierarchical_reply01.PNG)
+![reply02](https://github.com/daesungRa/MyStudy/blob/master/imgs/db/hierarchical_reply02.png)
 
 - 보는 바와 같이 3 번 글에 대한 1 차 답글인 7 번, 8 번 답글은 밀려나고 6 번 답글의 답답글 두 개가 사이에 추가되었다
 - 답답글이므로 indent 는 2 가 되었다

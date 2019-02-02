@@ -5,7 +5,7 @@
 # 게시판 글과 답글, 댓글을 위한 기본적인 계층형 쿼리 정리
 
 - 총 두 가지 방법이 있다.
-- 게시판 자체를 계층형을 고려하여 구성하거나[1](#계층형-게시판-만들기), start with-connect by 문법을 활용해 애초에 계층형으로 쿼리를 날리는 방식[2](#계층형-쿼리-사용하기)이다
+- 게시판 자체를 계층형을 고려하여 구성하거나([1](#계층형-게시판-만들기)), start with-connect by 문법을 활용해 애초에 계층형으로 쿼리를 날리는 방식([2](#계층형-쿼리-사용하기)) 이다
 - 후자의 방법은 바로 윗 부모의 시리얼을 알고 적절하게 쿼리를 날리면 오라클이 알아서 정렬해 준다
 - 부모가 같은 게시글 집합에서는 그냥 시리얼 넘버로 정렬(asc or desc)하면 된다
 - 이하 예제에서 사용할 테이블명은 **BOARD**, 시퀀스명은 **SEQ_BOARD** 이다
@@ -39,6 +39,10 @@ insert into board (serial, id, title, content,
 ![mainContent](https://github.com/daesungRa/MyStudy/blob/master/imgs/db/hierarchical_fiveMainContent.PNG)
 
 ### 답글 등록하기
+
+- 답글도 새 글이므로 새로운 시리얼(serial) 을 부여하고,
+- 그룹 시리얼(gSerial) 은 참조하는 원본 글의 그룹 시리얼(gSerial),
+- 부모 시리얼(pSerial) 은 바로 윗 부모의 시리얼(serial)
 
 ### 답글의 답글 등록하기
 

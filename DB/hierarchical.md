@@ -25,10 +25,11 @@
 	* 새 답글을 등록할 때 참조하는 글의 indent 가 0 이라면(최상위 글) 그룹 내 전체 글 개수를 구하고 그것으로부터 +1 된 depth 를 삽입하는 과정이 필요하다 (그룹 맨 아래 추가)
 	* 만약 답답글이라면(참조하는 글의 indent > 0) 참조하는 글 이하 모든 답글들의 depth 를 1 씩 증가시키고 그 중간에 답답글을 끼워넣는 쿼리를 실행한다 (같은 그룹 내)
 	* 그냥 최신 답글 순이라면 일괄적으로 참조하는 글 바로 아래에 추가하고 나머지는 1 씩 증가시키면 되므로 상대적으로 더 쉽다 (답답글도 마찬가지)
-- indent 의 경우, 부모 글의 indent 에서 1 을 더한다
+- indent 의 경우, 부모 글의 indent 에서 1 을 더하며, 화면에 나타낼 때는 각 수준에 따라 들여쓰기한다
 - 필수컬럼 외 id, pwd, title, content 등의 요소들은 상황에 따라 추가한다
 - 정렬은 gSerial desc, depth asc 하고 행 넘버를 추가한 다음의 쿼리를 사용한다
 
+**query 1**
 ```SQL
 select * from (
     select rownum rno, s.* from (
@@ -43,6 +44,7 @@ select * from (
 - 최상위 글이므로 gSerial 은 serial 과 같고,
 - 나머지 pSerial, depth, indent 는 모두 0 이다
 
+**query 2**
 ```SQL
 insert into board (serial, id, title, content,
 		gSerial, pSerial, depth, indent, bDate)
@@ -63,6 +65,7 @@ insert into board (serial, id, title, content,
 - indent 는 참조하는 글의 indent + 1 (최상위 글에 대한 답글이므로, 0 + 1)
 - 결과적으로 같은 그룹 내 모든 글 수를 카운트하는 쿼리와 새로운 답글을 삽입하는 쿼리 총 두 개가 필요하다
 
+**boardDao.java**
 ```JAVA
 ...
 
@@ -132,6 +135,8 @@ public boolean insertReply (HttpServletRequest request) {
 
 	return b;
 }
+
+...
 ```
 
 - 테스트를 위해 3 번 글에 대한 답글 세 개를 등록하고 정렬한 결과는 다음과 같다
@@ -151,7 +156,10 @@ public boolean insertReply (HttpServletRequest request) {
 - 같은 부모를 공유하는 답답글들의 개수를 파악하는 쿼리와 자기 자신 이하 모든 답글들의 depth 를 1 씩 증가시키는 쿼리, 자신을 삽입하는 쿼리 총 세 개가 필요하다
 - 답글의 답글이므로 indent 는 1 보다 크다
 
+**boardDao.java**
 ```JAVA
+...
+
 public boolean insertReply (HttpServletRequest request) {
 
 	boolean b = false;
@@ -172,7 +180,7 @@ public boolean insertReply (HttpServletRequest request) {
 
 	if (indent == 0) {
 		...
-	} else if (indent > 0) { // 참조하는 글이 답글이라면, 해당 답글을 부모로 하는 답답글들 중 최하단에 삽입. 그 이하 indent 는 +1
+	} else if (indent > 0) { // 참조하는 글이 답글이라면, 해당 답글을 부모로 하는 답답글들 중 최하단에 삽입. 그 이하 답글들의 depth 는 +1
 		try {
 			conn.setAutoCommit(false);
 			// 1. 같은 부모 답글을 공유하는 모든 글 수를 카운트(cnt) 후 자기 자신의 depth 산출
@@ -193,7 +201,7 @@ public boolean insertReply (HttpServletRequest request) {
 
 			// 2. 자기 자신 이하 모든 답글들의 depth + 1 (같은 그룹 내)
 			sql = " update board set depth = depth + 1 "
-				+ " where gSerial = ? and depth >= ? "; // 같은 그룹이면서 depth 가 같거나 큰 답답글들을 모두 밀어냄
+				+ " where gSerial = ? and depth >= ? "; // 같은 그룹이면서 depth 가 자신과 같거나 큰 답답글들을 모두 밀어냄
 
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, gSerial);
@@ -236,6 +244,8 @@ public boolean insertReply (HttpServletRequest request) {
 
 	return b;
 }
+
+...
 ```
 
 - 테스트를 위해 3 번 글을 그룹으로 하는 답글 중 6 번 시리얼을 부모 답글로 삼는 답답글 두 개 (시리얼 9, 10) 를 추가하고 정렬한 결과는 다음과 같다
@@ -246,6 +256,94 @@ public boolean insertReply (HttpServletRequest request) {
 - 답답글이므로 indent 는 2 가 되었다
 
 ### 글 삭제
+
+- 최상위 글이던 답글이던 자신을 참조하는 답답글이 존재한다면 삭제되지 않도록 조치한다
+
+boardDao.java
+```JAVA
+...
+
+public boolean delete (int serial) {
+	boolean b = false;
+	// 삭제하고자 하는 글을 참조하는 답글이 존재하는지 조회
+	String sql = " select count(*) cnt from board where pSerial = ? ";
+	int cnt = 0;
+
+	try {
+		ps = conn.prepareStatement(sql);
+		ps.setInt(1, serial);
+		rs = ps.executeQuery();
+
+		if (rs.next()) {
+			cnt = rs.getInt("cnt");
+		}
+
+		rs.close();
+		ps.close();
+
+		// 조회 결과가 없을 시 삭제 구문 실행
+		if (cnt == 0) {
+			conn.setAutoCommit(false);
+			sql = " delete from board where serial = ? "
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, serial);
+			int result = ps.executeUpdate();
+
+			if (result > 0) {
+				b = true;
+				conn.commit();
+			}
+		}
+	} catch (Exception ex) {
+		try {
+			conn.rollback();
+			ex.printStackTrace();
+		} catch (Exception ex) { }
+	} finally {
+		try {
+			closeSet();
+		} catch (Exception ex) { ex.printStackTrace(); }
+	}
+
+	return b;
+}
+
+...
+```
+
+- 반환값이 true 면 삭제 완료, false 면 참조글이 존재하거나 에러이므로 확인해본다
+
+#### 자신을 참조하는 모든 답답글들까지 연쇄삭제 하려면?
+
+- 만약 참조 여부에 상관 없이 삭제하고자 한다면, 자기 자신을 참조하는 모든 답글들을 보존하거나 연쇄적으로 삭제할지 결정한 후 적절한 쿼리를 추가해야 한다
+- 일괄 삭제 시 참조 기준을 단순 부모 시리얼로 하면 안 된다.
+- 연쇄적으로 참조되기 때문에 특정 답답글이 자신의 하위에 속해있으면서도 직속 부모 시리얼로 참조하지 않고 있을 수 있기 때문
+- 그렇다고 그룹 시리얼로 정할 수도 없다. 같은 그룹이면서도 자신과 같은 indent 이거나(자신을 참조하지 않는다는 의미) 자신보다 상위 답글들이 존재할 수 있으므로 안 된다
+- 해결방안
+	* 조건 : 같은 그룹이면서, depth 가 자신보다 높은 동시에 자신의 다음 답글 (같은 부모를 참조한다는 것 외에 연관성이 없는 같은 indent 수준의 답글) 보다 낮은 답답글들
+	* 쿼리 : 3 번 그룹의 6 번 답글을 삭제한다고 가정. 자신의 depth 는 1 이며 다음 답글 7 번과 자신의 답답글 두 개가 존재한다
+	* 위 조건을 적용해 delete 쿼리를 작성하면 다음과 같다
+
+```SQL
+delete from board
+	where (gSerial = (select gSerial from board where serial = 6)) -- 같은 그룹 내
+		and (
+			depth between (select depth from board where serial = 6) -- depth 가 자기 자신의 depth 부터 ~
+				and (
+					(select min(depth) from board where gSerial = (select gSerial from board where serial = 6) -- 자신과 같은 그룹이면서
+						and depth > (select depth from board where serial = 6) -- depth 는 자신보다 높고
+						and indent = (select indent from board where serial = 6) -- indent 수준은 자신과 같은, 즉 같은 수준의 자신을 참조하지 않는 다음 답글들
+					) - 1 -- 중의 최소값인 depth 에서 1 을 뺀 depth
+				)
+		); -- 그런 depth 까지 포함되는 모든 답답글들을 삭제한다
+```
+
+- Oracle Sql Developer 에서 위 쿼리를 날리고 테이블을 정렬 조회하면, 원하는 답글과 그것의 답답글들이 연쇄적으로 삭제된 것을 볼 수 있다
+
+```
+3개 행 이(가) 삭제되었습니다.
+```
+![deleting reply content in cascade](https://github.com/daesungRa/MyStudy/blob/master/imgs/db/hierarchical_delete_in_cascade.png)
 
 ## 계층형 쿼리 사용하기
 

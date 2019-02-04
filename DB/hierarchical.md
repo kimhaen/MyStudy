@@ -356,6 +356,50 @@ delete from board
 
 ## 계층형 쿼리 사용하기
 
+- 삭제하기 이전의 **board** 테이블을 **start with-connect by** 문법으로 동일하게 정렬하면 다음과 같다
+
+**hierarchical_query01**
+```SQL
+select * from board
+	start with pserial = 0
+	connect by prior serial = pserial
+	order siblings by gserial desc, depth asc;
+```
+
+- 정렬 결과는 동일하다
+
+![계층형 쿼리 사용01](https://github.com/daesungRa/MyStudy/blob/master/imgs/db/hierarchical_query01.png)
+
+- 문법
+	* **start with** : 계층화를 위한 루트 노드 지정. 서브쿼리 사용 가능하다
+	* **connect by** : 각 컬럼 중 부모와 자식 관계를 규정. 서브쿼리 사용 불가
+	* **order siblings by** : 결과 데이터를 정렬하되, 계층화 되었으므로 패밀리(형제 노드)끼리 분리해서 정렬
+- 구문 해석
+	* 루트 노드는 부모 노드가 없는 최상위 행으로 지정 (**pserial** = 0).
+	* **pserial** (우변) 을 부모로 삼는 자식 노드 **serial** (좌변) 의 관계 지정
+	* **gserial desc, depth asc** 순으로 정렬하되, **pserial** = 0 인 루트 노드로 형성된 각 계층별로 나눠서 함 (**siblings**)
+
+### **lpad** 함수로 들여쓰기
+
+- 계층별 그룹핑을 확실히 보기 위해 5 번 시리얼 글에 1차 답글 세 개와 2차 답답글 두 개를 추가한 후 들여쓰기의 결과를 확인한다
+
+**hierarchical_query02**
+```SQL
+select serial, level, lpad(' ', (level-1), ' ') || id id, title, content, gserial, pserial, depth, indent, bdate from board
+	start with pserial = 0
+	connect by prior serial = pserial
+	order siblings by gserial desc, depth asc;
+```
+
+- **connect by** 절을 사용하면 컬럼에 **level** 이 발생한다. 이는 각 행의 계층 수준을 의미한다
+- **lpad** 로 정렬할 때는, 이 **level** 값에 따라서 공백 문자열이 먼저 채워지고, 그것에 덧붙여 아이디가 위치하도록 조치한다
+- 예를 들어 최상위인 레벨 1 은 (1 - 1) = 0 칸의 공백이 채워진 후, 1차 답글 수준인 2 레벨은 (2 - 1) = 1 칸의 공백이 채워진 후 아이디가 위치하게 된다
+
+![계층형 쿼리 사용02](https://github.com/daesungRa/MyStudy/blob/master/imgs/db/hierarchical_query02.png)
+
+- 5 번 최상위 글에 대한 1차 답글 세개, 2차 답글 두개, 3차 답글 두 개가 정렬되며 각 **level** 값에 따라서 들여쓰기된 것을 볼 수 있다
+- 3 번 최상위 글에 대한 각 답글들도 **level** 에 따라 정렬 후 적절히 들여쓰기 되었다
+- 사실상 **indent** 자체가 **level** 을 의미하므로, **indent** 순으로 들여쓰기 해도 상관 없다
 
 
 

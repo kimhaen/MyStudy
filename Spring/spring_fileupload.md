@@ -23,6 +23,48 @@
 6. 생성된 sysFileName 을 기준으로 임시 업로드된 파일정보를 실제 저장 경로로 transfer 시킨다 (**mFile.transferTo([저장경로] + sysFileName)**).
 7. 마지막으로 각 **oriFileName** 과 **sysFileName** 을 데이터베이스에 저장한다. 각각은 사용자에게 보여질 원본파일명과 실제 서버에 저장될 유일한 파일명을 의미한다
 
+### **MultipartHttpServletRequest** 활용을 위한 스프링 환경설정
+
+- **pom.xml** 에 **commons-fileupload** 와 **commons-io** 를 위한 **dependency** 를 추가한다 (메이븐 레포에서 적절한 버전 검색)
+
+```XML
+	...
+
+	<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+	<dependency>
+		<groupId>commons-fileupload</groupId>
+		<artifactId>commons-fileupload</artifactId>
+		<version>1.4</version>
+	</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+	<dependency>
+		<groupId>commons-io</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>2.6</version>
+	</dependency>
+
+	...
+```
+
+- **servlet-context.xml** 에서 **multipartResolver beans** 를 추가한다
+- 이것은 **MultipartHttpServletRequest** 를 위한 빈 객체로 활용된다
+
+```XML
+	...
+
+	<!-- Resolves upload files -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- maxSize = 10mb -->
+		<beans:property name="maxUploadSize" value="100000000"></beans:property>
+		<beans:property name="defaultEncoding" value="utf-8"></beans:property>
+	</beans:bean>
+
+	...
+```
+
+- 프로퍼티로는 업로드 파일 사이즈를 지정하는 **maxUploadSize (10mb)** 속성과 **defaultEncoding (utf-8)** 속성을 지정한다
+- 이제 **MultipartHttpServletRequest** 를 임포트해서 사용 가능하다
+
 ### 코드
 
 - 회원등록 시 **MEMBER** 테이블에 **insert** 하기 위한 **MemberVo** 객체를 반환하는 **FileUpload** 클래스를 작성한다

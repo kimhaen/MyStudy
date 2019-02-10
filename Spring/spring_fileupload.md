@@ -5,9 +5,9 @@
 ## **Spring** 컨테이너 내장 인터페이스인 **MultipartHttpServletRequest** 활용해 파일 업로드하기
 
 - 기존 서블릿 컨테이너에서는 **request** 객체를 **MultipartRequest** 인터페이스로 변환해 자동 파일 업로드 및 오리지널, 시스템 파일명 분리까지 가능했다
-- 마찬가지로 **MultipartHttpServletRequest** 인터페이스도 파일업로드가 가능하지만, 실제 저장되는 시스템 파일을 자동으로 생성하지는 못한다 (방법을 못찾았을 수도 있다)
+- 마찬가지로 **MultipartHttpServletRequest** 인터페이스도 파일업로드가 가능하지만, 실제 저장되는 시스템 파일을 자동으로 생성하지는 못한다 (방법을 못찾았을 수도 있음)
 - 요청 객체 변환의 전 과정은, 자바 언어의 특성인 상속과 인터페이스 구현 기능으로 편리하게 가능하다
-- 본 포스트에서는 파일 업로드 기능을 회원가입 로직에서 멤버이미지를 업로드하는 예제를 활용해 기록한다
+- 본 포스트에서는 회원가입 로직에서 멤버이미지를 업로드하는 예제를 활용해 파일 업로드 기능을  공부한다
 
 ### 시나리오
 
@@ -20,7 +20,8 @@
 3. 변환한 파일 정보가 존재하는지 반복자 (**Iterator**) 로 확인한 후, 저장 파일 정보를 **MultipartFile** 형식으로 추출한다 (**mFile** 로 가칭)
 4. **mFile.getOriginalFilename()** 으로 실제 저장된 파일 정보를 확인한 후, 그것을 데이터베이스에 담기 위해 활용한다 (**oriFileName** 가칭)
 5. 서버 내 실제 저장 경로에 동일한 파일명이 존재하는지 **'[경로] + oriFileName'** 으로 확인한 후, 존재하지 않는다면 동일한 이름의 **sysFileName** 을 생성하고, 존재한다면 **substring** 으로 시스템 시각을 덧붙여 **sysFileName** 을 생성한다
-6. 각 **oriFileName** 과 **sysFileName** 을 데이터베이스에 저장한다. 각각은 사용자에게 보여질 원본파일명과 실제 서버에 저장될 유일한 파일명을 의미한다
+6. 생성된 sysFileName 을 기준으로 임시 업로드된 파일정보를 실제 저장 경로로 transfer 시킨다 (**mFile.transferTo([저장경로] + sysFileName)**).
+7. 마지막으로 각 **oriFileName** 과 **sysFileName** 을 데이터베이스에 저장한다. 각각은 사용자에게 보여질 원본파일명과 실제 서버에 저장될 유일한 파일명을 의미한다
 
 ### 코드
 
@@ -145,7 +146,7 @@ public class FileUpload {
 }
 ```
 - 컨트롤러는 **FileUpload** 인스턴스를 만들어 요청받은 **request** 객체를 넘겨주고 **MemberVo** 객체를 리턴받는다
-- **FileUpload** 에서는 파일 업로드 로직이 실행되고, 성공했다면 **oriFileName** 과 **sysFileName** 을 포함한 적절한 **vo** 객체를 만들어 반환한다
+- **FileUpload** 에서는 파일 업로드 로직이 실행되고, 성공했다면 **oriFileName** 과 **sysFileName** 을 포함한 적절한 **vo** 객체를 만들어 반환한다 (최종 회원정보를 DB 에 저장하기 위해)
 
 join result - directory
 ![join result - directory](https://github.com/daesungRa/MyStudy/blob/master/imgs/SpringStudy/joinresult_directory01.png)

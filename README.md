@@ -19,7 +19,7 @@
 
 ## 카테고리
 
-### Learning from My Bugs
+### Learning from Errors
 
 - [자바스크립트 주의할점](https://github.com/daesungRa/MyStudy/blob/master/LearnFromBugs/JS.md) (최초 190201, fri, 지속업뎃)
 - [EL, JSTL 주의할점](https://github.com/daesungRa/MyStudy/blob/master/LearnFromBugs/El_Jstl.md) (최초 190201, fri, 지속업뎃)

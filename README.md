@@ -31,7 +31,7 @@
 
 ### DB
 
-- [게시판 계층형 쿼리](https://github.com/daesungRa/MyStudy/blob/master/DB/hierarchicalQuery.md) (190131, thur)
+- [계층형 게시판 정리](https://github.com/daesungRa/MyStudy/blob/master/DB/hierarchical.md) (190131, thur)
 - [게시판을 위한 DB 계정 생성 및 테이블 생성](https://github.com/daesungRa/MyStudy/blob/master/DB/createUser.md) (190124, thur)
 - [자바와 DB 연동하기 in eclipse](https://github.com/daesungRa/MyStudy/blob/master/DB/Connect_with_JAVA%26DB_in_Eclipse.md) (181217, mon)
 - [연동된 DB 게시판 테이블에 쿼리문 실행하기](https://github.com/daesungRa/MyStudy/blob/master/DB/Execute_db_query_into_board_tables.md) (181218, Tues)
@@ -76,6 +76,8 @@
 - [스프링 Interceptor](https://github.com/daesungRa/MyStudy/blob/master/Spring/Interceptor.md) (190119, sat)
 - [JDBC Template](https://github.com/daesungRa/MyStudy/blob/master/Spring/JDBCTemplate.md) (190119, sat)
 - [JDBC Template 로 커넥션 풀 구현하기](https://github.com/daesungRa/MyStudy/blob/master/Spring/JDBC_ConnectionPool.md) (190120, sun)
+- [스프링 컨테이너 리다이렉트 이슈](https://github.com/daesungRa/MyStudy/blob/master/Spring/issue_redirect.md) (190204, sun)
+- [스프링 파일 업로드 (MultipartHttpServletRequest 활용)](https://github.com/daesungRa/MyStudy/blob/master/Spring/spring_fileupload.md) (190209, sat)
 
 ### HTML CSS
 

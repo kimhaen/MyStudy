@@ -13,8 +13,8 @@
 - 페이지 요청 시 일반적인 get/post 요청에 더해서 ajax 비동기 방식으로 처리하는 부분이 어려웠음
 - 예를 들어 index 에서 게시판 페이지를 처음으로 로드할 때는 get 방식으로 전체 페이지를 갱신 했지만,
 - 이후 페이징이나 검색 처리 시에는 ajax 방식으로 되도록 (동일한 서블릿 요청임, list.brd) 분기시키는 것이 까다로웠음
-- 특히, ajax 자바스크립트에서 post 방식으로 파라미터를 넘기면서 페이지 요청을 날리려면 FormData 객체가 필요한데,
-- 이것을 사용하기 위해서는 뷰단에서 form 태그에 enctype='multipart/form-data' 처리를 한 후
+- 특히, ajax 자바스크립트에서 post 방식으로 파라미터를 넘기면서 페이지 요청을 날리고자 할 때 FormData 객체를 활용하는 방식이 있는데,
+- 이것을 위해서는 뷰단에서 form 태그에 enctype='multipart/form-data' 처리를 한 후
 - 서블릿 단에서도 이 폼을 받기 위해 MultipartRequest 변환 객체를 사용해야만 했다 (그래야 request 객체 내 파라미터를 사용할 수 있음)
 
 ### 코드 리뷰
@@ -63,7 +63,7 @@ list.jsp
 	...
 ```
 - 위로 게시판 리스트 화면이 쭉 있다고 치고, 2 페이지로 이동하기 위한 버튼(.btnCircle)을 클릭하면, movePage() 함수가 실행되며
-custom.js
+board.js
 ```JAVASCRIPT
 	...
 
@@ -83,6 +83,7 @@ custom.js
 
 	function movePage (nowPage) {
     		var boardFrm = document.boardFrm;
+		// 페이지 이동이므로 전달받은 nowPage 에 맞는 조건으로 세팅
     		boardFrm.search.value = '';
     		boardFrm.nowPage.value = nowPage;
     		boardFrm.action = 'list.brd';
@@ -104,6 +105,7 @@ custom.js
 	...
 ```
 
+- 서버에 전송할 method 와 form, url 을 세팅한 후 ajax 비동기 방식으로 지정한 경로 페이지 요청을 날린다
 - 스크립트에서는 넘겨받은 nowPage 및 search 요소에 적절한 폼 데이터 처리 후 ajax 비동기 방식으로 지정한 경로 페이지 요청을 날린다
 
 

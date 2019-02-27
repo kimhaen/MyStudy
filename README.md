@@ -39,7 +39,8 @@
 - [Statement & PreparedStatement](https://github.com/daesungRa/MyStudy/blob/master/DB/Statement&PreparedStatement.md) (190103, thur)
 - [DBCP](https://github.com/daesungRa/MyStudy/blob/master/DB/DBCP.md) (190104, fri)
 - [[MyBatis] 마이바티스 시작, 환경설정, 예제](https://github.com/daesungRa/MyStudy/blob/master/DB/mybatis01.md) (190225, mon)
-- [[MyBatis] 마이바티스 SqlSession 활용](https://github.com/daesungRa/MyStudy/blob/master/DB/mybatis02.md) (190226, tue)
+- [[MyBatis] 마이바티스 SqlSession 활용, 기본 쿼리](https://github.com/daesungRa/MyStudy/blob/master/DB/mybatis02.md) (190226, tue)
+- [[MyBatis] 마이바티스 동적 SQL](https://github.com/daesungRa/MyStudy/blob/master/DB/mybatis03.md) (190227, wed)
 
 ### Algorithm
 

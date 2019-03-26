@@ -42,4 +42,10 @@ SELECT s.* FROM (
 	* 여기서 주의할 점은 startNo 인데, ROWNUM 은 1부터 차례대로 카운트하므로 startNo = 1 혹은 이전 글의 개수 + 1 인 반면,
 	* LIMIT 에서는 인덱스 0에서부터 바로 카운트된다 (이 차이점 때문에 애먹음)
 
+### SEQUENCE 사용
+
+- Oracle 은 시퀀스를 사용한다. 별도의 시퀀스를 생성하고 NEXTVAL, CURRVAL 을 활용한다
+- 그러나 MySql 은 시퀀스 사용 없이 애초에 테이블 생성 시 AUTO_INCREMENT 조건을 적용한다
+
+
 

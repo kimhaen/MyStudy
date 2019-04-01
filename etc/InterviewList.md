@@ -6,16 +6,32 @@
 
 ## 목차
 
-1. [자바 기초](#자바 기초)
-2. [자바 심화](#자바 심화)
-3. [JSP / Servlet](#JSP / Servlet)
-4. [Spring]
-5. [Oracle, MySql]
-6. [프론트 기술]
-7. [알고리즘]
-8. [프로젝트 설명]
-9. [기타]
+1. [자바 기초](#Basic)
+2. [자바 심화](#Intensive)
+3. [JSP / Servlet](#JSP/Servlet)
+4. [Spring](#Spring)
+5. [Oracle, MySql](#Database)
+6. [프론트 기술](#Front)
+7. [알고리즘](#Algorithm)
+8. [프로젝트 설명](#Project)
+9. [기타](#Other)
 
-## 자바 기초
+## Basic
+
+## Intensive
+
+## JSP/Servlet
+
+## Spring
+
+## Database
+
+## Front
+
+## Algorithm
+
+## Project
+
+## Other
 
 

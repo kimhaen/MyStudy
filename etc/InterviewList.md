@@ -20,7 +20,8 @@
 12. [네트워크](#Network)
 13. [기타](#Other)
 
-## Basic [목차로](#목차)
+## Basic
+[목차로](#목차)
 
 - 자바의 특징
 	* 선 마이크로시스템즈에서 95년 제임스 고슬링을 필두로 만들어짐. 2010년 오라클에 인수됨
@@ -56,7 +57,8 @@
 - 추상 클래스와 인터페이스
 - 예외처리
 
-## Intensive [목차로](#목차)
+## Intensive
+[목차로](#목차)
 
 - 컬렉션 프레임워크
 	* Array 와 ArrauList 의 차이
@@ -77,7 +79,8 @@
 - Java Networking, TCP/UDP
 - 소켓 프로그래밍
 
-## Web [목차로](#목차)
+## Web
+[목차로](#목차)
 
 - HTTP 프로토콜
 - 쿠키와 세션
@@ -88,13 +91,15 @@
 - MVC 패턴
 - Restful
 
-## JSP/Servlet [목차로](#목차)
+## JSP/Servlet
+[목차로](#목차)
 
 - JSP
 - Servlet
 - Container 란?
 
-## Spring [목차로](#목차)
+## Spring
+[목차로](#목차)
 
 - 스프링 프레임워크란?
 - IoC, DI
@@ -102,7 +107,8 @@
 - 스프링에서 싱글톤 패턴을 사용하는 이유
 - Filter, Interceptor
 
-## Database [목차로](#목차)
+## Database
+[목차로](#목차)
 
 - DBMS 란?
 - ERD 란?
@@ -128,14 +134,16 @@
 - Data Warehouse 란?
 - Oracle SQL 과 MySql 의 차이
 
-## Front [목차로](#목차)
+## Front
+[목차로](#목차)
 
 - HTML, CSS
 - Javascript, jQuery
 - Ajax
 - Responsive web
 
-## Algorithm [목차로](#목차)
+## Algorithm
+[목차로](#목차)
 
 - 스레드가 3개 생성되었을 때, t1, t2, t3 의 순서가 보장되는 코드 작성
 - pivotal(대각선이 고정인 행렬) 3x3, 4x4 를 뒤집는 로직 작성하기. 재귀 사용
@@ -147,13 +155,15 @@
 - 주어진 단일 연결리스트로부터 루프(Loop)를 발견하여 존재하면 true, 존재하지 않으면 false 를 반환하는 함수 detectLoop() 작성하기
 	* 토끼와 거북이(Hare and Tortoise) 알고리즘 활용
 
-## Project [목차로](#목차)
+## Project
+[목차로](#목차)
 
 - 협업의 방식, 장단점 (git 과 연관)
 - 코드 리뷰 방식은?
 - 프로젝트 진행 시 어려웠던 점과 극복 방식은?
 
-## Computer [목차로](#목차)
+## Computer
+[목차로](#목차)
 
 - 이진 체계 설명
 - 진법 변환
@@ -164,11 +174,13 @@
 - Processor
 - Scheduling
 
-## Linux [목차로](#목차)
+## Linux
+[목차로](#목차)
 
 - 기본 명령어
 
-## Network [목차로](#목차)
+## Network
+[목차로](#목차)
 
 - IP Address, Port
 - IPv4, IPv6
@@ -176,7 +188,8 @@
 - OSI 7 Layer
 - VPN, NAT 비교
 
-## Other [목차로](#목차)
+## Other
+[목차로](#목차)
 
 - 동기와 비동기의 차이, 장단점
 - Stack, Queue

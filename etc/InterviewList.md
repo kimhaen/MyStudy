@@ -108,8 +108,17 @@
 	* **Map**
 		- Key 와 Value 로 이루어진 쌍의 집합, 순서는 존재하지 않으며 키는 중복 불가, 값은 중복 가능
 		- 값을 가져올 때 Map 컬렉션은 Iterator 사용이 불가하므로, 일반적으로 Key 값으로 이루어진 Set 을 추출해 활용한다
-		- Hashtable
+		- HashTable
+			* put, get 메서드
+			* 동기화 적용 (synchronized 키워드)
+			* key, value 에 null 을 허용하지 않는다
 		- HashMap
+			* HashTable 과 동일하나 동기화가 적용되지 않음
+			* null 입력 가능
+			* 빈번히 사용됨
+		- ConcurrentHashMap
+			* HashMap 에 동기화가 적용. thread-safe 하도록 만들기 위함
+			* null 을 허용하지 않는다
 		- SortedMap
 - StringBuffer 와 StringBuilder 의 차이
 	* 먼저, String 은 사이즈 변경 및 + 연산 시 새로운 주소에 새롭게 할당되지만, StringBuffer 와 StringBuilder 는 concat 시 동일한 주소에 append 된다
@@ -118,7 +127,7 @@
 		- 동기화 지원, 모든 메서드에 synchronized 키워드가 붙는다
 	* StringBuilder
 		- 동기화 지원하지 않음
-	* 동기화를 지원한다는 것은 그만큼 스레드 안전하지만, 속도가 느리다
+	* 동기화를 지원한다는 것은 그만큼 스레드 안전하지만, 속도가 느리다는 것
 	* 그 외에 두 클래스는 모든 면에서 동일하다
 - 대표적인 디자인패턴
 	* Singleton
@@ -177,6 +186,9 @@
 - DBMS 란?
 - ERD 란?
 - UML 이란?
+- 정규화(Normalization) 의 정의와 사용 이유, 장단점
+	* 데이터 중복 및 컬럼 간 종속 문제를 해결하기 위해 사용
+	* 각종 이상현상을 방지할 수 있으나, 데이터 검색 시 잦은 조인으로 인해 속도가 상대적으로 느릴 수 있다
 - 무결성
 - Sequence, Auto-Increment
 - join

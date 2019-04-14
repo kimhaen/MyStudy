@@ -15,7 +15,8 @@
 6. [Spring](#Spring)
 7. [HTML/CSS](#HTML-CSS)
 8. [Javascript](#Javascript)
-9. [기타 정보](#기타-정보)
+9. [스터디](#GroupStudy)
+10. [기타 정보](#기타-정보)
 
 ## 카테고리
 
@@ -113,6 +114,10 @@
 ### 게시판 만들기 연습!!
 
 - [[BoardTest01] 프로젝트 생성부터 MVC 만들고 임시테스트까지](https://github.com/daesungRa/MyStudy/blob/master/SpringPractice/[springmvc-BoardTest01]init_to_testLogic.md) (190124, thur)
+
+### GroupStudy
+
+- [[스티브리자바] 선행학습기초예제, 스프링 기초](https://github.com/daesungRa/MyStudy/blob/master/GroupStudy/steveleejava-study-01.md) (190414, sun)
 
 ### 기타 정보
 

@@ -6,7 +6,7 @@
 > 몫과 나머지 구하기 연산으로 응용문제 풀기
 
 ## 설탕 배달  ([백준2839])
->Q. N 킬로그램의 설탕의 배달하기 위해 3 킬로그램과 5 킬로그램으로 구성된 최소 개수의 설탕봉지를 구성한다
+>Q. N 킬로그램의 설탕의 배달하기 위해 3 킬로그램과 5 킬로그램으로 구성된 최소 개수의 설탕봉지를 구한다
 
 첫째 줄에 N이 주어진다. (3 ≤ N ≤ 5000)
 상근이가 배달하는 봉지의 최소 개수를 출력한다. 만약, 정확하게 N킬로그램을 만들 수 없다면 -1을 출력한다.
@@ -24,7 +24,7 @@ package arithmetic;
 
 import java.util.Scanner;
 
-public class DeliverSugar {
+public class SugarDeliver {
 
 	static Scanner scn = new Scanner(System.in);
 

@@ -17,6 +17,7 @@
 	* [DOM](https://developer.mozilla.org/ko/docs/DOM) (Document Object Model)
 		- html 이나 xml 문서에서 각 객체들을 처리하기 위한 api
 		- 문서의 구조적 형태를 제공하므로 자바스크립트로 컨트롤 가능
+- 최상위 Throwable 하위구조 살펴보기 (Exception + err ~)
 
 ### 스프링 시작!
 
@@ -41,7 +42,7 @@
 
 ### 스프링 실습
 
-- DI 실습 (Phone)
+#### DI 실습 (Phone)
 	* 인터페이스의 사용 이유?
 		- 프로젝트 아키텍쳐가 큰 틀(자바, mvc), 화면 구성 등을 만들고 각 개발자에게 복사해서 나눠준다
 		- 자바 파일의 경우, 이때 인터페이스를 만들어서 각 메서드들을 구현하도록 강제한다
@@ -101,7 +102,68 @@ INFO : org.springframework.context.support.GenericXmlApplicationContext - Closin
 
 ```
 
-- AOP 실습 
+#### AOP 실습
+	* AspectJ Weaver 라이브러리 의존성 받기
+	* ~.AOP 패키지 하위에 관련 파일 작성
+		- Supernaturalpowers.java(i), Jiminsuper.java, SeolHyensuper.java 는 만들어진 파일 받을 것
+		- 변신하고 스킬 쓰고(on, off) 그런거를 구현한 것임
+		- 나머지 LogAop.java, MainTest.java 파일은 직접 만들 것
+	* 빈 설정파일 만들기
+		- DI 와 같은 방식으로 aopctx.xml 파일을 만들고, AOP 실행을 위한 LogAop.java 파일 만들기
+		- LogAop.java 에서 최상위 Throwable 을 사용하되, 내부 catch 를 사용하지 못하는 이유는 Object 객체를 반환하도록 설계되어 있기 때문이다.
+		- catch 내부에서 반환할 Object 가 존재할 수 없다
+
+**aopctx.xml**
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<bean id='logaop' class='com.steveleejava.springstep2.AOP.LogAop' />
+	
+	<aop:config>
+		<aop:aspect id='logger' ref='logaop'>
+			<aop:pointcut id='pointc' expression='within(com.steveleejava.springstep2.AOP.*)'></aop:pointcut>
+			<aop:around pointcut-ref='pointc' method='loggerAoptest'></aop:around>
+		</aop:aspect>
+	</aop:config>
+	
+	<bean id='' class='com.steveleejava.springstep2.AOP.SeolHyensuper' />
+	
+</beans>
+
+```
+
+**LogAop.java**
+```JAVA
+package com.steveleejava.springstep2.AOP;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+public class LogAop {
+
+	public Object loggerAoptest (ProceedingJoinPoint joinpoint) throws Throwable {
+		String signature = joinpoint.getSignature().toString();
+		System.out.println(signature + " is start");
+		long st = System.currentTimeMillis();
+		
+		try {
+			Thread.sleep(1000);
+			Object obj = joinpoint.proceed();
+			return obj;
+		} finally {
+			long et = System.currentTimeMillis();
+			System.out.println(signature + " id end");
+			System.out.println(signature + " 경과시간 : " + (et - st));
+		}
+	}
+}
+
+```
+	*
 
 
 

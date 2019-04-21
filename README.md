@@ -118,6 +118,7 @@
 ### GroupStudy
 
 - [[스티브리자바] 선행학습기초예제, 스프링 기초](https://github.com/daesungRa/MyStudy/blob/master/GroupStudy/steveleejava-study-01.md) (190414, sun)
+- [[스티브리자바] 웹 기초, 메이븐, 스프링(DI, AOP)](https://github.com/daesungRa/MyStudy/blob/master/GroupStudy/steveleejava-study-02.md) (190421, sun)
 
 ### 기타 정보
 

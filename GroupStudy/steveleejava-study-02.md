@@ -6,7 +6,7 @@
 
 ### 자바 및 웹 기초 훑어보기
 
-- 자바에서 [Annotation](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98){: target="_blank"} 이란 무엇을 의미하는가?
+- 자바에서 [Annotation](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98) 이란 무엇을 의미하는가?
 	* 자바 소스 코드에 추가하여 사용할 수 있는 메타데이터의 일종 (위키백과)
 	* 클래스 파일에 임베디드되어 컴파일러에 의해 생성된 후 JVM 에 포함되어 작동
 - 자바 형변환과 parsing 의 차이점?
@@ -14,7 +14,7 @@
 	* 파싱 : 타입 자체가 아예 다를 때 사용. 예를 들어, 숫자로 보이지만 실제로 문자열인 경우 숫자형으로 변환시키는 것을 의미한다
 	* 이유 => 결국 로직보다 중요한 것은 데이터이다
 - 자바스크립트 dom 및 document 의 의미
-	* [DOM](https://developer.mozilla.org/ko/docs/DOM){: target="_blank"} (Document Object Model)
+	* [DOM](https://developer.mozilla.org/ko/docs/DOM) (Document Object Model)
 		- html 이나 xml 문서에서 각 객체들을 처리하기 위한 api
 		- 문서의 구조적 형태를 제공하므로 자바스크립트로 컨트롤 가능
 
@@ -38,6 +38,72 @@
 - AOP
 	* 반복되는 로직에 대해 중복 코드를 없애기 위해 해당 로직을 공통적으로 작성해서 그것이 요구되는 각 관점(Aspect)에서 실행시키는 것을 의미
 	* 로그인 체크나 금융쪽 트랜잭션 컨트롤(commit and rollback), 보안 인증 시에 주로 사용된다
+
+### 스프링 실습
+
+- DI 실습 (Phone)
+	* 인터페이스의 사용 이유?
+		- 프로젝트 아키텍쳐가 큰 틀(자바, mvc), 화면 구성 등을 만들고 각 개발자에게 복사해서 나눠준다
+		- 자바 파일의 경우, 이때 인터페이스를 만들어서 각 메서드들을 구현하도록 강제한다
+		- DI 를 위해서 특정 모듈이 인터페이스 파라미터를 주입받도록 설계하면, 그것이 구현된 모든 구현체들을 의존성 낮게 주입받아 사용할 수 있다
+		- 예를 들어 Phone 인터페이스를 구현한 모든 구현체들을 원하는 대로 주입받아 사용할 수 있는 것
+	* 빈 설정 파일 만들기
+		- appServlet 밑의 servlet-context.xml 을 src/main/resources 밑에 복사
+		- 이름을 phonectx.xml 로 변경하고, 네임스페이스를 'beans' 만 두고 모두 해제
+		- 불필요한 태그들을 제거하고 최상위 'beans:bean' 을 'bean' 으로 변경
+		- Phone 인터페이스를 구현한 FeaturePhone 의 빈을 등록한다
+
+**phonectx.xml**
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id='phone' class='com.steveleejava.springstep2.DI.FeaturePhone' />
+	
+</beans>
+```
+
+	* 빈을 로드해 사용하는 메인 자바 파일 만들기
+		- 메인 메서드에서는, ApplicationContext 구현체를 사용하여 phonectx.xml 컨텍스트 설정파일을 로드하고,
+		- 등록되어 있는 빈을 Phone 인터페이스로 주입 받아 사용하게 된다
+		- phonectx.xml 설정파일에서 'phone' 이라는 아이디로 등록된 빈을 변경함으로써 그것을 주입받아 사용하는 모든 모듈에 적용할 수 있다
+		- ctx 구현체는 마지막에 close() 해줘야 한다
+
+**MainClass.java**
+```JAVA
+package com.steveleejava.springstep2.DI;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		AbstractApplicationContext ctx = new GenericXmlApplicationContext("classpath: phonectx.xml");
+		Phone phone = ctx.getBean("phone", Phone.class);
+		phone.use();
+		
+		ctx.close();
+	}
+
+}
+```
+
+	* 아이폰으로 변경한 후 결과화면 (콘솔)
+
+```
+INFO : org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [phonectx.xml]
+INFO : org.springframework.context.support.GenericXmlApplicationContext - Refreshing org.springframework.context.support.GenericXmlApplicationContext@ba8a1dc: startup date [Sun Apr 21 13:10:29 KST 2019]; root of context hierarchy
+아이폰입니다. 시리야!
+INFO : org.springframework.context.support.GenericXmlApplicationContext - Closing org.springframework.context.support.GenericXmlApplicationContext@ba8a1dc: startup date [Sun Apr 21 13:10:29 KST 2019]; root of context hierarchy
+
+```
+
+- AOP 실습 
+
+
 
 
 

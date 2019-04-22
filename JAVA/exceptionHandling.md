@@ -22,8 +22,8 @@
 - 결과적으로 Exception 클래스 하위 자손은 두 그룹으로 나눌 수 있는데,
 
 ```
-1. **Exception 클래스 직계자손 클래스들**, 즉 IOException, ClassNotFoundException 등 RuntimeException 계를 제외한 클래스들과
-2. **RuntimeException 계 자손 클래스**들이 그것이다.
+1. Exception 클래스 직계자손 클래스들, 즉 IOException, ClassNotFoundException 등 RuntimeException 계를 제외한 클래스들과
+2. RuntimeException 계 자손 클래스들이 그것이다.
 ```
 
 - RuntimeException 클래스들은 주로 프로그래머의 실수(프로그래밍 요소)에 의해서 발생될 수 있다(IndexOutOfBoundsException, NullPointerException, ClassCastException, ArithmeticException).
@@ -63,7 +63,7 @@ class ExceptionEx9 {
 		try {
 			Exception e = new Exception("예외 발생시킴!");
 			throw e;
-			// throw new Exception("예외 발생시킴!");
+			// throw new Exception("예외 발생시킴!"); // 한 줄로 작성가능
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -71,9 +71,31 @@ class ExceptionEx9 {
 }
 ```
 
+- **메서드에 예외 선언하기**
+	* 메서드 선언부에 **'throws'** 키워드를 이용하여 발생할 수 있는 예외 클래스를 지정한다. 예외가 여러 개인 경우 콤마(',')로 구분한다.
+	* 이때 발생한 예외는 던져져서(throws) 메서드를 사용하는 호출부에서 처리하게 된다.
+	* 메서드 오버라이드 혹은 이 메서드를 사용하는 사용자는 선언부를 통해 발생 가능한 예외의 종류를 쉽게 알 수 있어 적절한 대비가 가능하다(try-catch, 예외의 처리가 강요됨).
+	* 이러한 throws 처리된 예외는 Call Stack 구조에 따라 연속적으로 던져질 수 있으며, 최종 main 메서드에서도 처리되지 않는다면 프로그램이 비정상 종료된다.
 
+## finally 블럭
 
+- try-catch 문과 함께 **예외의 발생여부에 상관없이 실행되어야할 코드**를 포함. try-catch-finally 순.
+- try 블럭 혹은 catch 블럭 내에 return; 키워드가 있더라도, finally 블럭이 먼저 실행된 후에 리턴된다(메서드 종료).
 
+## 자동자원반환 **try-catch-resources** 문
+
+- IO 나 DB 커넥션 등을 활용하는 로직에서 사용한 자원을 반환할 때 유용하게 사용될 수 있음(JDK1.7 부터 추가됨).
+- 만약 finally 블럭에서 close() 메서드를 호출한다면 해당 자원의 존재유무를 체크하고 별도의 예외처리를 하는 로직이 추가적으로 필요하지만,
+- try-catch-resources 문을 사용한다면 **try 블럭을 벗어나는 순간 자동으로 close() 메서드가 호출**된다. 그 이후에 catch 나 finally 블럭이 실행된다.
+- 다만 이것을 위해서는 생성하는 클래스가 AutoCloseable 인터페이스를 구현한 것이어야 한다(close() 메서드 오버라이드 강제).
+
+```JAVA
+[코드 작성]
+```
+
+## 사용자정의 예외 만들기
+
+- 가급적 기존의 예외클래스를 이용하자..
 
 
 

@@ -8,15 +8,16 @@
 ## 목차
 
 1. [JAVA](#JAVA)
-2. [DB](#DB)
-3. [Algorithm](#Algorithm)
-4. [Git](#Git)
-5. [JSP/Servlet](#JSP-Servlet)
-6. [Spring](#Spring)
-7. [HTML/CSS](#HTML-CSS)
-8. [Javascript](#Javascript)
-9. [스터디](#GroupStudy)
-10. [기타 정보](#기타-정보)
+2. [Python](#Python)
+3. [DB](#DB)
+4. [Algorithm](#Algorithm)
+5. [Git](#Git)
+6. [JSP/Servlet](#JSP-Servlet)
+7. [Spring](#Spring)
+8. [HTML/CSS](#HTML-CSS)
+9. [Javascript](#Javascript)
+10. [스터디](#GroupStudy)
+11. [기타 정보](#기타-정보)
 
 ## 카테고리
 
@@ -30,6 +31,10 @@
 - [자바 기본개념 및 커맨드라인 환경에서 자바 컴파일 후 실행하기](https://github.com/daesungRa/MyStudy/blob/master/JAVA/CommandlineCompile.md) (190113, sun)
 - [원활한 협업을 위한 자바 상식, 규칙](https://github.com/daesungRa/MyStudy/blob/master/JAVA/JavaCommonSenseForCooperation.md) (최초 190113, sun, 지속업뎃)
 - [예외처리 정리](https://github.com/daesungRa/MyStudy/blob/master/JAVA/exceptionHandling.md) (190421, sun)
+
+### Python
+
+- [파이썬 설치 및 환경설정 + 파이참](https://github.com/daesungRa/MyStudy/blob/master/Python/pythonConfiguration.md) (190423, tue)
 
 ### DB
 

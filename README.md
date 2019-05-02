@@ -49,6 +49,7 @@
 - [[MyBatis] 마이바티스 SqlSession 활용, 기본 쿼리](https://github.com/daesungRa/MyStudy/blob/master/DB/mybatis02.md) (190226, tue)
 - [[MyBatis] 마이바티스 동적 SQL](https://github.com/daesungRa/MyStudy/blob/master/DB/mybatis03.md) (190227, wed)
 - [[Oracle vs MySql] 오라클과 MySql 비교](https://github.com/daesungRa/MyStudy/blob/master/DB/diffOracleMySql.md) (190326, tue)
+- [[MongoDB] MongoDB 01](https://github.com/daesungRa/MyStudy/blob/master/DB/mongodb01.md) (190502, thur)
 
 ### Algorithm
 

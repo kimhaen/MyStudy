@@ -132,4 +132,4 @@
 - [웹 프로젝트를 위한 기본 기술목록](https://github.com/daesungRa/MyStudy/blob/master/etc/BasicTechStackForWeb.md) (최초 190123, wed, 지속 업뎃)
 - [기술 참조 모음](https://github.com/daesungRa/MyStudy/blob/master/etc/Reference.md) (190115, tue)
 - [인터뷰 리스트](https://github.com/daesungRa/MyStudy/blob/master/etc/InterviewList.md) (최종수정일 : 190401, mon)
-
+- [공부 스케줄](https://github.com/daesungRa/MyStudy/blob/master/etc/myschedule.md) (최종수정일 : 190502, thur)

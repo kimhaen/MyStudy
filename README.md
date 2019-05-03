@@ -37,6 +37,7 @@
 ### Python
 
 - [파이썬 설치 및 환경설정 + 파이참](https://github.com/daesungRa/MyStudy/blob/master/Python/pythonConfiguration.md) (190423, tue)
+- [[FLASK] 플라스크 환경설정 방법](https://github.com/daesungRa/MyStudy/blob/master/Python/flaskconfig.md) (190503, fri)
 
 ### DB
 
@@ -63,6 +64,7 @@
 ### Git
 
 - [Reset, Checkout 명령어](https://github.com/daesungRa/MyStudy/blob/master/GitStudy/CompareResetCheckout.md) (181231, mon)
+- [git 내부 캐시정보 삭제하기](https://github.com/daesungRa/MyStudy/blob/master/GitStudy/deletecaches.md) (190503, fri)
 
 ### JSP Servlet
 

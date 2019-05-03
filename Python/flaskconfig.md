@@ -18,7 +18,7 @@ if __name__ == '__main__':
 - 일반적인 flask app 은 위와 같은 방식으로 인스턴스 생성 후 구동된다.
 - 주석 부분의 설명처럼, app 에는 디버그 모드, 테스트 모드, 비밀 키 등 여러 종류의 환경설정을 추가할 수 있다.
 
-** 이하 참조 : [flask-docs](https://flask-docs-kr.readthedocs.io/ko/latest/config.html) **
+이하 참조 : [flask-docs](https://flask-docs-kr.readthedocs.io/ko/latest/config.html)
 
 ## 설정 다루기
 

@@ -1,6 +1,6 @@
 ﻿
 ![author](https://img.shields.io/badge/author-daesungRa-lightgray.svg?style=flat-square)
-![date](https://img.shields.io/badge/date-190502-lightgray.svg?style=flat-square)
+![date](https://img.shields.io/badge/date-190504-lightgray.svg?style=flat-square)
 
 # 공부 스케줄
 

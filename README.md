@@ -37,7 +37,7 @@
 ### Python
 
 - [파이썬 설치 및 환경설정 + 파이참](https://github.com/daesungRa/MyStudy/blob/master/Python/pythonConfiguration.md) (190423, tue)
-- [[FLASK] 플라스크 환경설정 방법](https://github.com/daesungRa/MyStudy/blob/master/Python/flaskconfig.md) (190504, sat)
+- [[FLASK] 플라스크 환경설정 방법](https://github.com/daesungRa/MyStudy/blob/master/Python/flaskconfig.md) (190506, mon)
 
 ### DB
 

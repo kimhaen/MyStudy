@@ -3,7 +3,7 @@
 
 # 플라스크 프로젝트 시작하기
 
-> Python 3.7 / Flask / MongoDB / summernote editor 등등
+> Python 3.7 / Flask / MongoDB / PyCharm / PyMongo / summernote editor 등등
 
 - [Flask 공식 도큐먼트](http://flask.pocoo.org/docs/1.0/)와 [MongoDB 연동 예제](https://api.mongodb.com/python/current/)들을 참조한다
 - 기본 베이스는 과장님이 만든 [flask 예제 프로젝트 - fork](https://github.com/daesungRa/flask)

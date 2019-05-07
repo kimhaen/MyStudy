@@ -39,7 +39,7 @@
 
 - [파이썬 설치 및 환경설정 + 파이참](https://github.com/daesungRa/MyStudy/blob/master/Python/pythonConfiguration.md) (190423, tue)
 - [[FLASK] 플라스크 개요 및 환경설정](https://github.com/daesungRa/MyStudy/blob/master/Python/flaskconfig.md) (190506, mon)
-- [[FLASK] 플라스크 프로젝트 살펴보기](https://github.com/daesungRa/MyStudy/blob/master/Python/startflask.md) (190507, tue)
+- [[FLASK] 플라스크 프로젝트 살펴보기 (with pymongo)](https://github.com/daesungRa/MyStudy/blob/master/Python/startflask.md) (190507, tue)
 
 ### DB
 

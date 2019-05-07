@@ -5,7 +5,7 @@
 
 > Python 3.7 / Flask / MongoDB / summernote editor 등등
 
-- [flask 공식 도큐먼트](http://flask.pocoo.org/docs/1.0/)와 [mongodb 연동 예제](https://api.mongodb.com/python/current/)들을 참조한다
+- [Flask 공식 도큐먼트](http://flask.pocoo.org/docs/1.0/)와 [MongoDB 연동 예제](https://api.mongodb.com/python/current/)들을 참조한다
 - 기본 베이스는 과장님이 만든 [flask 예제 프로젝트 - fork](https://github.com/daesungRa/flask)
 - 포커스는 flask 프로젝트 구성 및 요청 처리과정, 원격지 mongodb 에 접근하여 데이터를 관리하는 방식을 알아가는 것에 있다.
 
@@ -19,10 +19,132 @@
 
 - 몽고디비는 기존의 RDBMS 의 비용 및 확장성 문제 보완을 위해 만들어진 대표적인 NoSQL 이다.
 - 스키마 구조가 없기 때문에 초대량의 데이터를 매우 빠론 속도로 처리할 수 있고, 자유로운 확장 및 마이그레이션이 가능하다. 일반적으로 master-slave 구조로 3 개 이상의 데이터서버를 구축해 상호보완적으로 운용한다.
-- 그러나 데이터 수정이 잦고 복잡한 쿼리가 필요하거나 안정적이며 일관성 있는 데이터 처리가 요구될 때는 불리한 측면이 있다. 그리고 빅데이터를 다루는 만큼 하드웨어적인 디스크 성능도 중요하고, 부분적인 데이터 유실 가능성이 존재한다.
+- 그러나 데이터 수정이 잦고 복잡한 쿼리가 필요하거나 안정적이며 일관성 있는 데이터 처리가 요구될 때는 불리한 측면이 있다. 그리고 빅데이터를 다루는 만큼 하드웨어적인 디스크 성능이 중요하고, 부분적인 데이터 유실 가능성도 존재한다.
 - 기본 단위는 document, 즉 문서이며 테이블에 해당하는 개념은 collection 이다.
 - 이 collection 내에 원하는 방식의 JSON(혹은 BSON) 데이터를 저장 및 조회한다.
 - python 프로젝트에서 MongoDB 를 사용하기 위해서는 디비 서버로부터 클라이언트 커넥션을 얻어오기 위한 **PyMongo 모듈**이 필요하다.
+
+#### PyMongo 활용예제 ([pymongo docs](https://api.mongodb.com/python/current/index.html))
+
+- PyMongo 는 몽고디비를 활용할 수 있는 도구를 포함한 파이썬 기반 배포 모듈이다. (MongoDB 의 설치 및 구성방법은 [MongoDB Tutorial](https://docs.mongodb.com/manual/tutorial/) 을 참조한다.)
+- 설치
+    * 별도의 bson 패키지는 설치하지 말 것. 이미 pymongo 에는 고유의 bson 패키지가 포함되어 있다.
+    * 원하는 venv 에서 pip 모듈을 이용해 pymongo 를 install 한다. 업그레이드 시에는 --upgrade 옵션을 추가한다.
+- 사용 (post 데이터 활용예제)
+    * 먼저 설치한 pymongo 모듈의 MongoClient 를 import 한다. MongoClient 는 지정한 경로의 몽고디비의 인스턴스를 생성하는 모듈이다.
+    * MongoClient 로부터 인스턴스를 생성하고(접속주소, 포트번호 등), 인스턴스로부터 사용할 database 객체를 얻어온 후 최종적으로 원하는 collection 객체를 얻어온다.
+    * 기억할 점은, collection 객체를 얻어오기까지의 코드는 디비 서버에서 아무런 동작도 하지 않은 상태라는 것인데, 이후 첫 번째 document 를 insert 하는 과정에서 collection, database 객체가 최초 생성된다.
+    * 하나의 post 를 등록하기 위해 기존의 JSON 방식으로 데이터를 만들고 insert 를 수행한다. 이 과정에서 JSON 데이터는 자동적으로 BSON(binary) 타입으로 convert 된다. (특히 native python 타입)
+    * 지금까지의 샘플 코드는 다음과 같다.
+
+```python
+from flask import Flask, render_template
+from pymongo import MongoClient
+import datetime
+
+app = Flask(__name__)
+
+@app.route("/samplePost", methods=['GET'])
+def samplePost():
+    # client = MongoClient('localhost', 27017)
+    client = MongoClient('mongodb://localhost:27017')
+    db = client.test_database
+    collection = db.posts
+    
+    post = {
+                "author":"Mike",
+                "text":"My first blog post!",
+                "tags":["mongodb", "python", "pymongo"],
+                "date":datetime.datetime.utcnow()
+            }
+    
+    collection.insert_one(post)
+    client.close()
+    
+    return "post 등록 완료!"
+
+@app.route("/postList", methods=['GET'])
+def postList():
+    # client = MongoClient('localhost', 27017)
+    client = MongoClient('mongodb://localhost:27017')
+    db = client.test_database
+    collection = db.posts
+    results = collection.find()
+    client.close()
+    
+    return render_template("posts.html", data=results)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+- 위 샘플코드에서는 기본적으로 insert 와 find 기능을 통해 post 를 등록하고 조회한다.
+- find 는 등록된 모든 데이터들을 조회해 리스트 형식으로 반환한다.
+- 참고로, JSON 데이터 정렬해주는 사이트 : http://json.parser.online.fr/
+
+#### pymongo 확장된 활용
+
+- Return the _id Field
+    * MongoDB 에서 Field 는 Column 을 의미한다. (document 는 row 를 의미함)
+    * insert_one 메서드를 실행하면 결과에 따라 특정 반환값을 리턴하는데, InsertOneResult 객체가 그것이다.
+    * InsertOneResult 객체는 inserted_id 라는 속성을 가지고 있는데 이것은 도큐먼트 insert 시 자동으로 생성되는 _id 필드의 값이다.
+    * _id 필드는 insert 작업 시 특별한 specify 가 없다면 MongoDB 에서 unique 특성을 지닌 id 값을 자동으로 생성해 각 도큐먼트와 함께 저장한다.
+    * 이것은 구분자 역할을 하는데, 일반적으로 힙 메모리 주소값을 갖는다. (ex. 5b1910482ddb101b7042fcd7)
+    * 여기서 꼭 기억할 점은, _id 필드의 값이 binary 타입이라는 것인데, 이것은 string 타입과 다르므로 주의해서 사용할 것.
+    * ```_id```의 값을 특정해서 저장할 수도 있는데, 컬렉션에 ```[{"_id":1, "text":"hihi"}, {"_id":2, "text":"hello"}, ...]``` 와 같은 식으로 저장하면 된다.
+    * 다음은 위 코드에서 inser_one 의 리턴값을 반환하는 로직을 추가한 것이다.
+
+```python
+...
+
+    x = collection.insert_one(post)
+    client.close()
+    
+    return render_template("insertedid.html", id=x.inserted_id)
+
+...
+``` 
+
+- Getting a Single Document With find_one()
+    * find 메서드는 컬렉션에 저장된 모든 정보를 리턴한다.
+    * find_one 메서드는 인자로 입력한 정보(key-value) 에 해당하는 도큐먼트를 리턴한다.
+    * 매칭되는 도큐먼트가 없다면 아무 값도 리턴하지 않는다.
+    * 만약 ```result = collention.find_one({"author":"Mike"})``` 명령을 실행한다면 이에 해당하는 document 가 리턴되는 식이다.
+    * 인자로 ```_id``` 컬럼 값을 넘겨줘도 동일한 document 를 리턴한다.
+    * 일반적으로 입력하는 데이터 타입은 string 이므로, 실제 저장된 객체 주소 타입(binary)과 매칭시키기 위하여 ```ObjectId()``` 메서드를 꼭 활용해야 한다! **> 문자열 값을 객체 아이디 형식으로 변환해줌**
+
+```python
+...
+
+@app.route("/findone/<post_id>", methods=['POST'])
+def findoneResult(post_id):
+    ...
+
+    doc = collection.find_one({"_id":ObjectId(post_id)})
+    client.close()
+    
+    return render_template("findoneresult.html", doc=doc)
+
+...
+```
+
+- Insert Multiple Documents
+
+- Quering for More Than One Document
+
+- Counting
+
+- Range Queries
+
+- Indexing
+
+#### Python 에서 취급되는 Unicode Strings 에 대한 간단설명
+
+- Python 코드를 통해 몽고디비 서버로부터 얻어온 각 string 데이터들은 뭔가 약간 생김새가 다르다. (e.g. u'Mike' instead of 'Mike')
+- 앞서 설명했듯 몽고디비는 **BSON format** 의 데이터를 저장하는데, 이것은 UTF-8 으로 인코딩된 것이므로 PyMongo 는 저장된 모든 데이터가 **UTF-8 하에서만 유효하다는 것**을 보장해야만 한다.
+- Regular string (<type 'str'>) 이 디비에 저장될 때는 바로 UTF-8 인코딩이 이루어지고 유효성이 보장된 다음 저장되는 반면, Unicode strings (<type 'unicode'>) 는 반대로 저장된 BSON 문자열에서 UTF-8 으로 인코딩이 먼저 된 이후에 반환된다.
+- 그러므로 저장된 BSON 데이터를 조회하는 PyMongo 입장에서는 바이너리 데이터에서 UTF-8 으로 변환된 데이터라는 사실을 적시함으로써 안정성을 보장한다.
+- [you can read more about Python unicode strings here](https://docs.python.org/3/howto/unicode.html) 
 
 ## 프로젝트 설명
 

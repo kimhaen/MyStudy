@@ -1,7 +1,35 @@
 ﻿![author](https://img.shields.io/badge/author-daesungRa-lightgray.svg?style=flat-square)
 ![date](https://img.shields.io/badge/date-190503-lightgray.svg?style=flat-square)
 
-# 플라스크 application 환경설정
+# Flask overview
+
+## Flask and Django
+
+- Flask 는 파이썬 기반의 경량 웹 프레임워크이다.
+- 같은 파이썬 기반의 Django framework 도 존재한다.
+- 플라스크는 최소한의 뼈대로부터 출발하는 경량이면서 자유도 높은 모듈이고, 쟝고는 기본적인 구조가 갖춰진 상대적으로 자유도가 낮은 모듈이다.
+- 둘은 장단점이 있으니, 필요에 따라 다르게 사용하면 된다.
+
+## 개요
+
+- 플라스크는 Werkzeug WSGI(Web Server Gateway Interface) 툴킷과 Jinja2 template engine 으로 구성된다(python 기반).
+- 벡자이크는 웹서버가 웹앱과 상호작용하는 방식 및 request 에 따른 처리과정을 정의하는 인터페이스이며,
+- Jinja2 는 html, css 등과 사용되는 템플릿 엔진이다. jstl 과 같이 간결한 문법으로 작성 가능하며, flask 기반으로 운용된다. 물론 독립적으로도 사용 가능하다.
+
+## Flask 프로젝트 기본 구조
+
+- 완벽하게 정해진 구조는 없지만, 일반적으로 다음과 같은 형태로 많이 사용한다.
+
+![플라스크 프로젝트 기본구조](https://github.com/daesungRa/MyStudy/blob/master/imgs/python/flaskstructure01.JPG)
+
+- 루트 프로젝트 디렉토리 하위에 웹앱 구동파일(flask/hello.py)과 static, templates 디렉토리가 위치한다.
+- 웹앱 구동파일은 프로젝트 외부에 둬도 되는데, 이 때는 해당 패키지에 대한 __init__.py 파일을 만들어 모듈 방식으로 import 하도록 한다. (import 한 모듈로부터 원하는 어플리케이션 객체를 얻어와 run 하는 방식으로 사용).
+- static 에는 각종 모듈 및 라이브러리가 존재하고, templates 에는 정적 템플릿 파일들(html 등)이 존재한다.
+- venv 가상환경은 포함시켜도 되고 아니면 각 로컬에서(협업한다면) 개별적으로 구성해서 활용해도 된다(호환성만 맞는다면).
+- MVC 프로젝트라면 루트 경로 하위에 controller, model 등을 두면 되고, 규모가 커짐에 따라 리소스 파일(db, 환경변수 등)이 필요하다면 별도로 디렉토리를 만들어 일관성 있게 활용하면 된다. (그만큼 자유도가 높다)
+- 그 외 필요한 구성에 대해서는 팀별 약속에 따라 만들어가면 된다.
+
+# Flask application 환경설정
 
 ```python
 from flask import Flask

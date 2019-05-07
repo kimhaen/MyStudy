@@ -1,4 +1,5 @@
-﻿# 라대성의 공부 기록
+﻿
+# 라대성의 공부 기록
 
 이 프로젝트는 공부한 내용들을 그날그날 업로드 하는 것이 목적입니다.<br>
 구분은 과목별, 프로젝트별로 되어 있습니다
@@ -37,7 +38,8 @@
 ### Python
 
 - [파이썬 설치 및 환경설정 + 파이참](https://github.com/daesungRa/MyStudy/blob/master/Python/pythonConfiguration.md) (190423, tue)
-- [[FLASK] 플라스크 환경설정 방법](https://github.com/daesungRa/MyStudy/blob/master/Python/flaskconfig.md) (190506, mon)
+- [[FLASK] 플라스크 개요 및 환경설정](https://github.com/daesungRa/MyStudy/blob/master/Python/flaskconfig.md) (190506, mon)
+- [[FLASK] 플라스크 프로젝트 살펴보기](https://github.com/daesungRa/MyStudy/blob/master/Python/startflask.md) (190507, tue)
 
 ### DB
 
@@ -137,3 +139,4 @@
 - [웹 프로젝트를 위한 기본 기술목록](https://github.com/daesungRa/MyStudy/blob/master/etc/BasicTechStackForWeb.md) (최초 190123, wed, 지속 업뎃)
 - [기술 참조 모음](https://github.com/daesungRa/MyStudy/blob/master/etc/Reference.md) (190115, tue)
 - [인터뷰 리스트](https://github.com/daesungRa/MyStudy/blob/master/etc/InterviewList.md) (최종수정일 : 190401, mon)
+

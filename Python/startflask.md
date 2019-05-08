@@ -87,11 +87,11 @@ if __name__ == '__main__':
 - Return the _id Field
     * MongoDB 에서 Field 는 Column 을 의미한다. (document 는 row 를 의미함)
     * insert_one 메서드를 실행하면 결과에 따라 특정 반환값을 리턴하는데, InsertOneResult 객체가 그것이다.
-    * InsertOneResult 객체는 inserted_id 라는 속성을 가지고 있는데 이것은 도큐먼트 insert 시 자동으로 생성되는 _id 필드의 값이다.
-    * _id 필드는 insert 작업 시 특별한 specify 가 없다면 MongoDB 에서 unique 특성을 지닌 id 값을 자동으로 생성해 각 도큐먼트와 함께 저장한다.
+    * InsertOneResult 객체는 **inserted_id** 라는 속성을 가지고 있는데 이것은 도큐먼트 insert 시 자동으로 생성되는 **_id 필드**의 값이다.
+    * _id 필드는 insert 작업 시 별다른 specify 가 없다면 MongoDB 에서 unique 특성을 지닌 id 값을 자동으로 생성해 각 도큐먼트와 함께 저장한다.
     * 이것은 구분자 역할을 하는데, 일반적으로 힙 메모리 주소값을 갖는다. (ex. 5b1910482ddb101b7042fcd7)
-    * 여기서 꼭 기억할 점은, _id 필드의 값이 binary 타입이라는 것인데, 이것은 string 타입과 다르므로 주의해서 사용할 것.
-    * ```_id```의 값을 특정해서 저장할 수도 있는데, 컬렉션에 ```[{"_id":1, "text":"hihi"}, {"_id":2, "text":"hello"}, ...]``` 와 같은 식으로 저장하면 된다.
+    * 여기서 꼭 기억할 점은, _id 필드의 값이 **binary 타입**이라는 것인데, 이것은 string 타입과 다르므로 주의해서 사용할 것.
+    * **_id**의 값을 특정해서 저장할 수도 있는데, 컬렉션에 ```[{"_id":1, "text":"hihi"}, {"_id":2, "text":"hello"}, ...]``` 와 같은 식으로 저장하면 된다.
     * 다음은 위 코드에서 inser_one 의 리턴값을 반환하는 로직을 추가한 것이다.
 
 ```python
@@ -110,8 +110,9 @@ if __name__ == '__main__':
     * find_one 메서드는 인자로 입력한 정보(key-value) 에 해당하는 도큐먼트를 리턴한다.
     * 매칭되는 도큐먼트가 없다면 아무 값도 리턴하지 않는다.
     * 만약 ```result = collention.find_one({"author":"Mike"})``` 명령을 실행한다면 이에 해당하는 document 가 리턴되는 식이다.
-    * 인자로 ```_id``` 컬럼 값을 넘겨줘도 동일한 document 를 리턴한다.
+    * 인자로 **_id** 컬럼 값을 넘겨줘도 동일한 document 를 리턴한다.
     * 일반적으로 입력하는 데이터 타입은 string 이므로, 실제 저장된 객체 주소 타입(binary)과 매칭시키기 위하여 ```ObjectId()``` 메서드를 꼭 활용해야 한다! **> 문자열 값을 객체 아이디 형식으로 변환해줌**
+    * 아래 예제에서는 url 변수로 받은 문자열 형식의 **post_id** 를 **ObjectId()** 함수를 통해 **binary 형식의 _id 컬럼**에 맞게 변환하여 그에 맞는 하나의 도큐먼트(_id 는 unique 임)를 조회한다.
 
 ```python
 ...
@@ -129,14 +130,122 @@ def findoneResult(post_id):
 ```
 
 - Insert Multiple Documents
+    * 둘 이상의 documents 를 insert 하기 위하여 **insert_many()** 함수를 사용할 수 있다.
+    * 이것의 첫 번째 매개변수는 **list 형식**이고, 그 안에 여러 개의 document 가 존재하여 insert 시 차례로 등록된다.
+    * insert 후 반환객체는 **inserted_ids** 정보를 담고 있으며, 이것은 등록된 각 도큐먼트에 대응되는 **ObjectId 형식의 _id 값 리스트**이다.
+    * 다음 예제에서는 주목할 점이 하나 있는데, **collection 에 한 번에 insert 되는 여러 도큐먼드들의 스키마가 동일하지 않다는 것**이다.
+    * new_posts 리스트의 0번, 1번 인덱스 도큐먼트는 title, tags 필드가 서로 존재하지 않지만, 모두 한 번에 등록되었다.
+    * 이것이 MongoDB 의 Schema-Free 특성이다.
+
+```python
+>>> new_posts = [{"author": "Mike",
+...               "text": "Another post!",
+...               "tags": ["bulk", "insert"],
+...               "date": datetime.datetime(2009, 11, 12, 11, 14)},
+...              {"author": "Eliot",
+...               "title": "MongoDB is fun",
+...               "text": "and pretty easy too!",
+...               "date": datetime.datetime(2009, 11, 10, 10, 45)}]
+>>> result = posts.insert_many(new_posts)
+>>> result.inserted_ids
+[ObjectId('...'), ObjectId('...')]
+```
 
 - Quering for More Than One Document
+    * 앞서 find() 함수는 (별다른 매개변수가 없다면) collection 에 존재하는 모든 도큐먼트 리스트를 조회한다고 설명했다.
+    * 내용을 좀더 추가하자면, find() 함수의 리턴 데이터는 커서(Cursor) 인스턴스인데,
+    * 이 커서 객체는 iterate 반복자를 통해 원하는 대로 컨트롤할 수 있다.
+    * 또한 find() 함수에 특정 조회조건을 인자로 투입하면(key-value) 그것에 대응하는 도큐먼트들만 리스트 객체로 반환한다.
+
+```python
+>>> for post in posts.find():
+...   pprint.pprint(post)
+...
+{u'_id': ObjectId('...'),
+ u'author': u'Mike',
+ u'date': datetime.datetime(...),
+ u'tags': [u'mongodb', u'python', u'pymongo'],
+ u'text': u'My first blog post!'}
+{u'_id': ObjectId('...'),
+ u'author': u'Mike',
+ u'date': datetime.datetime(...),
+ u'tags': [u'bulk', u'insert'],
+ u'text': u'Another post!'}
+{u'_id': ObjectId('...'),
+ u'author': u'Eliot',
+ u'date': datetime.datetime(...),
+ u'text': u'and pretty easy too!',
+ u'title': u'MongoDB is fun'}
+```
+
+```python
+>>> for post in posts.find({"author": "Mike"}):
+...   pprint.pprint(post)
+...
+{u'_id': ObjectId('...'),
+ u'author': u'Mike',
+ u'date': datetime.datetime(...),
+ u'tags': [u'mongodb', u'python', u'pymongo'],
+ u'text': u'My first blog post!'}
+{u'_id': ObjectId('...'),
+ u'author': u'Mike',
+ u'date': datetime.datetime(...),
+ u'tags': [u'bulk', u'insert'],
+ u'text': u'Another post!'}
+```
 
 - Counting
+    * 선택한 collection 에 대해 ```count_documents({})``` 함수를 실행하면 몇 개의 도큐먼트가 존재하는지 알 수 있다.
+    * 같은 방식으로 조회조건 인자를 투입시키면 그것에 해당하는 결과 카운트만 반환한다.
+
+```python
+>>> posts.count_documents({})
+3
+>>> posts.count_documents({"author": "Mike"})
+2
+```
 
 - Range Queries
+    * MongoDB 에서도 RDBMS 와 마찬가지로 범주(Range)에 따른 향상된 조건조회를 하고자 할 때가 있다.
+    * find() 조회 조건에 **$lt** 또는 **$gt** 와 같은 비교키워드를 활용하거나 sort() 작업을 추가할 수 있다.
+
+```python
+from pymongo import MongoClient
+import datetime
+
+client = MongoClient('mongodb://localhost:27017')
+db = client.test_database
+collection = db.posts
+
+d = datetime.datetime.now() # datetime 타입의 객체 반환
+
+for post in collection.find({"date":{"$lt":d}}).sort("author"):
+    print(str(post))
+```
 
 - Indexing
+    * 자동으로 생성되는 **_id** 외에, collection.create_index() 함수로 선택한 collection 에 대한 index field 를 생성할 수 있다.
+    * 이때 인자로 ```unique=True``` 값을 넘겨줘야 해당 속성이 적용된다.
+    * 이후 도큐먼트 데이터를 투입할 때 생성한 인덱스에 해당하는 값도 포함시키면 된다.
+    * unique 특성이기 때문에 중복된 index 값을 투입시키고자 한다면, ```DuplicateKeyError``` 가 발생한다.
+    * [The MongoDB documentation on indexes](https://docs.mongodb.com/manual/indexes/)
+
+```python
+>>> result = db.profiles.create_index([('user_id', pymongo.ASCENDING)],
+...                                   unique=True)
+
+>>> user_profiles = [
+...     {'user_id': 211, 'name': 'Luke'},
+...     {'user_id': 212, 'name': 'Ziltoid'}]
+>>> result = db.profiles.insert_many(user_profiles)
+
+>>> new_profile = {'user_id': 213, 'name': 'Drew'}
+>>> duplicate_profile = {'user_id': 212, 'name': 'Tommy'}
+>>> result = db.profiles.insert_one(new_profile)  # This is fine.
+>>> result = db.profiles.insert_one(duplicate_profile)
+Traceback (most recent call last):
+DuplicateKeyError: E11000 duplicate key error index: test_database.profiles.$user_id_1 dup key: { : 212 }
+```
 
 #### Python 에서 취급되는 Unicode Strings 에 대한 간단설명
 
@@ -148,5 +257,5 @@ def findoneResult(post_id):
 
 ## 프로젝트 설명
 
-
+- 분량 관계상 [다음 글](https://github.com/daesungRa/MyStudy/blob/master/Python/descflaskproject.md)에서 다루기로 합시다 ㅎㅎ
 

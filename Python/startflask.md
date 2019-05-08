@@ -84,7 +84,7 @@ if __name__ == '__main__':
 
 #### pymongo 확장된 활용
 
-- Return the _id Field
+- **Return the _id Field**
     * MongoDB 에서 Field 는 Column 을 의미한다. (document 는 row 를 의미함)
     * insert_one 메서드를 실행하면 결과에 따라 특정 반환값을 리턴하는데, InsertOneResult 객체가 그것이다.
     * InsertOneResult 객체는 **inserted_id** 라는 속성을 가지고 있는데 이것은 도큐먼트 insert 시 자동으로 생성되는 **_id 필드**의 값이다.
@@ -105,7 +105,7 @@ if __name__ == '__main__':
 ...
 ``` 
 
-- Getting a Single Document With find_one()
+- **Getting a Single Document With find_one()**
     * find 메서드는 컬렉션에 저장된 모든 정보를 리턴한다.
     * find_one 메서드는 인자로 입력한 정보(key-value) 에 해당하는 도큐먼트를 리턴한다.
     * 매칭되는 도큐먼트가 없다면 아무 값도 리턴하지 않는다.
@@ -129,7 +129,7 @@ def findoneResult(post_id):
 ...
 ```
 
-- Insert Multiple Documents
+- **Insert Multiple Documents**
     * 둘 이상의 documents 를 insert 하기 위하여 **insert_many()** 함수를 사용할 수 있다.
     * 이것의 첫 번째 매개변수는 **list 형식**이고, 그 안에 여러 개의 document 가 존재하여 insert 시 차례로 등록된다.
     * insert 후 반환객체는 **inserted_ids** 정보를 담고 있으며, 이것은 등록된 각 도큐먼트에 대응되는 **ObjectId 형식의 _id 값 리스트**이다.
@@ -151,7 +151,7 @@ def findoneResult(post_id):
 [ObjectId('...'), ObjectId('...')]
 ```
 
-- Quering for More Than One Document
+- **Quering for More Than One Document**
     * 앞서 find() 함수는 (별다른 매개변수가 없다면) collection 에 존재하는 모든 도큐먼트 리스트를 조회한다고 설명했다.
     * 내용을 좀더 추가하자면, find() 함수의 리턴 데이터는 커서(Cursor) 인스턴스인데,
     * 이 커서 객체는 iterate 반복자를 통해 원하는 대로 컨트롤할 수 있다.
@@ -194,7 +194,7 @@ def findoneResult(post_id):
  u'text': u'Another post!'}
 ```
 
-- Counting
+- **Counting**
     * 선택한 collection 에 대해 ```count_documents({})``` 함수를 실행하면 몇 개의 도큐먼트가 존재하는지 알 수 있다.
     * 같은 방식으로 조회조건 인자를 투입시키면 그것에 해당하는 결과 카운트만 반환한다.
 
@@ -205,7 +205,7 @@ def findoneResult(post_id):
 2
 ```
 
-- Range Queries
+- **Range Queries**
     * MongoDB 에서도 RDBMS 와 마찬가지로 범주(Range)에 따른 향상된 조건조회를 하고자 할 때가 있다.
     * find() 조회 조건에 **$lt** 또는 **$gt** 와 같은 비교키워드를 활용하거나 sort() 작업을 추가할 수 있다.
 
@@ -223,7 +223,7 @@ for post in collection.find({"date":{"$lt":d}}).sort("author"):
     print(str(post))
 ```
 
-- Indexing
+- **Indexing**
     * 자동으로 생성되는 **_id** 외에, collection.create_index() 함수로 선택한 collection 에 대한 index field 를 생성할 수 있다.
     * 이때 인자로 ```unique=True``` 값을 넘겨줘야 해당 속성이 적용된다.
     * 이후 도큐먼트 데이터를 투입할 때 생성한 인덱스에 해당하는 값도 포함시키면 된다.

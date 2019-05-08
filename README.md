@@ -38,6 +38,7 @@
 ### Python
 
 - [파이썬 설치 및 환경설정 + 파이참](https://github.com/daesungRa/MyStudy/blob/master/Python/pythonConfiguration.md) (190423, tue)
+- [Python 에서 JSON 데이터 다루기](https://github.com/daesungRa/MyStudy/blob/master/Python/jsoninpython.md) (190508, wed)
 - [[FLASK] 플라스크 개요 및 환경설정](https://github.com/daesungRa/MyStudy/blob/master/Python/flaskconfig.md) (190506, mon)
 - [[FLASK] 플라스크 프로젝트 살펴보기 (with pymongo)](https://github.com/daesungRa/MyStudy/blob/master/Python/startflask.md) (190507, tue)
 

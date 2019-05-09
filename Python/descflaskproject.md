@@ -20,7 +20,7 @@
 
 ## hello.py
 
-<a href='https://github.com/daesungRa/flask/blob/master/hello.py' about='_blank'>코드 보기</a>
+<a href='https://github.com/daesungRa/flask/blob/master/hello.py' target='_blank'>코드 보기</a>
 
 - import
     * **flask** : Flask, request, session, render_template, redirect, url_for, abort, make_response, request
@@ -52,7 +52,11 @@
 - def hello_world(): ~
     * @app.route 에 의해 매핑된 **hello_world** 메서드이다. 요청 시 해당 내용이 실행된다.
 - app.logger
-- 
+- request, session 객체
+    * reqeust 객체는 특정 요청 시 유효하고 session 객체는 사용자 브라우저 접속만큼 유효하다. session 타임은 
+    * request.method 변수에는 요청 메서드 방식이 들어 있다.
+    * request.form['변수명'] 내부에는 변수명에 해당하는 요청 데이터가 들어 있다.
+    * 
 - 
 - 
 - 

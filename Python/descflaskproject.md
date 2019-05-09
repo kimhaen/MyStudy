@@ -52,16 +52,54 @@
 - def hello_world(): ~
     * @app.route 에 의해 매핑된 **hello_world** 메서드이다. 요청 시 해당 내용이 실행된다.
 - app.logger
+    * [flask docs](http://flask.pocoo.org/docs/1.0/quickstart/#logging) 를 인용한다.
+    
+    > &nbsp;때때로 정확성을 요하는 데이터를 다뤄야 할 경우가 있는데, 대개는 지켜지지 않는다. 예를 들어 서버로 HTTP request 를 전송하는 client-side 코드가 있는데 그것이 명백하게 기형이었다.
+    이것은 사용자가 임의로 조작한 데이터 혹은 client code failing 때문이었다. 대부분의 상황에서는 '400 Bad Request' 를 응답함으로써 별다른 문제가 없었지만,
+    가끔씩 해당 응답이 이루어지지 않은 채 코드가 그대로 진행되어 버리기도 했다.<br/> &nbsp;이때 당신은 뭔가 냄새나는 상황에 대한 log 를 원할 것이다.
+    이것이 logger 가 유용해지는 지점이고, 현 Flask 0.3 의 logger 는 당신이 사용할 수 있도록 사전 구성되었다.
+    
+    * log 를 사용한 예제는 다음과 같다.
+    ```python
+    app.logger.debug('A value for debugging')
+    app.logger.warning('A warning occurred (%d apples)', 42)
+    app.logger.error('An error occurred')
+    ```
+    * 위 코드에서의 logger 는 **is a standard logging Logger** 이므로, [the official logging documentation](https://docs.python.org/3/library/logging.html) 에서 더 많은 정보를 볼 수 있다.
 - request, session 객체
-    * reqeust 객체는 특정 요청 시 유효하고 session 객체는 사용자 브라우저 접속만큼 유효하다. session 타임은 
-    * request.method 변수에는 요청 메서드 방식이 들어 있다.
-    * request.form['변수명'] 내부에는 변수명에 해당하는 요청 데이터가 들어 있다.
-    * 
-- 
-- 
-- 
-- 
-- 
+    * reqeust 객체는 클라이언트 요청 시 유효하고 session 객체는 사용자 브라우저 접속만큼 유효하다. session 타임도 지정 가능. 
+    * **request.method** 속성에는 요청 메서드 방식이 들어 있다.
+    * **request.form['변수명']** 내부에는 form 리퀘스트가 포함하는 변수명에 해당하는 요청 데이터가 들어 있다.
+    * **request.args.get('변수명')** 으로는 일반적인 요청 데이터를 가져온다.
+    * 개발자가 flask 웹앱을 만들 때 session 을 사용하기 위해서는 **secret_key 지정이 필요**하다. 이것은 쿠키 상에 구현된다. (This is implemented on top of cookies for you and signs the cookies cryptographically.)
+    * 이는 사용자가 쿠키 내부 내용을 볼 수 있다는 의미이지만 그렇다고(심지어 secret_key 를 알고 있다고 해도) 그것을 수정할 수는 없다.
+    * 어떻게 좋은 비밀 키를 만들어내는가?
+        - 가능한 한 랜덤값어야 한다.
+        - 당신의 os 에는 암호화된 랜덤 generator 기반으로 가상 랜덤 데이터를 만드는 방법이 있다. (python 의 os 모듈 사용)
+        - 예를 들어 ```$ python -c 'import os; print(os.urandom(16))``` 명령으로 암호화된 binary 데이터를 생성할 수 있다.
+    * **session['속성명']** 내부에는 접속 사용자를 위한 여러 속성값을 저장할 수 있다. 대표적으로 로그인 세션 유지에 사용됨.
+    * **session.pop('속성명', None)** 은 해당 속성을 제거하는 것(pop)
+- app.errorhandler
+- url_for()
+- redirect()
+- render_template('템플릿 파일명', 매개변수, 매개변수, ...)
+- _id 와 ObjectId()
+
+## flask_template.py (테스트용인듯)
+
+<a href='https://github.com/daesungRa/flask/blob/master/flask_template.py' target='_blank'>코드 보기</a>
+
+- return render_template('index.html', title="Flask Template Test", my_str="Hello Flask!", my_list=[x+1 for x in range(30)])
+    * 'index.html' : 렌더링하는 템플릿 파일
+    * title : 반환 정보 페이지의 타이틀
+    * my_str : 그냥 인삿말?
+    * my_list : response 테스트용 list. 0-29 총 30번 루핑하는 동안 각 인덱스에 +1 한 값을 list 타입으로 반환!
+
+## venv/
+
+## static/dist/
+
+## templates/
 
 
 

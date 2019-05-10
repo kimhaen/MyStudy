@@ -85,7 +85,7 @@ app.config.update(
 - DEBUG, TESTING, SECRET_KEY, SESSION_COOKIE_NAME, SESSION_COOKIE_PATH, LOGGER_NAME, SERVER_NAME, APPLICATION_ROOT 등등
 - 설정 키(key)는 오직 대문자로만 구성되어야 한다.
 - 다음을 참조한다
-[flask 내장 설정값](https://flask-docs-kr.readthedocs.io/ko/latest/config.html#id3)
+<br/>[flask 내장 설정값](https://flask-docs-kr.readthedocs.io/ko/latest/config.html#id6)
 
 ## 외부 파일을 통하여 설정하기
 

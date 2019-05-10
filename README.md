@@ -38,6 +38,8 @@
 ### Python
 
 - [파이썬 설치 및 환경설정 + 파이참](https://github.com/daesungRa/MyStudy/blob/master/Python/pythonConfiguration.md) (190423, tue)
+- [자료형 살펴보기 - list, set, tuple, dictionary](https://github.com/daesungRa/MyStudy/blob/master/Python/pythonDatatype.md) (190510, fri)
+- [OOP 개념, Class, Inheritance, Magic Method](https://github.com/daesungRa/MyStudy/blob/master/Python/oopclassinheritmagicmethod.md) (190510, fri)
 - [가상환경과 virtualenv, pip, pipenv](https://github.com/daesungRa/MyStudy/blob/master/Python/pipenv.md) (190509, thur)
 - [Context Manager 와 with 구문](https://github.com/daesungRa/MyStudy/blob/master/Python/contextmanager.md) (190509, thur)
 - [Python 에서 class mehtod 와 static method](https://github.com/daesungRa/MyStudy/blob/master/Python/classmethodAndStaticmethod.md) (190508, wed)

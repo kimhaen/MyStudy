@@ -70,15 +70,47 @@ app.config['DEBUG'] = True
 app.debug = True
 ```
 
-- 한 번에 다수의 키(key)들을 업데이트하기 위해서는 dict.update() 함수를 사용할 수 있다.
+- **dict.update() 활용**
+    * 한 번에 다수의 키(key)들을 업데이트하기 위해서는 dict.update() 함수를 사용할 수 있다.
+    ```python
+    app.config.update(
+        DEBUG=True,
+        SECRET_KEY='...'
+        ...
+    )
+    ```
 
-```python
-app.config.update(
-	DEBUG=True,
-	SECRET_KEY='...'
-	...
-)
-```
+- **from_object() 활용**
+    * app 구동 파일 내에 다수의 환경변수를 설정하고 app.config.from_object() 메서드로 한 번에 적용할 수 있다.
+    ```python
+    # all the imports
+    import sqlite3
+    from flask import Flask, request, session, g, redirect, url_for, \
+         abort, render_template, flash
+    
+    # configuration
+    DATABASE = '/tmp/flask.db'
+    DEBUG = True
+    SECRET_KEY = 'development key'
+    USERNAME = 'admin'
+    PASSWORD = 'default'
+    
+    # create our little application :)
+    app = Flask(__name__)
+    app.config.from_object(__name__)
+
+    ...
+    ```
+    * 직접 구동 방식이므로, from_object() 인자로는 **\_\_name__** 이 사용된다.
+    
+- **from_envvar() 활용**
+    * 시스템 내에 적용된 환경변수를 직접 가져올 수도 있다.
+    ```python
+    ...
+    app.config.from_envvar('FLASK_SETTINGS', silent=True)
+    ```
+    * 이때 FLASK_SETTINGS 에 명시된 설정 파일이 로드되면 기본 설정값들은 덮어쓰기가 된다.
+    * silent 스위치는 True 일 경우 해당 대문자 환경변수가 존재하지 않아도 무시하고 app 이 동작하도록 한다.
 
 ## 내장된 고유 설정값들
 
@@ -90,14 +122,20 @@ app.config.update(
 ## 외부 파일을 통하여 설정하기
 
 - app 의 모든 설정정보를 외부 파일에 모아 관리하면 더 유용할 것이다. 사후 유지보수 측면에서도 유리하다.
+- 앞서 살펴본 from_object() 를 활용한다면 외부 파일을 import 해서 그곳에 정의된 대문자 환경변수들을 찾을 것이다.
+- 외부 환경설정 모듈을 `external_env.py` 라고 정의한다면 다음과 같이 코드를 작성할 수 있다. (클래스명은 External_env)
 
 ```python
+from flask import Flask, ...
+from external_env import External_env
+
 app = Flask(__name__)
-app.config.from_object('yourapplication.default_settings')
-app.config.from_envvar('YOURAPPLICATION_SETTINGS')
+app.config.from_object(External_env)
+
+...
 ```
 
-- 'yourapplication.default_settings' 는 파이썬 오브젝트 모듈이고, 'YOURAPPLICATION_SETTNGS' 파일의 내용으로 덮어씌운다.
+- 추가적으로 ```app.config.from_pyfile()``` 도 존재한다.
 
 
 

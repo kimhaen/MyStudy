@@ -52,19 +52,21 @@
         - 부모 클래스를 넘겨받는 방식으로 상속된 자식 클래스라면 동일 이름의 메서드를 구현함으로써 재정의가 가능하다.
 ## Magic Method
 
-- [python-course : magic method](https://www.python-course.eu/python3_magic_methods.php) (번역)
+- <a href="https://www.python-course.eu/python3_magic_methods.php" target="_blank">python-course : magic method</a> (번역)
 ```text
 소위 말하는 'magic methods' 는 마법과는 관련이 없다.
-그것은 '__init__' 과 같이 names 를 double underscore 가 앞뒤로 붙어있게 변형함으로써 만들어지는 특별한 메서드다. 이러한 것을 뭐라고 불러야할지 명확하지는 않다.
+그것은 '__init__' 과 같이 names 를 double underscore 가 앞뒤로 붙어있게 변형함으로써 만들어지는 특별한 메서드다.
+이러한 것을 뭐라고 불러야할지 명확하지는 않다.
 어쨌든 '__init__' 메서드의 마법은 무엇일까? 그 답은, '그것을 직접적으로 호출하지 않아도 되는' 것에 있다.
 호출은 뒷편에서 이루어진다. 예를 들어,
 당신이 A 라는 클래스의 인스턴스 x 를 "x = A()" 방식으로 만든다고 할때 파이썬은 __new__ 와 __init__ 메서드를 필수적으로 호출한다.
 우리는 __call__ 메서드를 살펴볼 것인데, 그것은 많은 언어들이 가지고 있지 않은 파이썬만의 기능을 가지고 있다.
 __call__ 메서드는 인스턴스가 함수처럼 작동하는 클래스를 작성할 수 있도록 한다. 그러한 클래스의 함수와 인스턴스들은 'callables' 로 불린다.
 
-우리는 'operator overloading(연산자 오버로딩)' 이라는 컨셉을 많이 접해왔는데, 숫자 값을 더하는 것뿐 아니라 문자열 및 list 도 더할 수 있는 'plus sign (+)' 이 대표적이다.
+우리는 'operator overloading(연산자 오버로딩)' 이라는 컨셉을 많이 접해왔는데,
+숫자 값을 더하는 것뿐 아니라 문자열 및 list 도 더할 수 있는 'plus sign (+)' 이 대표적이다.
 ```
-
+예시 -
 ```python
 >>> 4 + 5
 9
@@ -86,7 +88,7 @@ __call__ 메서드는 인스턴스가 함수처럼 작동하는 클래스를 작
 'K' 가 __add__ 메서드를 가지고 있다면, 그것은 이제 "x.__add__(y)" 형태로 호출된다. 만약 가지고 있지 않다면 에러 메시지가 발생한다.
 ``` 
 
-대략적으로 정의된 '+' 연산자가 없다는 의미
+에러메시지 - 대략적으로 정의된 '+' 연산자가 없다는 의미
 ```python
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -94,7 +96,7 @@ TypeError: unsupported operand type(s) for +: 'K' and 'K'
 ```
 
 - 지금까지의 설명이 magic method 에 대한 전부이며, '+' 연산자 뿐만 아니라 다른 사례들도 살펴보며 익혀나가면 된다.
-- 다른 사례들은 참조문서의 중반부에 있다 > [참조문서](https://www.python-course.eu/python3_magic_methods.php)
+- 다른 사례들은 참조문서의 중반부에 있다 > <a href="https://www.python-course.eu/python3_magic_methods.php" target="_blank">참조문서</a>
 
 
 

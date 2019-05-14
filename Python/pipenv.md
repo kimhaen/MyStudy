@@ -39,11 +39,16 @@
     * ```pipenv shell``` (가상환경 진입 명령어. 가상환경이 없다면 생성)
     * 순수하게 생성만 하는 명령은 ```pipenv --python 3.7``` 이다.
 - 확인
+    * pipenv 가 생성되는 방식은 virtualenv 와 유사한데(포함한 거니까 당연ㅡㅡ), 생성 위치는 차이가 있다.
+    * 기존 ```virtualenv [venv 이름]``` 하면 현 위치를 기준으로 venv 가 생성되고 그 밑에 **python.exe** 및 모든 라이브러리들이 설치됐지만,
+    * ```pipenv shell``` 혹은 ```pipenv --python 3.7``` 방식은 현 위치에 **Pipfile** 만 생성되고 나머지 실행파일이나 라이브러리들은 가상환경만 모아 놓은 특정 위치에 만들어진다. (Pipfile 은 관련 환경설정 및 스크립트 파일)
     * ```pipenv --py``` 하면 가상환경 파이썬 런타임이 새롭게 설치된 진짜 위치를 알 수 있다.
     * ```$HOME/.local/share/virtualenvs/pipenv-tutorial-S-kj1fAT/bin/python``` 보통 이런 곳에 위치한다.
+    * 윈도우에서는 ```C:\Users\Adminisrator\.virtualenvs\[생성된 pipenv]``` 폴더 하위에 생성된다.
+    * 새로운 pipenv 가 생성되면 이곳에 하나씩 추가되는 식이다.
 - 필요한 패키지 설치
     * ```pipenv install [설치할 패키지명]```
-    * 만약 **--dev** 옵션을 사용한다면 devDependencies 를 지원하게 된다.
+    * 만약 **--dev** 옵션을 사용한다면 devDependencies 를 지원하게 된다. (개발용 의존성. default 는 배포용이다)
     * 그러면 Pipfile 에 [dev-packages] 하위에 리스팅 된다.
     ```text
     $ cat Pipfile
@@ -113,6 +118,11 @@
         * deterministic-builds 란, "Be able to get the exact same set of dependencies on multiple machines" 로 정의되는데
         * 의미는 어떤 상황에서도(복수의 머신, 여러 가상환경 혹은 을 의미하는 듯?) 동일하게 site-packages tree 를 유지하며 설치할 수 있도록 보장한다는 것이다.
         * 위키백과의 <a href="" target="_blank">결정론적 알고리즘</a>에서는 "어떤 특정한 입력이 들어오면 언제나 똑같은 과정을 거쳐서 똑같은 결과를 내놓는다"고 설명한다.
+    * ```pipenv install [패키지명]``` 으로 원하는 의존성 및 버전의 lib 환경구성을 마쳤다면, **lock** 키워드를 사용하여 **Pipfile.lock** 파일에 업데이트할 수 있다.
+        * ```pipenv lock```
+        * 이 명령은 기존 **pip3** 모듈에서 ```pip3 freeze > requirements.txt``` 와 유사한 역할을 한다고 보면 된다.
+    * 결국 **Pipfile** 에는 환경구성 및 라이브러리, 스크립트 정보가 들어 있고, **Pipfile.lock** 에는 패키지 의존성 정보가 들어 있어서
+    * 해당 프로젝트를 새롭게 **fork** 하거나 **pull** 한 로컬에서는 원하는 위치에서 ```pipenv shell``` 혹은 ```pipenv install``` 만으로 모든 환경을 자동구성할 수 있다.
 - 만들었던 venv 제거하기
     * ```pipenv --rm```
     ```text

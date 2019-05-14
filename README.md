@@ -49,6 +49,7 @@
 - [[FLASK] 플라스크에서 PyMongo 를 통해 MongoDB 활용하기](https://github.com/daesungRa/MyStudy/blob/master/Python/startflask.md) (190507, tue)
 - [[FLASK] Flask-PyMongo-MongoDB 예제 프로젝트](https://github.com/daesungRa/MyStudy/blob/master/Python/descflaskproject.md) (190508, wed)
 - [[FLASK-Jinja2] Jinja2 템플릿 엔진 에서 dict 요소 접근시 에러발생!](https://github.com/daesungRa/MyStudy/blob/master/Python/templateErrorForConnectingDict.md) (190513, mon)
+- [[PATH ERROR] 파이썬 경로에러 - 같은 패키지에서도 임포트가 안된다??](https://github.com/daesungRa/MyStudy/blob/master/Python/pythonpatherror.md) (190514, tue)
 
 ### DB
 

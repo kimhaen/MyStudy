@@ -8,34 +8,48 @@
 
 > [나의 공부 스케줄](https://github.com/daesungRa/MyStudy/blob/master/etc/myschedule.md) (최종수정일 : 190506, mon)
 
-## 목차
+# 목차
 
-1. [JAVA](#JAVA)
-2. [Python](#Python)
-3. [DB](#DB)
-4. [Algorithm](#Algorithm)
-5. [Git](#Git)
-6. [JSP/Servlet](#JSP-Servlet)
-7. [Spring](#Spring)
-8. [HTML/CSS](#HTML-CSS)
-9. [Javascript](#Javascript)
-10. [스터디](#GroupStudy)
-11. [기타 정보](#기타-정보)
+1. Languages
+    1. [JAVA](#JAVA)
+    2. [Python](#Python)
+2. Web, Web Framework
+    1. [HTML/CSS](#HTML-CSS)
+    2. [Javascript](#Javascript)
+    3. [JSP/Servlet](#JSP-Servlet)
+    4. [Spring](#Spring)
+3. Databases
+    1. [DB](#DB)
+    2. Oracle
+    3. MySql
+    4. MongoDB
+4. WAS (Web Application Server)
+    1. Apache + Tomcat
+5. VCS (Versoin Control System)
+    1. [Git, Github](#Git)
+6. OS (Operating System)
+    1. Windows
+    2. Ubuntu
+7. CS (Computer Science)
+    1. [Algorithm](#Algorithm)
+8. etc
+    1. [기타 정보](#기타-정보)
+    2. [스터디](#GroupStudy)
 
-## 카테고리
+# 카테고리
 
-### Learning from Errors
+## Learning from Errors
 
 - [자바스크립트 주의할점](https://github.com/daesungRa/MyStudy/blob/master/LearnFromBugs/JS.md) (최초 190201, fri, 지속업뎃)
 - [EL, JSTL 주의할점](https://github.com/daesungRa/MyStudy/blob/master/LearnFromBugs/El_Jstl.md) (최초 190201, fri, 지속업뎃)
 
-### JAVA
+## JAVA
 
 - [자바 기본개념 및 커맨드라인 환경에서 자바 컴파일 후 실행하기](https://github.com/daesungRa/MyStudy/blob/master/JAVA/CommandlineCompile.md) (190113, sun)
 - [원활한 협업을 위한 자바 상식, 규칙](https://github.com/daesungRa/MyStudy/blob/master/JAVA/JavaCommonSenseForCooperation.md) (최초 190113, sun, 지속업뎃)
 - [예외처리 정리](https://github.com/daesungRa/MyStudy/blob/master/JAVA/exceptionHandling.md) (190421, sun)
 
-### Python
+## Python
 
 - [파이썬 설치 및 환경설정 + 파이참](https://github.com/daesungRa/MyStudy/blob/master/Python/pythonConfiguration.md) (190423, tue)
 - [자료형 살펴보기 - list, set, tuple, dictionary](https://github.com/daesungRa/MyStudy/blob/master/Python/pythonDatatype.md) (190510, fri)
@@ -53,7 +67,7 @@
 - [**[FLASK-MONGODB]** Model 기반 Validator 만들기 (mrxmamun 의 flask-mvc-pymongo 클론)](https://github.com/daesungRa/MyStudy/blob/master/Python/modelBasedValidator.md) (190515, wed)
 - [**[FLASK-RESTFUL]** Flask 에서는 어떻게 Restful API 를 구현할까? ](https://github.com/daesungRa/MyStudy/blob/master/Python/flaskRestful.md) (190516, thur)
 
-### DB
+## DB
 
 - [계층형 게시판 정리](https://github.com/daesungRa/MyStudy/blob/master/DB/hierarchical.md) (190131, thur)
 - [게시판을 위한 DB 계정 생성 및 테이블 생성](https://github.com/daesungRa/MyStudy/blob/master/DB/createUser.md) (190124, thur)
@@ -68,19 +82,19 @@
 - [[Oracle vs MySql] 오라클과 MySql 비교](https://github.com/daesungRa/MyStudy/blob/master/DB/diffOracleMySql.md) (190326, tue)
 - [[MongoDB] MongoDB 01](https://github.com/daesungRa/MyStudy/blob/master/DB/mongodb01.md) (190502, thur)
 
-### Algorithm
+## Algorithm
 
 - [선택정렬과 버블정렬 예제](https://github.com/daesungRa/MyStudy/blob/master/Algorithm/SelectionSort.md) (181228, fri)
 - [사칙연산 응용 예제 - 설탕 배달](https://github.com/daesungRa/MyStudy/blob/master/Algorithm/SugarDeliver.md) (181231, mon)
 - [규칙 찾기 - 벌집](https://github.com/daesungRa/MyStudy/blob/master/Algorithm/BeeHouse.md) (190101, tue)
 - [규칙 찾기 - 분수 찾기](https://github.com/daesungRa/MyStudy/blob/master/Algorithm/FindFraction.md) (190103, thur)
 
-### Git
+## Git
 
 - [Reset, Checkout 명령어](https://github.com/daesungRa/MyStudy/blob/master/GitStudy/CompareResetCheckout.md) (181231, mon)
 - [git 내부 캐시정보 삭제하기](https://github.com/daesungRa/MyStudy/blob/master/GitStudy/deletecaches.md) (190503, fri)
 
-### JSP Servlet
+## JSP Servlet
 
 - [Cookie 와 Session, 그리고 HTTP](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/CookieAndSession.md) (181231, mon)
 - [Java Bean](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JavaBean.md) (181231, mon)
@@ -96,7 +110,7 @@
 - [JSP 로만 만든 웹페이지05, 파일 업로드, 우편번호 API, 페이지 정보 보존 처리](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/JPSboard_fileUpload.md) (190122, tue)
 - [서블릿 기초 정리](https://github.com/daesungRa/MyStudy/blob/master/JSP_Servlet/ServletBasic.md) (190114, mon)
 
-### Spring
+## Spring
 
 - [IoC & DI](https://github.com/daesungRa/MyStudy/blob/master/Spring/SpringBegin.md) (190109, wed)
 - [스프링 기본 모듈, IoC 컨테이너, 아파치 메이븐 정리](https://github.com/daesungRa/MyStudy/blob/master/Spring/SpringModuleAndIoCContainerAndMaven.md) (190110, thur)
@@ -109,7 +123,7 @@
 - [스프링 컨테이너 리다이렉트 이슈](https://github.com/daesungRa/MyStudy/blob/master/Spring/issue_redirect.md) (190204, sun)
 - [스프링 파일 업로드 (MultipartHttpServletRequest 활용)](https://github.com/daesungRa/MyStudy/blob/master/Spring/spring_fileupload.md) (190209, sat)
 
-### HTML CSS
+## HTML CSS
 
 - [html 기본 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/htmlBasic.md) (190103, thur)
 - [css 기본 한방정리!](https://github.com/daesungRa/MyStudy/blob/master/HTML,CSS/cssBasic.md) (190104, fri)
@@ -119,7 +133,7 @@
 - [텍스트 박스에 띄어쓰기가 포함된 문자열 삽입이 안될 때](https://github.com/daesungRa/MyStudy/blob/master/HTML%2CCSS/cannotInputEscapeInTextTag.md) (190116, wed)
 - [부트스트랩 01](https://github.com/daesungRa/MyStudy/blob/master/HTML%2CCSS/bootstrap01.md) (190128, mon)
 
-### Javascript
+## Javascript
 
 - [[JS] JavaScript 시작!](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Javascript_Summary.md) (190107, mon)
 - [[JS] 자바스크립트 개요](https://github.com/daesungRa/MyStudy/blob/master/Javascript/JS_basic.md) (190108, tue)
@@ -136,16 +150,24 @@
 - [[AJAX] Ajax 기초 06 - AJAX 게시판 - 다중 파일 업로드 스크립트 처리](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Ajax05AjaxBoard_multiFileUpload.md) (190211, mon)
 - [[jQuery] Ajax 기초 01 - jQuery 기초](https://github.com/daesungRa/MyStudy/blob/master/Javascript/jQuery01.md) (190212, tue)
 
-### 게시판 만들기 연습!!
+## Operating System
+
+### Windows
+
+### Ubuntu
+
+- [Ubuntu 파티셔닝 후 설치](https://github.com/daesungRa/MyStudy/blob/master/OperatingSystem/ubuntuPartitioning.md) (190515, wed)
+
+## 게시판 만들기 연습!!
 
 - [[BoardTest01] 프로젝트 생성부터 MVC 만들고 임시테스트까지](https://github.com/daesungRa/MyStudy/blob/master/SpringPractice/[springmvc-BoardTest01]init_to_testLogic.md) (190124, thur)
 
-### GroupStudy
+## GroupStudy
 
 - [[스티브리자바] 선행학습기초예제, 스프링 기초](https://github.com/daesungRa/MyStudy/blob/master/GroupStudy/steveleejava-study-01.md) (190414, sun)
 - [[스티브리자바] 웹 기초, 메이븐, 스프링(DI, AOP)](https://github.com/daesungRa/MyStudy/blob/master/GroupStudy/steveleejava-study-02.md) (190421, sun)
 
-### 기타 정보
+## 기타 정보
 
 - [이클립스 Project Clean](https://github.com/daesungRa/MyStudy/blob/master/etc/ProjectClean.md) (190101, tue)
 - [웹 프로젝트를 위한 기본 기술목록](https://github.com/daesungRa/MyStudy/blob/master/etc/BasicTechStackForWeb.md) (최초 190123, wed, 지속 업뎃)

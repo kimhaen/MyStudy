@@ -45,11 +45,13 @@
 - [Python 에서 class mehtod 와 static method](https://github.com/daesungRa/MyStudy/blob/master/Python/classmethodAndStaticmethod.md) (190508, wed)
 - [Python 에서 날짜와 시간 다루기](https://github.com/daesungRa/MyStudy/blob/master/Python/datetime.md) (190508, wed)
 - [Python 에서 JSON 데이터 다루기](https://github.com/daesungRa/MyStudy/blob/master/Python/jsoninpython.md) (190508, wed)
-- [[FLASK] 플라스크 개요 및 환경설정](https://github.com/daesungRa/MyStudy/blob/master/Python/flaskconfig.md) (190506, mon)
-- [[FLASK] 플라스크에서 PyMongo 를 통해 MongoDB 활용하기](https://github.com/daesungRa/MyStudy/blob/master/Python/startflask.md) (190507, tue)
-- [[FLASK] Flask-PyMongo-MongoDB 예제 프로젝트](https://github.com/daesungRa/MyStudy/blob/master/Python/descflaskproject.md) (190508, wed)
-- [[FLASK-Jinja2] Jinja2 템플릿 엔진 에서 dict 요소 접근시 에러발생!](https://github.com/daesungRa/MyStudy/blob/master/Python/templateErrorForConnectingDict.md) (190513, mon)
-- [[PATH ERROR] 파이썬 경로에러 - 같은 패키지에서도 임포트가 안된다??](https://github.com/daesungRa/MyStudy/blob/master/Python/pythonpatherror.md) (190514, tue)
+- [**[FLASK]** 플라스크 개요 및 환경설정](https://github.com/daesungRa/MyStudy/blob/master/Python/flaskconfig.md) (190506, mon)
+- [**[FLASK]** 플라스크에서 PyMongo 를 통해 MongoDB 활용하기](https://github.com/daesungRa/MyStudy/blob/master/Python/startflask.md) (190507, tue)
+- [**[FLASK]** Flask-PyMongo-MongoDB 예제 프로젝트](https://github.com/daesungRa/MyStudy/blob/master/Python/descflaskproject.md) (190508, wed)
+- [**[FLASK-JINJA2 ERROR]** Jinja2 템플릿 엔진 에서 dict 요소 접근시 에러발생!](https://github.com/daesungRa/MyStudy/blob/master/Python/templateErrorForConnectingDict.md) (190513, mon)
+- [**[PATH ERROR]** 파이썬 경로에러 - 같은 패키지에서도 임포트가 안된다??](https://github.com/daesungRa/MyStudy/blob/master/Python/pythonpatherror.md) (190514, tue)
+- [**[FLASK-MONGODB]** Model 기반 Validator 만들기 (mrxmamun 의 flask-mvc-pymongo 클론)](https://github.com/daesungRa/MyStudy/blob/master/Python/modelBasedValidator.md) (190515, wed)
+- [**[FLASK-RESTFUL]** Flask 에서는 어떻게 Restful API 를 구현할까? ](https://github.com/daesungRa/MyStudy/blob/master/Python/flaskRestful.md) (190516, thur)
 
 ### DB
 

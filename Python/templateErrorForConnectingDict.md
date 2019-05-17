@@ -43,11 +43,11 @@ sample2 = { _id: 2, profile: { name: 'saejong', age: 22 } }
 sample2 = { _id: 2, profile: { name: 'saejong', age: 22 } }
 ```
 ```text
-{% if sample.profile %}
-    출력 : {{ sample._id }} / {{ sample.profile.name }} / {{ sample.profile.age }}
+{% if sample2.profile %}
+    출력 : {{ sample2._id }} / {{ sample2.profile.name }} / {{ sample2.profile.age }}
 {% endif %}
 ```
-(for 구문으로도 접근 가능하다)<br/>
+(for 구문으로도 접근 가능하다)<br/><br/>
 결과 -
 ```text
 출력 : 2 / saejong / 22

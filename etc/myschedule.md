@@ -4,7 +4,16 @@
 
 # 공부 스케줄
 
-## 190520 (mon) - 
+## 190520 (mon) - (저녁) flask-board crud 만들기
+
+- 근무시간동안 퍼블리싱 얼추 했으니,
+- 일단 기본적인 crud 부터 만들어보자.
+- 다 못하면 내일 이어서 하기!
+- 회원관리나 추가적인 부분은 그 다음에 하기
+- collection fields
+    * _id, title, content, author, created, updated
+    * _id 는 자동등록, 작성자, 등록 및 수정일도 자동등록
+    * 제목, 글 내용만 쓰면됨
 
 ## 190513 (mon) - pipenv 정리, 아무것도 안보고 flask/mongodb 게시판 만들기
 

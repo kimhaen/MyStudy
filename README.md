@@ -8,6 +8,8 @@
 
 > [나의 공부 스케줄](https://github.com/daesungRa/MyStudy/blob/master/etc/myschedule.md) (최종수정일 : 190521, tue)
 
+> [파이썬의 자바보다 좋은 점 (feat. 그냥 차이점)](https://github.com/daesungRa/MyStudy/blob/master/etc/pythonBetterThanJava.md) (최종수정일 : 190521, tue)
+
 # 목차
 
 1. Languages
@@ -142,6 +144,7 @@
 
 - [Reset, Checkout 명령어](https://github.com/daesungRa/MyStudy/blob/master/GitStudy/CompareResetCheckout.md) (181231, mon)
 - [git 내부 캐시정보 삭제하기](https://github.com/daesungRa/MyStudy/blob/master/GitStudy/deletecaches.md) (190503, fri)
+- [git 으로 하는 협업 과정 간단정리](https://github.com/daesungRa/MyStudy/blob/master/GitStudy/gitCooperationProcess.md) (190521, tue)
 
 ## Operating System
 
@@ -178,4 +181,7 @@
 - [웹 프로젝트를 위한 기본 기술목록](https://github.com/daesungRa/MyStudy/blob/master/etc/BasicTechStackForWeb.md) (최초 190123, wed, 지속 업뎃)
 - [기술 참조 모음](https://github.com/daesungRa/MyStudy/blob/master/etc/Reference.md) (190115, tue)
 - [인터뷰 리스트](https://github.com/daesungRa/MyStudy/blob/master/etc/InterviewList.md) (최종수정일 : 190401, mon)
+- [나의 공부 스케줄](https://github.com/daesungRa/MyStudy/blob/master/etc/myschedule.md) (최종수정일 : 190521, tue)
+- [파이썬의 자바보다 좋은 점(feat. 그냥 차이점)](https://github.com/daesungRa/MyStudy/blob/master/etc/pythonBetterThanJava.md) (최종수정일 : 190521, tue)
+
 

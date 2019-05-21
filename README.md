@@ -84,6 +84,7 @@
 - [[AJAX] Ajax 기초 05 - AJAX 게시판 비동기 처리(페이징, 검색)](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Ajax05AjaxBoard.md) (190207, thur)
 - [[AJAX] Ajax 기초 06 - AJAX 게시판 - 다중 파일 업로드 스크립트 처리](https://github.com/daesungRa/MyStudy/blob/master/Javascript/Ajax05AjaxBoard_multiFileUpload.md) (190211, mon)
 - [[jQuery] Ajax 기초 01 - jQuery 기초](https://github.com/daesungRa/MyStudy/blob/master/Javascript/jQuery01.md) (190212, tue)
+- [[AJAX JSON] ajax 로 json 데이터 전송 (with flask)](https://github.com/daesungRa/MyStudy/blob/master/Javascript/ajaxjson.md) (190521, tue)
 
 ## JSP Servlet
 

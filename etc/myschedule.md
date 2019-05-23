@@ -9,7 +9,8 @@
 - flask 에서 사용되는 session 과 cookie 에 대해 학습한 후
 - 예제를 보고 프로젝트에 어떻게 적용할지 구상하고 적용해보기
     * flask request 객체 개념정리 : request object, cookies, sessions
-    * 적용!
+    * 회원정보로 디비에 저장될 required field 구상
+        - username, pwd, nickname, register_date 정도..?
 - 보수 사항
     * 댓글 구현
     * 관리자 구현

@@ -4,6 +4,35 @@
 
 # 공부 스케줄
 
+## 190523 (fri) - flask-board : 매크로+모달, 페이지네이션, 회원관리 적용하기 2
+
+- macro + modal 적용함
+    * target_id, title, content, btn_first(선택), btn_second(디폴트 close) 변수 적용
+    * 모달은 bootstrap modal 을 customizing 함
+    * 투입한 target_id 에 해당하는 모달을 그것과 연계된 버튼을 통해 활성화한다.
+    * 현재 모달 구현 템플릿은 signin, signup, delete_account 세 개이다.
+- 게시판에 대해서 Pagination 을 적용함
+    * 이전에 만들었던 것처럼 Pagination 클래스 기반의 독립적인 인스턴스를 만들어 활용함
+        * nowpage, pagesize, blocksize
+        * totalcount, maxpage, maxblock, nowblock
+        * endpage, startpage
+    * mongodb 특성을 활용해 nowpage, collection_name 을 투입해 필요한 데이터들을 계산함
+    * mongodb 에서는 skip(), limit() 함수를 통해 보다 쉬운 명령으로 원하는 결과를 얻을 수 있음
+        * skip 은 전달받은 수 만큼 건너뛰고 조회, limit 은 한 번에 조회되는 도큐먼트의 갯수를 제한한다.
+        * find 함수에 key-value 쌍의 인자를 넣으면 그것에 맞게 필터링된다.
+        * sort 함수에 정렬하고자 하는 field 명을 넣고 1 (오름차순), -1 (내림차순) 정렬 가능하다
+        * pretty 함수는 조회결과를 json 형식으로 보기좋게 출력한다.
+    * 그렇게 조회된 결과와 pagination 변수들을 활용해 프론트 화면에 잘 그린다.
+- 보수 사항 추가
+    * 브라우저 요청 url 에서 불필요한 get 요청을 안정적인 post 방식으로 바꾸기
+    * 페이지 이동이나 부분적인 요청 시 서버 부하를 줄이기 위한 방법을 고민해볼 것 (비동기 처리, ajax)
+- 더 공부할 부분
+    * mongodb cursor
+    * crud 및 원활한 쿼리를 위한 세부문법 학습
+    * pymongo 에서의 유용한 함수 살펴보기
+    * 다른 사람의 잘 만들어진 프로젝트 구조, 모듈 등을 보고 배우기
+- account authentication : 책이나 레퍼런스 보고 따라서 만들어보기 (주말간 해보기)
+
 ## 190523 (thur) - flask-board 회원관리 적용하기
 
 - flask 에서 사용되는 session 과 cookie 에 대해 학습한 후

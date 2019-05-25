@@ -16,8 +16,8 @@
 
 ```javascript
 var sendData = {
-    aaa: 'aaa',
-    num: 20
+    'aaa': 'aaa',
+    'num': 20
 }
 ```
 

@@ -4,7 +4,13 @@
 
 # 공부 스케줄
 
-## 190523 (fri) - flask-board : 매크로+모달, 페이지네이션, 회원관리 적용하기 2
+## 190525 (sat) - flask-board 보수
+
+- url 매핑 수정
+- 브라우저 요청 방식 수정
+- 비동기 처리로 전환 (게시글 리스트 페이징처리 같은거)
+
+## 190524 (fri) - flask-board : 매크로+모달, 페이지네이션, 회원관리 적용하기 2
 
 - macro + modal 적용함
     * target_id, title, content, btn_first(선택), btn_second(디폴트 close) 변수 적용

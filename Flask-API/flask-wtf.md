@@ -4,7 +4,7 @@
 
 # Flask WTF 살펴보기
 
-> 요약: WTF 는 안전하고 검증된 WTForm 을 제공함으로써 CSRF 취약점을 해결하거나, File upload 등의 부가적 form 기능 구현을 위한 모듈이다.
+> 요약: WTF 는 안전하고 검증된 WTForm 을 제공함으로써 CSRF 취약점을 해결하거나, File upload 등의 부가적 form 관련 기능 구현을 위한 모듈이다.
 
 ## CSRF?
 
@@ -32,7 +32,7 @@ class MyForm(FlaskForm):
     <input type="submit" value="Go" />
 </form>
 ```
-- 만약 당신의 form 이 multiple hidden fields 를 가지고 있다면, 그것들을 하나의 블럭을 사용함으로써 렌더링할 수 있다.
+- 만약 당신의 form 이 multiple hidden fields 를 가지고 있다면, 그것들을 하나의 블럭을 사용함으로써 렌더링할 수 있다. (hidden_tag 활용)
 ```html
 <form method="POST" action="/">
     {{ form.hidden_tag() }}
@@ -63,7 +63,7 @@ def submit():
 ...
 ```
 - 주목할 점은 ```request.form``` 방식의 form 데이터를 Flask-WTF 클래스에 넘겨줄 필요가 없다는 것이다. (자동으로 로드됨)
-- 그리고 편리한 ```validate_on_submit``` 은 그것이 **POST** 리퀘스트인지 그리고 유효한지를 체크한다.
+- 그리고 편리한 ```validate_on_submit``` 은 그것이 **POST 리퀘스트**인지 그리고 **유효한지**를 체크한다.
 
 ## File Uploads
 
@@ -165,6 +165,9 @@ RECAPTCHA_DATA_ATTRS = {'theme': 'dark'}
 </form>
 ```
 
+## CSRF Protection
+
+- 
 
 
 

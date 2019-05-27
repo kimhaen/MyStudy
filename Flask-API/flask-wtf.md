@@ -6,6 +6,8 @@
 
 > 요약: WTF 는 안전하고 검증된 WTForm 을 제공함으로써 CSRF 취약점을 해결하거나, File upload 등의 부가적 form 관련 기능 구현을 위한 모듈이다.
 
+참조 : [Flask-WTF docs](https://flask-wtf.readthedocs.io/en/stable/)
+
 ## CSRF?
 
 - Cross-Site Request Forgery, 크로스사이트 요청 위조

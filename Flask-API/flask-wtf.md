@@ -67,7 +67,72 @@ def submit():
 
 ## File Uploads
 
-- 
+- **Flask-WTF** 에 의해 제공되는 **FileField** 는 **WTForms** 에 의해 제공되는 필드와 다르다.
+- **FileField** 는 FileStorage 클래스 안의 파일이 빈 인스턴스인지 확인하고, 빈 인스턴스라면 data 가 None 이 된다.
+```python
+from flask import Flask, render_template
+from flask_wtf import FlaskForm
+from flask_wtf.file import FileField, FileRequired
+from werkzeug.utils import secure_filename
+import os
+
+app = Flask(__name__)
+
+class PhotoForm(FlaskForm):
+    photo = FileField(validators=[FileRequired()])
+
+@app.route('/upload', methods=['GET', 'POST'])
+def upload():
+    form = PhotoForm()
+    if form.validate_on_submit():
+        f = form.photo.data
+        filename = secure_filename(f.filename)
+        f.save(os.path.join(
+            app.instance_path, 'photos', filename
+        ))
+        return redirect(url_for('index'))
+    return render_template('upload.html', form=form)
+```
+- HTML form 에서 ```enctype="multipart/form-data"``` 설정을 잊지 말것. (아니면 무조건 empty 처리된다.)
+- Flask-WTF 는 당신을 위해 form data 를 form 으로 전달한다.
+- data 를 명시적으로만 전달한다면, **request.form** 과 **request.files** 객체는 form 에 자동으로 포함된다.
+```python
+form = PhotoForm()
+# is equivalent to:
+
+from flask import request
+from werkzeug.datastructures import CombineMultiDict
+form = PhotoForm(CombinesMultiDict((request.files, request.form)))
+```
+- Validation
+    * Flask-WTF 는 **FileRequired** 와 **FileAllowed** 를 통해 파일 업로드 체크를 한다.
+    * 이것들은 **Flask-WTF** 와 **WTForms** 의 **FileField** 클래스에서 공통적으로 사용 가능하다.
+    * **FileAllowed** 는 **Flask-Uploads** 와 함께 잘 동작한다.
+```python
+from flask_uploads import UploadSet, IMAGES
+from flask_wtf import FlaskForm
+from flask_wtf.file import FileField, FileAllowed, FileRequired
+
+images = UploadSet('images', IMAGES)
+
+class UploadForm(FlaskForm):
+    upload = FileField('image', validators=[
+        FileRequired(),
+        FileAllowed(images, 'Images only!')
+    ])
+```
+- **Flask-Uploads** 없이 확장자를 직접 전달함으로써 동일하게 사용 가능하다.
+```python
+...
+class UploadForm(FlaskForm):
+    upload = FileField('image', validators=[
+        FileRequired(),
+        FileAllowed(['jpg', 'png'], 'Images only!')
+    ])
+...
+```
+
+
 
 
 

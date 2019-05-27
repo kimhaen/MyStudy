@@ -125,7 +125,12 @@
 - [**[PATH ERROR]** 파이썬 경로에러 - 같은 패키지에서도 임포트가 안된다??](https://github.com/daesungRa/MyStudy/blob/master/Python/pythonpatherror.md) (190514, tue)
 - [**[FLASK-MONGODB]** Model 기반 Validator 만들기 (mrxmamun 의 flask-mvc-pymongo 클론)](https://github.com/daesungRa/MyStudy/blob/master/Python/modelBasedValidator.md) (190515, wed)
 - [**[FLASK-RequestObject]** Request 객체와 Cookie, Session 다루기](https://github.com/daesungRa/MyStudy/blob/master/Python/flaskRequestCookieSession.md) (190523, thur)
-- [**[FLASK-RESTFUL]** Flask 에서는 어떻게 Restful API 를 구현할까? ](https://github.com/daesungRa/MyStudy/blob/master/Python/flaskRestful.md) (190516, thur)
+
+## Flask-API
+
+- [**[CORS]** Flask-CORS](https://github.com/daesungRa/MyStudy/blob/master/Flask-API/flask-cors.md) (190527, mon)
+- [**[WTF]** Flask-WTF ](https://github.com/daesungRa/MyStudy/blob/master/Flask-API/flask-wtf.md) (190527, mon)
+- [**[RESTFUL]** Flask 에서는 어떻게 Restful API 를 구현할까? ](https://github.com/daesungRa/MyStudy/blob/master/Flask-API/flaskRestful.md) (190516, thur)
 
 ## DB
 

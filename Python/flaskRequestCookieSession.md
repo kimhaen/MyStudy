@@ -47,7 +47,7 @@ def setcookie():
 ...
 ```
 
-**response 객체로부터 cookie 값을 얻어와 반환하기**
+**request 객체로부터 cookie 값을 얻어와 반환하기**
 ```python
 ...
 

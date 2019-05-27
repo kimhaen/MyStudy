@@ -132,7 +132,38 @@ class UploadForm(FlaskForm):
 ...
 ```
 
+## Recaptcha
 
+- **captcha** 란, 완전 자동화된 컴퓨터나 사람을 구별하는 것을 말한다.
+- Flask-WTF 에서는 **RecaptchaField** 를 지원한다.
+```python
+from flask_wtf import FlaskForm, RecaptchaField
+from wtforms import TextField
+
+class SignupForm(FlaskForm):
+    username = TextField('Username')
+    recaptcha = RecaptchaField()
+```
+- 이것은 꼭 구현해야만 하는 여러 configuration 과 함께 사용된다.
+```
+RECAPTCHA_PUBLIC_KEY	required A public key.
+RECAPTCHA_PRIVATE_KEY	required A private key.
+RECAPTCHA_API_SERVER	optional Specify your Recaptcha API server.
+RECAPTCHA_PARAMETERS	optional A dict of JavaScript (api.js) parameters.
+RECAPTCHA_DATA_ATTRS	optional A dict of data attributes options. https://developers.google.com/recaptcha/docs/display
+```
+- 다음은 RECAPTCHA_PARAMETERS 와 RECAPTCHA_DATA_ATTRS 의 예시이다.
+```text
+RECAPTCHA_PARAMETERS = {'h1': 'zh', 'render': 'explicit'}
+RECAPTCHA_DATA_ATTRS = {'theme': 'dark'}
+```
+- 당신의 application 에서 테스트하기 위해 (만약 ```app.testing``` 이 ```True``` 라면) recaptcha 필드는 항상 당신의 편의를 위해 사용 가능하다.
+```html
+<form action="/" method="POST">
+    {{ form.username }}
+    {{ form.recaptcha }}
+</form>
+```
 
 
 

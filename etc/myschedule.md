@@ -2,7 +2,59 @@
 ![author](https://img.shields.io/badge/author-daesungRa-lightgray.svg?style=flat-square)
 ![date](https://img.shields.io/badge/date-190504-lightgray.svg?style=flat-square)
 
-# 공부 스케줄
+# 스케줄
+
+## 190528 (tue) - flask-board, flask-wtf 적용, ajax pagination
+
+#### flask-wtf??
+
+- flask-wtf 는 안전하고 효율적인 html form 양식을 제공한다. 보안의 측면에서 csrf attack 으로부터 safe 하며, 사용자가 추가적으로 작업할 부분은 없다(on/off 가능)
+- 원하는 form 양식에 대한 customizing 이 가능하며, 매우 쉽게 재사용할 수 있다.
+- 설정한 대로 사용자 입력 데이터의 무결성 및 제약조건을 자동으로 체크하여 블럭한다.
+- 잘못 입력한 정보에 대한 적절한 메시지도 반환 가능하다.
+- 사용 방식은 서버 단에서 form 양식을 만들어 템플릿에 반환한다.
+
+#### 내 프로젝트에 적용하기
+
+- 그냥 서버로부터 customizing 된 form 을 받아와서 바로 적용하면 쉽지만,
+- 나는 singin, signup 페이지를 modal+macro 로 사용하고 있기 때문에
+- 이 두 페이지에 대해서는 아예 해당 form 을 base.html 페이지 내에 모달로 그려놓고 시작하려고 한다.
+	* 기존의 signin.html 과 signup.html 을 사용하지 않고 base.html 에서 모달로 그려놓고 시작한다는 의미.
+	* 그러려면 거의 모든 뷰 함수에서 개별적으로 form 을 반환해줘야 하는 코드반복의 문제가 발생한다!!
+
+- 이 코드반복의 문제를 해결하기 위해,
+	1. decorator 사용하기
+	2. global g 객체 사용하기 (feat. Application Context)
+	3. app.before_request 사용하기
+
+- 1 번은 성공, 2 번도 성공했지만 모든 request 에 구분 없이 적용된다는 점이 존재함
+- 3 번은 실패
+	* 일단 application context 는 하나의 스레드(사용자 세션을 의미하는 듯?)에 한 번의 request 에만 적용되는듯 하다
+	* 같은 세션이어도 서로 다른 요청에서는 새롭게 초기화된다.
+	* 다만, application context 의 global g 객체는 한 번의 request 동안에 전역적으로 사용 가능하다.
+
+- **정리**
+    * 모든 템플릿이 base.html 을 기반으로 생성되며, account 관련 wtform 은 이곳에 렌더링 되니,
+    * 최대한 코드를 줄이기 위해 **before-request** 를 사용하는 것이 적절하다.
+    * 만약 모든 페이지에 적용되지 않고 선택적인 요소라면, **decorator** 를 사용하는 것이 더 나을 것이다.
+    * 또한, 만약 가능하다면 전역 객체로 한 번 선언해 두고 필요에 따라 호출해서 사용하는 게 가장 좋지 않을까 싶다.
+
+- 추가할 사항
+    * 사용자 입력정보 체크 후 서버로 넘기기
+    * 잘못된 입력이라면 메시지 표현하기
+    * 디비까지 저장
+    * 저장 결과 메시지 표현하기
+
+#### 페이지 ajax 처리
+
+- 불필요한 ajax 처리는 안하느니만 못하다는 전제.
+- 부분적으로 갱신되는 정보에 대해서는 페이지 전체를 리로드하지 않아도 되게 하는 이점이 있음.
+- 화면 내 용적이 크거나 메인 컨텐츠의 경우에는 그냥 페이지 이동시키는 것이 낫다.
+
+- 어쨌든, flask 에서 ajax 테스트를 위해 게시판 페이징 처리를 ajax 로 구현했다
+	* 처음 로드는 get 방식으로 1 페이지 전체가 그려지도록 함
+	* 이후 페이지 이동은 ajax-post 방식으로 부분적 비동기 처리
+	* 캐시에 페이지 이동기록이 남지 않기 때문에 페이지 리로드 시에는 최초 1 페이지로 돌아감
 
 ## 190525 (sat) - flask-board 보수
 

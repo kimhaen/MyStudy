@@ -132,6 +132,7 @@
 
 - [**[CORS]** Flask-CORS](https://github.com/daesungRa/MyStudy/blob/master/Flask-API/flask-cors.md) (190527, mon)
 - [**[WTF]** Flask-WTF ](https://github.com/daesungRa/MyStudy/blob/master/Flask-API/flask-wtf.md) (190527, mon)
+- [**[WTF-FileUpload]** FileField 로 받은 file 데이터 저장 이슈 ](https://github.com/daesungRa/MyStudy/blob/master/Flask-API/flask-wtf-filefield.md) (190527, mon)
 - [**[RESTFUL]** Flask 에서는 어떻게 Restful API 를 구현할까? ](https://github.com/daesungRa/MyStudy/blob/master/Flask-API/flaskRestful.md) (190516, thur)
 
 ## DB

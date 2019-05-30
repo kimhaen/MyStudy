@@ -4,6 +4,19 @@
 
 # 스케줄
 
+## 190530 (thur) - flask-board / 사용자용 mariadb 활용하기-계정등록 로직
+
+- signup form 전송정보를 db 까지 저장해보기
+	* member_service.py 를 통해 각 모듈 활용하여 구성한다
+	* collection 이름은 members
+	* field 목록 : username, pwd, email, nickname, profile, auth, created
+	* 관리자용 계정 하나 만들고,
+	* 나머지 일반유저는 브라우저를 통해 등록하기
+	* auth : 1(일반), 2(관리자), 3(수퍼관리자)
+- 프로필 페이지 만들기 (페이지로? 모달로?)
+- 저녁에 할일
+    * flask tutorial 강의 따라하기(1,2,3,4 강 까지)
+
 ## 190528 (tue) - flask-board, flask-wtf 적용, ajax pagination
 
 #### flask-wtf??
